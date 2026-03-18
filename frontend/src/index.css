@@ -1,115 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;800&family=Inter:wght@300;400;500;600&family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-default: #0A0A0F;
+  --bg-paper: #12121A;
+  --bg-subtle: #1A1A24;
+  --primary: #00D4AA;
+  --primary-light: #5EEAD4;
+  --primary-dark: #009678;
+  --secondary: #7B61FF;
+  --secondary-light: #A795FF;
+  --text-primary: #E8E8ED;
+  --text-secondary: #9494A0;
+  --text-muted: #5F5F6E;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    margin: 0;
-    font-family:
-        -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-        sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-default);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-code {
-    font-family:
-        source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+::selection {
+  background-color: var(--primary);
+  color: var(--bg-default);
 }
 
-@layer base {
-    :root {
-        --background: 0 0% 100%;
-        --foreground: 0 0% 3.9%;
-        --card: 0 0% 100%;
-        --card-foreground: 0 0% 3.9%;
-        --popover: 0 0% 100%;
-        --popover-foreground: 0 0% 3.9%;
-        --primary: 0 0% 9%;
-        --primary-foreground: 0 0% 98%;
-        --secondary: 0 0% 96.1%;
-        --secondary-foreground: 0 0% 9%;
-        --muted: 0 0% 96.1%;
-        --muted-foreground: 0 0% 45.1%;
-        --accent: 0 0% 96.1%;
-        --accent-foreground: 0 0% 9%;
-        --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 0 0% 89.8%;
-        --input: 0 0% 89.8%;
-        --ring: 0 0% 3.9%;
-        --chart-1: 12 76% 61%;
-        --chart-2: 173 58% 39%;
-        --chart-3: 197 37% 24%;
-        --chart-4: 43 74% 66%;
-        --chart-5: 27 87% 67%;
-        --radius: 0.5rem;
-    }
-    .dark {
-        --background: 0 0% 3.9%;
-        --foreground: 0 0% 98%;
-        --card: 0 0% 3.9%;
-        --card-foreground: 0 0% 98%;
-        --popover: 0 0% 3.9%;
-        --popover-foreground: 0 0% 98%;
-        --primary: 0 0% 98%;
-        --primary-foreground: 0 0% 9%;
-        --secondary: 0 0% 14.9%;
-        --secondary-foreground: 0 0% 98%;
-        --muted: 0 0% 14.9%;
-        --muted-foreground: 0 0% 63.9%;
-        --accent: 0 0% 14.9%;
-        --accent-foreground: 0 0% 98%;
-        --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 0 0% 14.9%;
-        --input: 0 0% 14.9%;
-        --ring: 0 0% 83.1%;
-        --chart-1: 220 70% 50%;
-        --chart-2: 160 60% 45%;
-        --chart-3: 30 80% 55%;
-        --chart-4: 280 65% 60%;
-        --chart-5: 340 75% 55%;
-    }
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-default);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-subtle);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Unbounded', sans-serif;
+}
+
+code, pre {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.font-ui {
+  font-family: 'Rajdhani', sans-serif;
 }
 
 @layer base {
-    * {
-        @apply border-border;
-    }
-    body {
-        @apply bg-background text-foreground;
-    }
+  :root {
+    --background: 240 10% 4%;
+    --foreground: 240 5% 92%;
+    --card: 240 10% 7%;
+    --card-foreground: 240 5% 92%;
+    --popover: 240 10% 7%;
+    --popover-foreground: 240 5% 92%;
+    --primary: 165 100% 42%;
+    --primary-foreground: 240 10% 4%;
+    --secondary: 255 100% 69%;
+    --secondary-foreground: 240 10% 4%;
+    --muted: 240 10% 14%;
+    --muted-foreground: 240 5% 60%;
+    --accent: 240 10% 14%;
+    --accent-foreground: 240 5% 92%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 10% 14%;
+    --input: 240 10% 14%;
+    --ring: 165 100% 42%;
+    --radius: 0.75rem;
+  }
 }
 
 @layer base {
-    [data-debug-wrapper="true"] {
-        display: contents !important;
-    }
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-[#0A0A0F] text-[#E8E8ED];
+  }
+}
 
-    [data-debug-wrapper="true"] > * {
-        margin-left: inherit;
-        margin-right: inherit;
-        margin-top: inherit;
-        margin-bottom: inherit;
-        padding-left: inherit;
-        padding-right: inherit;
-        padding-top: inherit;
-        padding-bottom: inherit;
-        column-gap: inherit;
-        row-gap: inherit;
-        gap: inherit;
-        border-left-width: inherit;
-        border-right-width: inherit;
-        border-top-width: inherit;
-        border-bottom-width: inherit;
-        border-left-style: inherit;
-        border-right-style: inherit;
-        border-top-style: inherit;
-        border-bottom-style: inherit;
-        border-left-color: inherit;
-        border-right-color: inherit;
-        border-top-color: inherit;
-        border-bottom-color: inherit;
-    }
+/* Glassmorphism utility */
+.glass-card {
+  @apply backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl;
+}
+
+.glass-card-hover {
+  @apply hover:bg-white/10 hover:border-white/20 transition-all duration-300;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #00D4AA 0%, #7B61FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow effects */
+.glow-primary {
+  box-shadow: 0 0 20px rgba(0, 212, 170, 0.3);
+}
+
+.glow-secondary {
+  box-shadow: 0 0 20px rgba(123, 97, 255, 0.3);
+}
+
+/* Link underline animation */
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* Shooting star animation */
+@keyframes shootingStar {
+  0% {
+    transform: translateX(-100px) translateY(-100px) rotate(-45deg);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(1000px) translateY(1000px) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+.shooting-star {
+  animation: shootingStar 2s ease-in-out forwards;
+}
+
+/* Nebula animation */
+@keyframes nebulaDrift {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.03;
+  }
+  50% {
+    transform: translate(50px, 30px);
+    opacity: 0.06;
+  }
+}
+
+.nebula {
+  animation: nebulaDrift 120s ease-in-out infinite;
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+
+/* Stagger children */
+.stagger-children > * {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+
+/* Markdown content styling */
+.prose-cosmic {
+  @apply text-[#E8E8ED];
+}
+
+.prose-cosmic h1 {
+  @apply text-3xl md:text-4xl font-bold mt-8 mb-4 text-[#E8E8ED];
+  font-family: 'Unbounded', sans-serif;
+}
+
+.prose-cosmic h2 {
+  @apply text-2xl md:text-3xl font-semibold mt-6 mb-3 text-[#E8E8ED];
+  font-family: 'Unbounded', sans-serif;
+}
+
+.prose-cosmic h3 {
+  @apply text-xl md:text-2xl font-medium mt-4 mb-2 text-[#E8E8ED];
+  font-family: 'Unbounded', sans-serif;
+}
+
+.prose-cosmic p {
+  @apply mb-4 leading-relaxed text-[#9494A0];
+}
+
+.prose-cosmic a {
+  @apply text-[#00D4AA] hover:text-[#5EEAD4] underline;
+}
+
+.prose-cosmic ul, .prose-cosmic ol {
+  @apply mb-4 pl-6 text-[#9494A0];
+}
+
+.prose-cosmic li {
+  @apply mb-2;
+}
+
+.prose-cosmic ul {
+  @apply list-disc;
+}
+
+.prose-cosmic ol {
+  @apply list-decimal;
+}
+
+.prose-cosmic pre {
+  @apply bg-[#12121A] rounded-lg p-4 mb-4 overflow-x-auto border border-white/10;
+}
+
+.prose-cosmic code {
+  @apply bg-[#12121A] px-1.5 py-0.5 rounded text-[#00D4AA] text-sm;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.prose-cosmic pre code {
+  @apply bg-transparent p-0;
+}
+
+.prose-cosmic blockquote {
+  @apply border-l-4 border-[#7B61FF] pl-4 italic text-[#9494A0] my-4;
+}
+
+.prose-cosmic strong {
+  @apply text-[#E8E8ED] font-semibold;
+}
+
+.prose-cosmic hr {
+  @apply border-white/10 my-8;
+}
+
+/* Highlight.js dark theme overrides */
+.hljs {
+  background: transparent !important;
+  color: #E8E8ED !important;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-built_in {
+  color: #7B61FF !important;
+}
+
+.hljs-string,
+.hljs-attribute {
+  color: #00D4AA !important;
+}
+
+.hljs-comment {
+  color: #5F5F6E !important;
+}
+
+.hljs-function,
+.hljs-title {
+  color: #5EEAD4 !important;
+}
+
+.hljs-number {
+  color: #FFB647 !important;
 }
