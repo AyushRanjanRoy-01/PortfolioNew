@@ -8,36 +8,33 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
+    { icon: Github, href: 'https://github.com/ayushranjanroy', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://linkedin.com/in/ayushranjanroy', label: 'LinkedIn' },
+    { icon: Twitter, href: 'https://twitter.com/ayushranjanroy', label: 'Twitter' },
     { icon: Mail, href: 'mailto:ayushranjanroy@gmail.com', label: 'Email' },
   ];
 
   return (
-    <footer className="relative border-t border-white/5 py-12" data-testid="footer">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer className="relative py-16 px-6 border-t border-white/[0.08]">
+      <div className="max-w-[980px] mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           {/* Left - Brand */}
           <div className="flex flex-col items-center md:items-start gap-2">
-            <span className="font-unbounded font-bold text-xl gradient-text">
-              Ayush Ranjan Roy
-            </span>
-            <span className="text-[#5F5F6E] text-sm">
-              Built with curiosity and code
+            <h3 className="font-display font-semibold text-lg tracking-tight text-[#E8E8ED]">Ayush Roy</h3>
+            <span className="text-[#6E6E73] text-sm font-normal">
+              AI Engineer • Building Intelligent Automation Systems
             </span>
           </div>
 
-          {/* Center - Social Links */}
-          <div className="flex items-center gap-4">
-            {socialLinks.map((link) => (
+          {/* Social Links */}
+          <div className="flex items-center gap-5">
+            {socialLinks.slice(0, 3).map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-white/5 border border-white/10 text-[#9494A0] hover:text-[#00D4AA] hover:border-[#00D4AA]/30 transition-all"
-                data-testid={`footer-social-${link.label.toLowerCase()}`}
+                className="text-[#6E6E73] hover:text-[#E8E8ED] transition-colors"
                 aria-label={link.label}
               >
                 <link.icon size={18} />
@@ -55,9 +52,11 @@ export const Footer = () => {
               Back to top
               <ArrowUp size={16} />
             </button>
-            <span className="text-[#5F5F6E] text-xs">
-              &copy; {currentYear} All rights reserved
-            </span>
+            <div className="mt-10 pt-8 border-t border-white/[0.08] text-center">
+              <p className="text-[#6E6E73] text-xs font-normal">
+                &copy; {currentYear} Ayush Ranjan Roy. All rights reserved.
+              </p>
+            </div>
           </div>
         </div>
       </div>

@@ -14,11 +14,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
-// Tech stack items
+// Tech stack items - AI/ML focused
 const techStack = [
-  'Python', 'TensorFlow', 'PyTorch', 'LangChain', 'OpenAI', 
-  'Hugging Face', 'FastAPI', 'React', 'AWS', 'GCP',
-  'Docker', 'Kubernetes', 'PostgreSQL', 'MongoDB', 'Redis'
+  'Python', 'FastAPI', 'PostgreSQL', 'LangChain', 'LangGraph', 
+  'Azure AI', 'OpenAI', 'Docker', 'Multi-Agent Systems', 'Document Intelligence'
 ];
 
 // Animation variants
@@ -49,55 +48,38 @@ const HeroSection = () => {
         initial="hidden"
         animate="visible"
         variants={staggerContainer}
-        className="text-center max-w-4xl"
+        className="text-center max-w-4xl mx-auto"
       >
-        <motion.p
+        <motion.h1 
           variants={fadeInUp}
-          className="text-[#9494A0] text-sm tracking-[0.2em] uppercase mb-4 font-rajdhani"
+          className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold mb-6 tracking-tighter leading-[1.05]"
         >
-          Hey, I'm
-        </motion.p>
-        
-        <motion.h1
-          variants={fadeInUp}
-          className="font-unbounded text-5xl md:text-7xl font-bold mb-6 gradient-text"
-          data-testid="hero-name"
-        >
-          Ayush Ranjan Roy
+          <span className="gradient-text">Ayush Ranjan Roy</span>
         </motion.h1>
-        
         <motion.p
           variants={fadeInUp}
-          className="font-rajdhani text-xl md:text-2xl text-[#E8E8ED] mb-4 font-medium"
+          className="text-[#A8A8B4] text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-normal"
         >
-          Gen AI Engineer · Building Intelligent Systems
+          Building intelligent automation systems. Currently working on multi-agent orchestration 
+          and document intelligence with Python, FastAPI, PostgreSQL, LangChain/LangGraph, and Azure AI.
         </motion.p>
-        
-        <motion.p
-          variants={fadeInUp}
-          className="text-[#9494A0] text-base md:text-lg max-w-2xl mx-auto mb-8 leading-relaxed"
-        >
-          Passionate about leveraging artificial intelligence to solve complex problems. 
-          Specializing in LLMs, RAG systems, and scalable AI infrastructure.
-        </motion.p>
-        
         <motion.div
           variants={fadeInUp}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Link to="/#projects">
             <Button 
-              className="bg-[#00D4AA] text-[#0A0A0F] font-semibold px-8 py-6 rounded-full hover:bg-[#5EEAD4] transition-all glow-primary"
-              data-testid="hero-cta-projects"
+              size="lg" 
+              className="bg-[#00D4AA] hover:bg-[#5EEAD4] text-[#0A0A0F] font-medium px-8 py-3.5 text-base rounded-full transition-all duration-200 hover:scale-[1.02]"
             >
-              View Projects
-              <ArrowRight className="ml-2 w-4 h-4" />
+              View My Work
+              <ArrowRight className="ml-2" size={18} />
             </Button>
           </Link>
           <Link to="/blog">
             <Button 
               variant="outline"
-              className="border-[#00D4AA] text-[#00D4AA] px-8 py-6 rounded-full hover:bg-[#00D4AA]/10 transition-all"
+              className="border-[#00D4AA] text-[#00D4AA] px-8 py-3.5 text-base rounded-full hover:bg-[#00D4AA]/10 transition-all"
               data-testid="hero-cta-blog"
             >
               Read Blog
@@ -105,7 +87,6 @@ const HeroSection = () => {
           </Link>
         </motion.div>
       </motion.div>
-      
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -149,33 +130,43 @@ const AboutSection = () => {
             <div className="relative w-64 h-64 md:w-80 md:h-80 mx-auto">
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#00D4AA]/20 to-[#7B61FF]/20 blur-2xl" />
               <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-white/10 glass-card">
-                <div className="w-full h-full bg-gradient-to-br from-[#12121A] to-[#1A1A24] flex items-center justify-center">
-                  <span className="font-unbounded text-6xl gradient-text">AR</span>
-                </div>
+                <img 
+                  src="/images/profile.jpg" 
+                  alt="Ayush Ranjan Roy - AI Engineer" 
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.innerHTML = '<div class="w-full h-full bg-gradient-to-br from-[#12121A] to-[#1A1A24] flex items-center justify-center"><span class="font-unbounded text-6xl gradient-text">AR</span></div>';
+                  }}
+                />
               </div>
             </div>
           </motion.div>
 
           {/* Content */}
           <motion.div variants={fadeInUp} className="space-y-6">
-            <h2 className="font-unbounded text-4xl md:text-5xl font-semibold text-[#E8E8ED]">
+            <h2 className="font-display text-4xl md:text-5xl font-semibold text-[#E8E8ED] tracking-tight">
               About <span className="gradient-text">Me</span>
             </h2>
             
-            <div className="space-y-4 text-[#9494A0] leading-relaxed">
+            <div className="space-y-4 text-[#A8A8B4] leading-relaxed text-base">
               <p>
-                I'm a Gen AI Engineer with a passion for building intelligent systems that make a real impact. 
-                My journey in tech has taken me through various domains, from traditional software engineering 
-                to the cutting edge of artificial intelligence.
+                I'm an AI Engineer at Accenture building production-grade automation systems. My work focuses 
+                on multi-agent orchestration, document intelligence, and scalable LLM applications.
               </p>
               <p>
-                Currently, I focus on developing LLM-powered applications, RAG systems, and AI infrastructure 
-                that helps organizations leverage the power of generative AI. I believe in building solutions 
-                that are not just technically impressive but also practical and user-friendly.
+                I believe in clean architecture, reliable systems, and practical solutions that solve real problems. 
+                Currently exploring distributed systems design and production ML patterns.
               </p>
               <p>
-                When I'm not coding, you'll find me exploring new AI research papers, contributing to 
-                open-source projects, or sharing my knowledge through blog posts and talks.
+                <strong className="text-[#E8E8ED]">Currently Working On:</strong><br/>
+                Multi-agent orchestration frameworks • Production-grade document intelligence pipelines • 
+                Scalable LLM applications with enterprise requirements
+              </p>
+              <p>
+                <strong className="text-[#E8E8ED]">Interests:</strong><br/>
+                Coffee and exploring new places • Chess and strategic thinking • System design and architecture • 
+                Open-source contributions
               </p>
             </div>
 
@@ -183,7 +174,7 @@ const AboutSection = () => {
             <div className="flex flex-wrap gap-4 text-sm">
               <div className="flex items-center gap-2 text-[#9494A0]">
                 <Briefcase size={16} className="text-[#00D4AA]" />
-                <span>Gen AI Engineer</span>
+                <span>AI Engineer at Accenture</span>
               </div>
               <div className="flex items-center gap-2 text-[#9494A0]">
                 <MapPin size={16} className="text-[#00D4AA]" />
@@ -204,10 +195,10 @@ const AboutSection = () => {
           variants={fadeInUp}
           className="mt-16"
         >
-          <h3 className="font-unbounded text-xl text-[#E8E8ED] mb-6 text-center">
-            Technologies I Work With
+          <h3 className="font-unbounded text-lg md:text-xl text-[#E8E8ED] mb-6 text-center">
+            Core Technologies
           </h3>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3">
             {techStack.map((tech) => (
               <span 
                 key={tech} 
@@ -231,7 +222,7 @@ const ProjectsSection = () => {
   const [filter, setFilter] = useState('All');
   const [loading, setLoading] = useState(true);
 
-  const categories = ['All', 'Data Engineering', 'AI/ML', 'Full Stack'];
+  const categories = ['All', 'AI/ML', 'Full Stack'];
 
   useEffect(() => {
     fetchProjects();
@@ -266,11 +257,11 @@ const ProjectsSection = () => {
           variants={staggerContainer}
         >
           <motion.div variants={fadeInUp} className="text-center mb-12">
-            <h2 className="font-unbounded text-4xl md:text-5xl font-semibold text-[#E8E8ED] mb-4">
+            <h2 className="font-display text-4xl md:text-5xl font-semibold text-[#E8E8ED] mb-12 text-center tracking-tight">
               Featured <span className="gradient-text">Projects</span>
             </h2>
             <p className="text-[#9494A0] max-w-2xl mx-auto">
-              A collection of projects showcasing my work in AI, data engineering, and full-stack development.
+              A collection of projects showcasing my work in AI/ML and full-stack development.
             </p>
           </motion.div>
 
@@ -428,8 +419,8 @@ const ContactSection = () => {
           variants={staggerContainer}
         >
           <motion.div variants={fadeInUp} className="text-center mb-12">
-            <h2 className="font-unbounded text-4xl md:text-5xl font-semibold text-[#E8E8ED] mb-4">
-              Let's <span className="gradient-text">Connect</span>
+            <h2 className="font-display text-4xl md:text-5xl font-semibold text-[#E8E8ED] mb-4 text-center tracking-tight">
+              Get in <span className="gradient-text">Touch</span>
             </h2>
             <p className="text-[#9494A0] max-w-2xl mx-auto">
               I'm always open to discussing new opportunities, interesting projects, 
@@ -467,32 +458,39 @@ const ContactSection = () => {
             <motion.div variants={fadeInUp}>
               <form onSubmit={handleSubmit} className="glass-card p-8 rounded-2xl space-y-6" data-testid="contact-form">
                 <div>
+                  <label htmlFor="contact-name" className="sr-only">Your Name</label>
                   <Input
+                    id="contact-name"
                     placeholder="Your Name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
+                    aria-required="true"
                     className="bg-white/5 border-white/10 text-[#E8E8ED] placeholder:text-[#5F5F6E] focus:border-[#00D4AA] focus:ring-[#00D4AA]"
                     data-testid="contact-name-input"
                   />
                 </div>
                 <div>
+                  <label htmlFor="contact-email" className="sr-only">Your Email</label>
                   <Input
+                    id="contact-email"
                     type="email"
                     placeholder="Your Email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
+                    aria-required="true"
                     className="bg-white/5 border-white/10 text-[#E8E8ED] placeholder:text-[#5F5F6E] focus:border-[#00D4AA] focus:ring-[#00D4AA]"
                     data-testid="contact-email-input"
                   />
                 </div>
                 <div>
+                  <label htmlFor="contact-subject" className="sr-only">Subject</label>
                   <Select
                     value={formData.subject}
                     onValueChange={(value) => setFormData({ ...formData, subject: value })}
                   >
-                    <SelectTrigger className="bg-white/5 border-white/10 text-[#E8E8ED] focus:ring-[#00D4AA]" data-testid="contact-subject-select">
+                    <SelectTrigger id="contact-subject" className="bg-white/5 border-white/10 text-[#E8E8ED] focus:ring-[#00D4AA]" data-testid="contact-subject-select">
                       <SelectValue placeholder="Subject" />
                     </SelectTrigger>
                     <SelectContent className="bg-[#12121A] border-white/10">
@@ -504,11 +502,14 @@ const ContactSection = () => {
                   </Select>
                 </div>
                 <div>
+                  <label htmlFor="contact-message" className="sr-only">Your Message</label>
                   <Textarea
+                    id="contact-message"
                     placeholder="Your Message"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     required
+                    aria-required="true"
                     rows={5}
                     className="bg-white/5 border-white/10 text-[#E8E8ED] placeholder:text-[#5F5F6E] focus:border-[#00D4AA] focus:ring-[#00D4AA] resize-none"
                     data-testid="contact-message-input"
@@ -540,7 +541,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative">
+    <main id="main-content" className="relative">
       <HeroSection />
       <div className="section-divider" />
       <AboutSection />
@@ -548,6 +549,6 @@ export default function Home() {
       <ProjectsSection />
       <div className="section-divider" />
       <ContactSection />
-    </div>
+    </main>
   );
 }

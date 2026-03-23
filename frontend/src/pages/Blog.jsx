@@ -43,7 +43,7 @@ export const BlogIndex = () => {
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
 
-  const categories = ['All', 'Data Engineering', 'AI/ML', 'Career'];
+  const categories = ['All', 'AI/ML', 'Career', 'Tech'];
 
   useEffect(() => {
     fetchPosts();
@@ -65,7 +65,7 @@ export const BlogIndex = () => {
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-16 px-6" data-testid="blog-index">
+    <main className="min-h-screen pt-24 pb-16 px-6" data-testid="blog-index">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <motion.div
@@ -77,7 +77,7 @@ export const BlogIndex = () => {
             The <span className="gradient-text">Blog</span>
           </h1>
           <p className="text-[#9494A0] max-w-2xl mx-auto">
-            Thoughts on AI, data engineering, career growth, and everything in between.
+            Thoughts on AI, machine learning, career growth, and everything in between.
           </p>
         </motion.div>
 
@@ -171,7 +171,7 @@ export const BlogIndex = () => {
           )}
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 
@@ -286,7 +286,7 @@ export const BlogPost = () => {
   if (!post) return null;
 
   return (
-    <div className="min-h-screen pt-24 pb-16 px-6" data-testid="blog-post-detail">
+    <main className="min-h-screen pt-24 pb-16 px-6" data-testid="blog-post-detail">
       <article className="max-w-3xl mx-auto">
         {/* Back Button */}
         <Link 
@@ -489,6 +489,6 @@ export const BlogPost = () => {
           </div>
         </section>
       </article>
-    </div>
+    </main>
   );
 };

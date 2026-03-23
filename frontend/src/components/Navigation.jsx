@@ -7,6 +7,7 @@ const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/#about' },
   { name: 'Projects', path: '/#projects' },
+  { name: 'Learn', path: '/learn' },
   { name: 'Blog', path: '/blog' },
   { name: 'Tech Pulse', path: '/tech-pulse' },
   { name: 'Contact', path: '/#contact' },
@@ -16,6 +17,7 @@ export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const [showSkipLink, setShowSkipLink] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,42 +54,47 @@ export const Navigation = () => {
 
   return (
     <>
+      {/* Skip to main content link for accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-[#00D4AA] focus:text-[#0A0A0F] focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold"
+        onFocus={() => setShowSkipLink(true)}
+        onBlur={() => setShowSkipLink(false)}
+      >
+        Skip to main content
+      </a>
       <nav
         data-testid="main-navigation"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? 'nav-blur border-b border-white/5' : ''
+          isScrolled ? 'bg-[#0A0A0F]/80 backdrop-blur-xl border-b border-white/[0.08]' : 'bg-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="max-w-[980px] mx-auto px-6">
+          <div className="flex items-center justify-between h-11">
             {/* Logo */}
             <Link 
               to="/" 
-              className="font-unbounded font-bold text-xl md:text-2xl gradient-text"
+              className="text-[17px] font-semibold tracking-tight text-[#E8E8ED] hover:text-white transition-colors"
               data-testid="nav-logo"
             >
-              ARR
+              <span className="md:hidden">AR</span>
+              <span className="hidden md:inline">Ayush Roy</span>
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-7" role="navigation" aria-label="Main navigation">
               {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.path.startsWith('/#') ? '/' : link.path}
-                  onClick={() => handleNavClick(link.path)}
-                  className={`relative font-rajdhani font-medium text-sm tracking-wider uppercase transition-colors ${
-                    isActive(link.path) ? 'text-[#00D4AA]' : 'text-[#9494A0] hover:text-[#E8E8ED]'
-                  } link-underline`}
-                  data-testid={`nav-link-${link.name.toLowerCase().replace(' ', '-')}`}
-                >
+              <Link
+                key={link.name}
+                to={link.path.startsWith('/#') ? '/' : link.path}
+                onClick={() => handleNavClick(link.path)}
+                className={`text-[13px] font-normal tracking-tight transition-all duration-200 focus:outline-none focus:text-white ${
+                  isActive(link.path) ? 'text-white' : 'text-[#A8A8B4] hover:text-white'
+                }`}
+                data-testid={`nav-link-${link.name.toLowerCase().replace(' ', '-')}`}
+                aria-current={isActive(link.path) ? 'page' : undefined}
+              >
                   {link.name}
-                  {isActive(link.path) && (
-                    <motion.div
-                      layoutId="activeIndicator"
-                      className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#00D4AA]"
-                    />
-                  )}
                 </Link>
               ))}
             </div>
@@ -95,11 +102,11 @@ export const Navigation = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 text-[#E8E8ED]"
+              className="md:hidden p-1 text-[#E8E8ED] hover:text-white transition-colors"
               data-testid="mobile-menu-button"
               aria-label="Toggle menu"
             >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
@@ -116,8 +123,8 @@ export const Navigation = () => {
             className="fixed inset-0 z-40 md:hidden"
             data-testid="mobile-menu"
           >
-            <div className="absolute inset-0 bg-[#0A0A0F]/95 backdrop-blur-xl">
-              <div className="flex flex-col items-center justify-center h-full gap-8">
+            <div className="absolute inset-0 bg-[#0A0A0F]/98 backdrop-blur-2xl">
+              <div className="flex flex-col items-center justify-center h-full gap-6">
                 {navLinks.map((link, index) => (
                   <motion.div
                     key={link.name}
@@ -128,8 +135,8 @@ export const Navigation = () => {
                     <Link
                       to={link.path.startsWith('/#') ? '/' : link.path}
                       onClick={() => handleNavClick(link.path)}
-                      className={`font-unbounded text-2xl ${
-                        isActive(link.path) ? 'text-[#00D4AA]' : 'text-[#E8E8ED]'
+                      className={`text-xl font-normal tracking-tight ${
+                        isActive(link.path) ? 'text-white' : 'text-[#A8A8B4]'
                       }`}
                       data-testid={`mobile-nav-link-${link.name.toLowerCase().replace(' ', '-')}`}
                     >

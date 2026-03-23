@@ -36,7 +36,7 @@ const AdminSidebar = ({ activeTab, setActiveTab }) => {
   ];
 
   return (
-    <aside className="admin-sidebar fixed left-0 top-0 h-screen pt-20 hidden lg:block" data-testid="admin-sidebar">
+    <aside className="admin-sidebar fixed left-0 top-0 h-screen pt-20 hidden lg:block overflow-y-auto" data-testid="admin-sidebar">
       <nav className="py-6">
         {navItems.map((item) => (
           <button
@@ -124,7 +124,7 @@ const BlogPanel = () => {
   const [editingPost, setEditingPost] = useState(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [formData, setFormData] = useState({
-    title: '', slug: '', content: '', excerpt: '', category: 'Data Engineering', 
+    title: '', slug: '', content: '', excerpt: '', category: 'AI/ML', 
     tags: '', read_time: 5, published: true
   });
 
@@ -178,7 +178,7 @@ const BlogPanel = () => {
 
   const resetForm = () => {
     setFormData({
-      title: '', slug: '', content: '', excerpt: '', category: 'Data Engineering',
+      title: '', slug: '', content: '', excerpt: '', category: 'AI/ML',
       tags: '', read_time: 5, published: true
     });
     setEditingPost(null);
@@ -259,10 +259,10 @@ const BlogPanel = () => {
                     <SelectValue placeholder="Category" />
                   </SelectTrigger>
                   <SelectContent className="bg-[#12121A] border-white/10">
-                    <SelectItem value="Data Engineering">Data Engineering</SelectItem>
                     <SelectItem value="AI/ML">AI/ML</SelectItem>
                     <SelectItem value="Career">Career</SelectItem>
                     <SelectItem value="Tech">Tech</SelectItem>
+                    <SelectItem value="Full Stack">Full Stack</SelectItem>
                   </SelectContent>
                 </Select>
                 <Input
@@ -364,7 +364,7 @@ const ProjectsPanel = () => {
   const [editingProject, setEditingProject] = useState(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [formData, setFormData] = useState({
-    title: '', description: '', full_description: '', category: 'Data Engineering',
+    title: '', description: '', full_description: '', category: 'AI/ML',
     tech_stack: '', github_url: '', live_url: '', image_url: '', featured: false
   });
 
@@ -418,7 +418,7 @@ const ProjectsPanel = () => {
 
   const resetForm = () => {
     setFormData({
-      title: '', description: '', full_description: '', category: 'Data Engineering',
+      title: '', description: '', full_description: '', category: 'AI/ML',
       tech_stack: '', github_url: '', live_url: '', image_url: '', featured: false
     });
     setEditingProject(null);
@@ -486,9 +486,9 @@ const ProjectsPanel = () => {
                   <SelectValue placeholder="Category" />
                 </SelectTrigger>
                 <SelectContent className="bg-[#12121A] border-white/10">
-                  <SelectItem value="Data Engineering">Data Engineering</SelectItem>
                   <SelectItem value="AI/ML">AI/ML</SelectItem>
                   <SelectItem value="Full Stack">Full Stack</SelectItem>
+                  <SelectItem value="Cloud & DevOps">Cloud & DevOps</SelectItem>
                 </SelectContent>
               </Select>
               <Input

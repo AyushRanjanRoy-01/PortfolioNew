@@ -1,17 +1,22 @@
 import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
+import { useTheme } from '../contexts/ThemeContext';
 
 export const Starfield = () => {
+  const { theme } = useTheme();
   const [init, setInit] = useState(false);
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   useEffect(() => {
+    if (prefersReducedMotion) return;
+    
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
     }).then(() => {
       setInit(true);
     });
-  }, []);
+  }, [prefersReducedMotion]);
 
   const options = useMemo(
     () => ({
@@ -43,13 +48,13 @@ export const Starfield = () => {
             enable: true,
             area: 1000,
           },
-          value: 150,
+          value: 50,
         },
         opacity: {
-          value: { min: 0.1, max: 0.8 },
+          value: { min: 0.1, max: 0.6 },
           animation: {
             enable: true,
-            speed: 0.5,
+            speed: 0.3,
             minimumValue: 0.1,
             sync: false,
           },
@@ -83,7 +88,12 @@ export const Starfield = () => {
     []
   );
 
-  if (!init) return null;
+  if (!init || prefersReducedMotion) return null;
+
+  // Hide particles in light mode for clean background
+  if (theme === 'light') {
+    return null;
+  }
 
   return (
     <Particles
@@ -95,36 +105,44 @@ export const Starfield = () => {
 };
 
 export const Nebula = () => {
+  const { theme } = useTheme();
+  
+  // Hide nebula in light mode for clean background
+  if (theme === 'light') {
+    return null;
+  }
+
   return (
-    <div className="fixed inset-0 -z-5 pointer-events-none overflow-hidden">
-      {/* Nebula cloud 1 */}
-      <div
-        className="nebula absolute w-[800px] h-[800px] rounded-full"
+    <div className="fixed inset-0 pointer-events-none z-0">
+      {/* Nebula 1 */}
+      <div 
+        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-10 animate-pulse"
         style={{
-          background: "radial-gradient(circle, rgba(123, 97, 255, 0.08) 0%, transparent 70%)",
-          top: "10%",
-          left: "10%",
-          animationDelay: "0s",
+          background: 'radial-gradient(circle, rgba(123, 97, 255, 0.3) 0%, transparent 70%)',
+          filter: 'blur(40px)',
+          animationDuration: '8s'
         }}
       />
-      {/* Nebula cloud 2 */}
-      <div
-        className="nebula absolute w-[600px] h-[600px] rounded-full"
+      
+      {/* Nebula 2 */}
+      <div 
+        className="absolute top-3/4 right-1/4 w-80 h-80 rounded-full opacity-10 animate-pulse"
         style={{
-          background: "radial-gradient(circle, rgba(0, 212, 170, 0.06) 0%, transparent 70%)",
-          top: "50%",
-          right: "5%",
-          animationDelay: "40s",
+          background: 'radial-gradient(circle, rgba(0, 212, 170, 0.3) 0%, transparent 70%)',
+          filter: 'blur(35px)',
+          animationDuration: '12s',
+          animationDelay: '4s'
         }}
       />
-      {/* Nebula cloud 3 */}
-      <div
-        className="nebula absolute w-[700px] h-[700px] rounded-full"
+      
+      {/* Nebula 3 */}
+      <div 
+        className="absolute top-1/2 left-3/4 w-64 h-64 rounded-full opacity-10 animate-pulse"
         style={{
-          background: "radial-gradient(circle, rgba(123, 97, 255, 0.05) 0%, transparent 70%)",
-          bottom: "10%",
-          left: "30%",
-          animationDelay: "80s",
+          background: 'radial-gradient(circle, rgba(255, 107, 107, 0.3) 0%, transparent 70%)',
+          filter: 'blur(30px)',
+          animationDuration: '10s',
+          animationDelay: '2s'
         }}
       />
     </div>
@@ -132,6 +150,7 @@ export const Nebula = () => {
 };
 
 export const ShootingStar = () => {
+  const { theme } = useTheme();
   const [stars, setStars] = useState([]);
 
   useEffect(() => {
@@ -150,9 +169,14 @@ export const ShootingStar = () => {
       }, star.duration * 1000);
     };
 
-    const interval = setInterval(createShootingStar, 15000 + Math.random() * 10000);
+    const interval = setInterval(createShootingStar, 30000 + Math.random() * 20000);
     return () => clearInterval(interval);
   }, []);
+
+  // Hide shooting stars in light mode for clean background
+  if (theme === 'light') {
+    return null;
+  }
 
   return (
     <div className="fixed inset-0 -z-5 pointer-events-none overflow-hidden">
