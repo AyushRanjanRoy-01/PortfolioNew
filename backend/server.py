@@ -551,6 +551,33 @@ Production AI is a reliability discipline as much as a modelling one. Ground you
     # Seed Projects
     projects = [
         {
+            "title": "Agentic Finance-Operations Automation",
+            "description": "Production multi-agent platform that automates enterprise finance operations end-to-end — collections, disputes and helpdesk resolution.",
+            "full_description": "A LangGraph multi-agent system (an orchestrator routing to specialist agents) that automates complex finance-operations workflows at enterprise scale. Specialist agents handle collections strategy, dispute resolution, payment-promise tracking and helpdesk categories, with human-in-the-loop checkpoints, RAG-grounded knowledge and end-to-end observability. Built on FastAPI, PostgreSQL and Azure OpenAI in a secure, multi-tenant cloud platform. (Enterprise work at Accenture.)",
+            "category": "AI/ML",
+            "tech_stack": ["LangGraph", "FastAPI", "PostgreSQL", "Azure OpenAI", "RAG", "Multi-Agent"],
+            "image_url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+            "featured": True
+        },
+        {
+            "title": "Intelligent Document Extraction",
+            "description": "A document-intelligence service that turns unstructured enterprise documents into structured, workflow-ready data.",
+            "full_description": "An extraction service that ingests unstructured enterprise documents (invoices, remittances, correspondence), detects language and translates where needed, and extracts structured fields that feed downstream agentic workflows. Designed for accuracy and resilience at production volume. (Enterprise work at Accenture.)",
+            "category": "AI/ML",
+            "tech_stack": ["Python", "Document Intelligence", "NLP", "Azure AI"],
+            "image_url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+            "featured": False
+        },
+        {
+            "title": "Agentic Platform Observability",
+            "description": "An observability layer that makes multi-agent LLM workflows debuggable end-to-end.",
+            "full_description": "A monitoring and metrics layer for agentic workflows — capturing per-agent inputs, outputs, cost, latency and status across every run, and turning opaque multi-agent pipelines into a readable, debuggable timeline. (Enterprise work at Accenture.)",
+            "category": "AI/ML",
+            "tech_stack": ["Python", "Observability", "Metrics", "Multi-Agent"],
+            "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800",
+            "featured": False
+        },
+        {
             "title": "IncidentIQ — AI-SRE Platform",
             "description": "Production-grade AI-SRE platform that automates incident detection, root-cause analysis and self-healing remediation.",
             "full_description": "A production-grade Site Reliability Engineering platform powered by a LangGraph multi-agent crew — Supervisor, Triage, Context, Knowledge and RCA agents — that reasons over a RAG knowledge base of runbooks and past incidents. It correlates noisy alerts, produces evidence-backed root-cause analyses with confidence scoring, and executes self-healing actions behind human-in-the-loop approval. Built on FastAPI, PostgreSQL + pgvector, Redis and Dramatiq, with OpenTelemetry observability and Kubernetes/Terraform infrastructure.",

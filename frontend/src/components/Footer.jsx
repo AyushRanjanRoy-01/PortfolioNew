@@ -23,7 +23,7 @@ export const Footer = () => {
           <div className="flex flex-col items-center md:items-start gap-2">
             <h3 className="font-display font-semibold text-lg tracking-tight text-[#E8E8ED]">Ayush Roy</h3>
             <span className="text-[#6E6E73] text-sm font-normal">
-              AI Engineer • Building Intelligent Automation Systems
+              Full Stack Gen AI Engineer • Building Intelligent Automation Systems
             </span>
           </div>
 

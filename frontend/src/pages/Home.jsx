@@ -14,10 +14,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
-// Tech stack items - AI/ML focused
+// Tech stack items - Full Stack Gen AI focused
 const techStack = [
-  'Python', 'FastAPI', 'PostgreSQL', 'LangChain', 'LangGraph', 
-  'Azure AI', 'OpenAI', 'Docker', 'Multi-Agent Systems', 'Document Intelligence'
+  'Python', 'FastAPI', 'React', 'PostgreSQL', 'LangGraph', 'LangChain',
+  'Azure OpenAI', 'RAG', 'Multi-Agent Systems', 'Document Intelligence', 'Docker'
 ];
 
 // Animation variants
@@ -60,8 +60,9 @@ const HeroSection = () => {
           variants={fadeInUp}
           className="text-[#A8A8B4] text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-normal"
         >
-          Building intelligent automation systems. Currently working on multi-agent orchestration 
-          and document intelligence with Python, FastAPI, PostgreSQL, LangChain/LangGraph, and Azure AI.
+          Full Stack Gen AI Engineer building production agentic systems — multi-agent orchestration,
+          document intelligence and retrieval-augmented generation — with Python, FastAPI, LangGraph,
+          Azure OpenAI and React.
         </motion.p>
         <motion.div
           variants={fadeInUp}
@@ -151,8 +152,10 @@ const AboutSection = () => {
             
             <div className="space-y-4 text-[#A8A8B4] leading-relaxed text-base">
               <p>
-                I'm an AI Engineer at Accenture building production-grade automation systems. My work focuses 
-                on multi-agent orchestration, document intelligence, and scalable LLM applications.
+                I'm a Full Stack Gen AI Engineer at Accenture, building production agentic systems for
+                enterprise operations. My work spans multi-agent orchestration, document intelligence and
+                extraction, retrieval-augmented generation, and the full-stack engineering (FastAPI + React)
+                and observability that keep LLM systems reliable in production.
               </p>
               <p>
                 I believe in clean architecture, reliable systems, and practical solutions that solve real problems. 
@@ -160,8 +163,8 @@ const AboutSection = () => {
               </p>
               <p>
                 <strong className="text-[#E8E8ED]">Currently Working On:</strong><br/>
-                Multi-agent orchestration frameworks • Production-grade document intelligence pipelines • 
-                Scalable LLM applications with enterprise requirements
+                Multi-agent orchestration for enterprise finance operations • Document extraction &amp;
+                intelligence pipelines • RAG knowledge systems with human-in-the-loop &amp; agent observability
               </p>
               <p>
                 <strong className="text-[#E8E8ED]">Interests:</strong><br/>
@@ -174,7 +177,7 @@ const AboutSection = () => {
             <div className="flex flex-wrap gap-4 text-sm">
               <div className="flex items-center gap-2 text-[#9494A0]">
                 <Briefcase size={16} className="text-[#00D4AA]" />
-                <span>AI Engineer at Accenture</span>
+                <span>Full Stack Gen AI Engineer @ Accenture</span>
               </div>
               <div className="flex items-center gap-2 text-[#9494A0]">
                 <MapPin size={16} className="text-[#00D4AA]" />
