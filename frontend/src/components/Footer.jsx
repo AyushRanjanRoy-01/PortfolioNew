@@ -8,10 +8,11 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/ayushranjanroy', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/ayushranjanroy', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com/ayushranjanroy', label: 'Twitter' },
+    { icon: Github, href: 'https://github.com/AyushRanjanRoy-01', label: 'GitHub' },
+    // TODO: replace with your real LinkedIn profile URL if this guess is wrong
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/ayushranjanroy', label: 'LinkedIn' },
     { icon: Mail, href: 'mailto:ayushranjanroy@gmail.com', label: 'Email' },
+    { icon: Twitter, href: 'https://twitter.com/ayushranjanroy', label: 'Twitter' },
   ];
 
   return (

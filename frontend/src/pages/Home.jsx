@@ -2,8 +2,8 @@ import { useEffect, useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
-  ArrowRight, ChevronDown, Github, Linkedin, Twitter, Mail, 
-  ExternalLink, Send, Coffee, MapPin, Briefcase 
+  ArrowRight, ChevronDown, Github, Linkedin, Mail,
+  ExternalLink, Send, Coffee, MapPin, Briefcase
 } from 'lucide-react';
 import axios from 'axios';
 import { toast } from 'sonner';
@@ -399,9 +399,9 @@ const ContactSection = () => {
   };
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
+    { icon: Github, href: 'https://github.com/AyushRanjanRoy-01', label: 'GitHub' },
+    // TODO: replace with your real LinkedIn profile URL if this guess is wrong
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/ayushranjanroy', label: 'LinkedIn' },
     { icon: Mail, href: 'mailto:ayushranjanroy@gmail.com', label: 'Email' },
   ];
 

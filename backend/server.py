@@ -386,53 +386,52 @@ async def seed_database():
     # Seed Blog Posts
     blog_posts = [
         {
-            "title": "Building Scalable Data Pipelines with Apache Airflow",
-            "slug": "building-scalable-data-pipelines-airflow",
-            "content": """# Building Scalable Data Pipelines with Apache Airflow
+            "title": "Designing Reliable Multi-Agent Systems with LangGraph",
+            "slug": "reliable-multi-agent-systems-langgraph",
+            "content": """# Designing Reliable Multi-Agent Systems with LangGraph
 
-In today's data-driven world, building robust and scalable data pipelines is crucial for any organization. Apache Airflow has emerged as the go-to orchestration tool for data engineers worldwide.
+A single LLM call is easy. A system of agents that stays reliable in production is hard. As I've built multi-agent workflows, a few patterns keep proving their worth.
 
-## Why Airflow?
+## Model the workflow as a graph, not a chat
 
-Airflow provides a powerful platform to programmatically author, schedule, and monitor workflows. Its Python-based DAG definitions make it incredibly flexible and easy to integrate with existing systems.
+LangGraph lets you express agents as nodes and control flow as edges, with explicit state passed between them. Treating orchestration as a state machine — rather than an open-ended conversation — makes behaviour predictable and debuggable.
 
-### Key Features
+### Patterns that hold up
 
-- **Dynamic Pipeline Generation**: Create pipelines programmatically using Python
-- **Extensible**: Easy to create custom operators and hooks
-- **Scalable**: Distributed execution with Celery or Kubernetes
-- **Rich UI**: Monitor and troubleshoot pipelines with ease
+- **Supervisor / specialist split**: a supervisor routes work to focused specialist agents (triage, context-gathering, retrieval, synthesis) instead of one agent trying to do everything.
+- **Explicit, typed state**: keep a single source of truth for what each node reads and writes.
+- **Bounded loops**: cap retries and self-correction steps so the graph always terminates.
+- **Human-in-the-loop gates**: pause before any irreversible action and require approval.
 
-## Best Practices
+## Make it observable
 
-1. **Keep DAGs Idempotent**: Ensure your tasks can be rerun without side effects
-2. **Use Templating**: Leverage Jinja templating for dynamic parameters
-3. **Implement Proper Error Handling**: Use retries and alerts effectively
-4. **Monitor Resource Usage**: Set appropriate pool sizes and concurrency limits
+You cannot fix what you cannot see. Instrument every node — inputs, outputs, token cost, latency — so a failed run tells you *which* agent went wrong and why.
 
 ```python
-from airflow import DAG
-from airflow.operators.python import PythonOperator
-from datetime import datetime
+from langgraph.graph import StateGraph, END
 
-def process_data(**context):
-    # Your data processing logic here
-    pass
+def triage(state): ...
+def gather_context(state): ...
+def synthesize(state): ...
 
-with DAG('data_pipeline', start_date=datetime(2024, 1, 1)) as dag:
-    task = PythonOperator(
-        task_id='process',
-        python_callable=process_data
-    )
+g = StateGraph(IncidentState)
+g.add_node("triage", triage)
+g.add_node("context", gather_context)
+g.add_node("synthesize", synthesize)
+g.set_entry_point("triage")
+g.add_edge("triage", "context")
+g.add_edge("context", "synthesize")
+g.add_edge("synthesize", END)
+app = g.compile()
 ```
 
 ## Conclusion
 
-Airflow is an essential tool in any data engineer's toolkit. Start small, iterate, and scale as your needs grow.""",
-            "excerpt": "Learn how to build robust and scalable data pipelines using Apache Airflow, the industry-standard orchestration tool.",
-            "category": "Data Engineering",
-            "tags": ["Airflow", "Data Pipelines", "Python", "Orchestration"],
-            "read_time": 8,
+Reliable agent systems come from constraints: explicit state, bounded control flow, human gates, and deep observability. Start narrow, measure everything, and expand the graph only once each node earns its place.""",
+            "excerpt": "Patterns for building multi-agent LLM systems that stay reliable in production: explicit state, supervisor/specialist routing, bounded loops, and human-in-the-loop gates.",
+            "category": "AI/ML",
+            "tags": ["LangGraph", "Multi-Agent", "LLM", "Agents"],
+            "read_time": 7,
             "published": True
         },
         {
@@ -476,87 +475,71 @@ The vector database landscape is evolving rapidly, making it an exciting time to
             "published": True
         },
         {
-            "title": "Mastering dbt for Modern Data Transformation",
-            "slug": "mastering-dbt-data-transformation",
-            "content": """# Mastering dbt for Modern Data Transformation
+            "title": "Advanced RAG: Going Beyond Naive Retrieval",
+            "slug": "advanced-rag-beyond-naive-retrieval",
+            "content": """# Advanced RAG: Going Beyond Naive Retrieval
 
-dbt (data build tool) has revolutionized how data teams approach data transformation, bringing software engineering best practices to analytics.
+"Embed the docs, embed the question, return the top-k" gets you a demo. It rarely gets you grounded, trustworthy answers. Here's the stack of techniques that moves RAG from toy to production.
 
-## The dbt Philosophy
+## Retrieve better
 
-dbt advocates for the ELT (Extract, Load, Transform) pattern, pushing transformations to the warehouse where compute is cheap and scalable.
+- **Hybrid search**: combine dense (semantic) retrieval with sparse keyword scoring (BM25). Each catches what the other misses.
+- **Multi-query expansion**: rewrite the user's question into several phrasings and union the results, so retrieval doesn't hinge on one wording.
+- **Reranking**: over-fetch candidates, then use a cross-encoder reranker to put the truly relevant chunks on top.
 
-### Core Concepts
+## Trust, then verify
 
-- **Models**: SQL SELECT statements that define transformations
-- **Tests**: Data quality assertions
-- **Documentation**: Auto-generated docs from YAML configs
-- **Macros**: Reusable SQL snippets
+- **Corrective RAG (CRAG)**: grade retrieved context for relevance before generating. If it's weak, rewrite the query or fall back — don't answer from thin air.
+- **Citations**: tie every claim back to a source (document, page, section). If you can't cite it, don't say it.
 
-## Project Structure
+## Measure, don't vibe
 
-```
-models/
-├── staging/
-│   ├── stg_customers.sql
-│   └── stg_orders.sql
-├── intermediate/
-│   └── int_order_items.sql
-└── marts/
-    └── dim_customers.sql
+Quality is a number, not a feeling. A harness like RAGAS lets you track faithfulness, answer relevance and context precision as you tune each layer.
+
+```text
+question → multi-query → hybrid search → rerank → grade context
+        → (rewrite if weak) → generate with citations
 ```
 
-## Best Practices
+## Conclusion
 
-1. Use staging models to clean raw data
-2. Implement generic and singular tests
-3. Document all models with descriptions
-4. Use refs() for all model dependencies
-5. Leverage incremental models for large datasets
-
-dbt has become essential for modern data teams, enabling faster, more reliable analytics.""",
-            "excerpt": "A comprehensive guide to using dbt for efficient and maintainable data transformations in your data warehouse.",
-            "category": "Data Engineering",
-            "tags": ["dbt", "Data Transformation", "SQL", "Analytics"],
-            "read_time": 7,
+Good RAG is a pipeline of small, measurable decisions — how you chunk, retrieve, rerank, and verify. Make every layer swappable, measure the impact, and keep the model honest with citations.""",
+            "excerpt": "The techniques that take RAG from demo to production: hybrid search, multi-query expansion, reranking, corrective retrieval (CRAG), citations, and measurable evaluation.",
+            "category": "AI/ML",
+            "tags": ["RAG", "Retrieval", "LLM", "Embeddings"],
+            "read_time": 8,
             "published": True
         },
         {
-            "title": "Career Lessons from 5 Years in Data Engineering",
-            "slug": "career-lessons-data-engineering",
-            "content": """# Career Lessons from 5 Years in Data Engineering
+            "title": "Lessons from Building an AI-SRE Platform",
+            "slug": "lessons-building-ai-sre-platform",
+            "content": """# Lessons from Building an AI-SRE Platform
 
-Reflecting on my journey in data engineering, I've gathered some insights that I wish someone had shared with me earlier.
+Building IncidentIQ — an AI platform that detects incidents, reasons about root cause, and proposes self-healing actions — taught me more about *trustworthy* AI than any tutorial could. A few lessons stuck.
 
-## Technical Growth
+## The model is the easy part
 
-1. **Master the Fundamentals**: SQL and Python are your bread and butter
-2. **Understand Distributed Systems**: Know how Spark, Kafka, and similar tools work under the hood
-3. **Learn Cloud Platforms**: AWS, GCP, or Azure - pick one and go deep
+Wiring an LLM to summarise an incident takes an afternoon. The hard parts are everything around it: gathering the right context (logs, metrics, recent deploys), correlating noisy alerts, and grounding every conclusion in evidence rather than confident guesses.
 
-## Soft Skills Matter
+## Confidence needs receipts
 
-Data engineering isn't just about writing code. Communication with stakeholders, understanding business requirements, and collaborating with data scientists are equally important.
+An RCA that says "the database is the problem" is useless without *why*. Every analysis should carry the evidence it used and a calibrated confidence score, so an on-call engineer can verify the reasoning in seconds.
 
-## Continuous Learning
+## Automate cautiously, gate aggressively
 
-The field evolves rapidly. What's hot today might be legacy tomorrow. Stay curious:
-- Follow industry blogs and podcasts
-- Experiment with new tools in personal projects
-- Attend conferences and meetups
+Self-healing is powerful and dangerous. The rule I settled on: anything reversible and low-risk can run automatically; anything else stops at a human-in-the-loop approval. Trust is earned one safe action at a time.
 
-## Work-Life Balance
+## Observability is non-negotiable
 
-Burnout is real. Take care of yourself:
-- Set boundaries with on-call responsibilities
-- Don't sacrifice personal time for work
-- Find hobbies outside of tech
+An agent system that can't explain its own runs is unmaintainable. Tracing every agent step — inputs, outputs, cost, latency — turned debugging from guesswork into reading a timeline.
 
-The journey is long. Pace yourself and enjoy the ride.""",
-            "excerpt": "Personal reflections and career advice from five years working as a data engineer in various organizations.",
-            "category": "Career",
-            "tags": ["Career", "Data Engineering", "Professional Growth"],
-            "read_time": 5,
+## Conclusion
+
+Production AI is a reliability discipline as much as a modelling one. Ground your answers, surface your evidence, gate your actions, and instrument everything.""",
+            "excerpt": "What building IncidentIQ taught me about production AI: context beats cleverness, conclusions need evidence, automate cautiously, and instrument everything.",
+            "category": "AI/ML",
+            "tags": ["AI-SRE", "Agents", "Reliability", "LangGraph"],
+            "read_time": 6,
             "published": True
         }
     ]
@@ -568,64 +551,63 @@ The journey is long. Pace yourself and enjoy the ride.""",
     # Seed Projects
     projects = [
         {
-            "title": "Real-Time Analytics Platform",
-            "description": "Built a real-time analytics platform processing 10M+ events daily using Kafka, Spark Streaming, and Snowflake.",
-            "full_description": "A comprehensive real-time analytics platform designed to process and analyze millions of events per day. The system uses Kafka for event streaming, Spark Streaming for processing, and Snowflake for storage and analytics. Features include real-time dashboards, anomaly detection, and automated alerting.",
-            "category": "Data Engineering",
-            "tech_stack": ["Apache Kafka", "Spark Streaming", "Snowflake", "Python", "Airflow"],
-            "github_url": "https://github.com",
-            "image_url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+            "title": "IncidentIQ — AI-SRE Platform",
+            "description": "Production-grade AI-SRE platform that automates incident detection, root-cause analysis and self-healing remediation.",
+            "full_description": "A production-grade Site Reliability Engineering platform powered by a LangGraph multi-agent crew — Supervisor, Triage, Context, Knowledge and RCA agents — that reasons over a RAG knowledge base of runbooks and past incidents. It correlates noisy alerts, produces evidence-backed root-cause analyses with confidence scoring, and executes self-healing actions behind human-in-the-loop approval. Built on FastAPI, PostgreSQL + pgvector, Redis and Dramatiq, with OpenTelemetry observability and Kubernetes/Terraform infrastructure.",
+            "category": "AI/ML",
+            "tech_stack": ["Python", "FastAPI", "LangGraph", "PostgreSQL + pgvector", "Redis", "Kubernetes"],
+            "github_url": "https://github.com/AyushRanjanRoy-01/IncidentIQ",
+            "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800",
             "featured": True
         },
         {
-            "title": "ML Feature Store",
-            "description": "Designed and implemented a feature store for ML models, reducing feature engineering time by 60%.",
-            "full_description": "An enterprise-grade feature store that enables data scientists to discover, share, and reuse features across ML projects. Built with Feast and Redis for low-latency feature serving, integrated with the existing data warehouse for batch features.",
+            "title": "RAGGym — Learn RAG by Coding",
+            "description": "An open-source “gym” for RAG interview prep: train by coding and by chatting with a corpus of books.",
+            "full_description": "RAGGym turns passive reading into reps. Chat mode answers questions with cited, grounded responses from an advanced pipeline — hybrid (dense + BM25) search, multi-query expansion, reranking and corrective (CRAG) self-correction — every answer pointing back to book, page and section. Practice mode pulls a concept from the corpus, generates a coding exercise into your IDE, and an AI reviewer grades your solution against the source material. Every layer (LLM, embeddings, vector store, chunking, retrieval) is swappable via .env, with a RAGAS harness to measure quality as you tune.",
             "category": "AI/ML",
-            "tech_stack": ["Feast", "Redis", "Python", "dbt", "PostgreSQL"],
-            "github_url": "https://github.com",
-            "image_url": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800",
-            "featured": True
-        },
-        {
-            "title": "Data Quality Framework",
-            "description": "Created a comprehensive data quality framework with Great Expectations and custom validators.",
-            "full_description": "A robust data quality framework that ensures data reliability across the organization. Includes automated testing, data profiling, lineage tracking, and integration with Slack for alerting. Reduced data incidents by 80%.",
-            "category": "Data Engineering",
-            "tech_stack": ["Great Expectations", "Python", "Airflow", "PostgreSQL"],
-            "github_url": "https://github.com",
-            "image_url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
-            "featured": False
-        },
-        {
-            "title": "RAG-Powered Documentation Assistant",
-            "description": "Built an AI assistant that helps engineers find answers from internal documentation using RAG.",
-            "full_description": "An intelligent documentation assistant powered by Retrieval-Augmented Generation. Uses vector embeddings to search through thousands of internal documents and provides contextual answers. Integrated with Slack for easy access.",
-            "category": "AI/ML",
-            "tech_stack": ["LangChain", "OpenAI", "Pinecone", "Python", "FastAPI"],
-            "github_url": "https://github.com",
-            "live_url": "https://demo.example.com",
+            "tech_stack": ["Python", "LangGraph", "Qdrant / Chroma", "FastEmbed", "RAGAS", "Streamlit"],
+            "github_url": "https://github.com/AyushRanjanRoy-01/RAG-Project",
             "image_url": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800",
             "featured": True
         },
         {
-            "title": "Cloud Cost Optimizer",
-            "description": "Developed a tool to analyze and optimize cloud spending, saving $200K annually.",
-            "full_description": "An automated cloud cost optimization tool that analyzes AWS spending patterns and recommends cost-saving measures. Features include unused resource detection, rightsizing recommendations, and reserved instance planning.",
-            "category": "Full Stack",
-            "tech_stack": ["Python", "AWS", "React", "PostgreSQL", "Terraform"],
-            "github_url": "https://github.com",
-            "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800",
+            "title": "AI Startup Incubator",
+            "description": "A LangGraph multi-agent workflow that ideates, validates and plans new ventures end-to-end.",
+            "full_description": "An AI-powered startup incubator built as a multi-agent LangGraph workflow. Specialist agents collaborate to frame a problem, generate and stress-test ideas, analyse the market and produce a structured go-to-market plan — taking a raw concept through to a coherent venture outline.",
+            "category": "AI/ML",
+            "tech_stack": ["Python", "LangGraph", "LLMs", "Multi-Agent Systems"],
+            "github_url": "https://github.com/AyushRanjanRoy-01/Startup_Incubator_LangGraph",
+            "image_url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+            "featured": True
+        },
+        {
+            "title": "Student Stress Detection",
+            "description": "ML pipeline that analyses behavioural and lifestyle signals to predict student stress levels.",
+            "full_description": "A machine-learning project that explores and models student stress from behavioural, academic and lifestyle indicators. It covers data exploration, feature analysis, model training and evaluation in a reproducible notebook workflow, surfacing the factors most predictive of elevated stress.",
+            "category": "AI/ML",
+            "tech_stack": ["Python", "scikit-learn", "Pandas", "Jupyter"],
+            "github_url": "https://github.com/AyushRanjanRoy-01/Student-Stress-Analysis-and-detection",
+            "image_url": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800",
             "featured": False
         },
         {
-            "title": "Streaming ETL Pipeline",
-            "description": "Designed a streaming ETL pipeline for IoT sensor data using AWS Kinesis and Lambda.",
-            "full_description": "A serverless streaming ETL pipeline that processes IoT sensor data in real-time. Uses AWS Kinesis for data ingestion, Lambda for processing, and S3 for storage. Includes data validation, transformation, and loading into Redshift for analytics.",
-            "category": "Data Engineering",
-            "tech_stack": ["AWS Kinesis", "Lambda", "S3", "Redshift", "Python"],
-            "github_url": "https://github.com",
+            "title": "Hybrid Driver Alert System",
+            "description": "Fuses computer-vision drowsiness cues with behavioural signals to warn fatigued drivers in real time.",
+            "full_description": "A hybrid driver-safety system that combines computer-vision drowsiness detection (eye and face cues) with behavioural and sensor signals to identify fatigue and distraction, raising real-time alerts. The layered, hybrid approach reduces false alarms compared with single-signal methods.",
+            "category": "AI/ML",
+            "tech_stack": ["Python", "OpenCV", "Computer Vision", "Jupyter"],
+            "github_url": "https://github.com/AyushRanjanRoy-01/hybrid-driver-alert-system",
             "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800",
+            "featured": False
+        },
+        {
+            "title": "EdTech Learning MVP",
+            "description": "An end-to-end ed-tech learning platform MVP with a Python backend.",
+            "full_description": "A fast, iterable ed-tech product MVP exploring structured lessons and content delivery end-to-end, with a Python backend. Built to validate the core learning-platform experience quickly.",
+            "category": "Full Stack",
+            "tech_stack": ["Python", "Full Stack", "REST API", "MVP"],
+            "github_url": "https://github.com/AyushRanjanRoy-01/edtech-mvp-01",
+            "image_url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
             "featured": False
         }
     ]
