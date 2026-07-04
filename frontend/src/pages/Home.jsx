@@ -20,6 +20,53 @@ const techStack = [
   'Azure OpenAI', 'RAG', 'Multi-Agent Systems', 'Document Intelligence', 'Docker'
 ];
 
+// Fallback projects — shown when the backend API isn't reachable (e.g. a static
+// frontend-only Vercel deploy). Mirrors the backend /api/seed data.
+const FALLBACK_PROJECTS = [
+  { id: 'synops-o2c', title: 'Agentic Finance-Operations Automation', category: 'AI/ML', featured: true,
+    description: 'Production multi-agent platform automating enterprise finance operations end-to-end — collections, disputes and helpdesk resolution.',
+    tech_stack: ['LangGraph', 'FastAPI', 'PostgreSQL', 'Azure OpenAI', 'RAG', 'Multi-Agent'],
+    image_url: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800' },
+  { id: 'doc-extraction', title: 'Intelligent Document Extraction', category: 'AI/ML', featured: false,
+    description: 'A document-intelligence service that turns unstructured enterprise documents into structured, workflow-ready data.',
+    tech_stack: ['Python', 'Document Intelligence', 'NLP', 'Azure AI'],
+    image_url: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800' },
+  { id: 'agent-observability', title: 'Agentic Platform Observability', category: 'AI/ML', featured: false,
+    description: 'An observability layer that makes multi-agent LLM workflows debuggable end-to-end.',
+    tech_stack: ['Python', 'Observability', 'Metrics', 'Multi-Agent'],
+    image_url: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800' },
+  { id: 'incidentiq', title: 'IncidentIQ — AI-SRE Platform', category: 'AI/ML', featured: true,
+    description: 'Production-grade AI-SRE platform that automates incident detection, root-cause analysis and self-healing.',
+    tech_stack: ['Python', 'FastAPI', 'LangGraph', 'pgvector', 'Kubernetes'],
+    github_url: 'https://github.com/AyushRanjanRoy-01/IncidentIQ',
+    image_url: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800' },
+  { id: 'raggym', title: 'RAGGym — Learn RAG by Coding', category: 'AI/ML', featured: true,
+    description: 'An open-source "gym" for RAG interview prep: train by coding and by chatting with a corpus of books.',
+    tech_stack: ['Python', 'LangGraph', 'Qdrant', 'RAGAS', 'Streamlit'],
+    github_url: 'https://github.com/AyushRanjanRoy-01/RAG-Project',
+    image_url: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800' },
+  { id: 'startup-incubator', title: 'AI Startup Incubator', category: 'AI/ML', featured: false,
+    description: 'A LangGraph multi-agent workflow that ideates, validates and plans new ventures end-to-end.',
+    tech_stack: ['Python', 'LangGraph', 'LLMs', 'Multi-Agent'],
+    github_url: 'https://github.com/AyushRanjanRoy-01/Startup_Incubator_LangGraph',
+    image_url: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800' },
+  { id: 'student-stress', title: 'Student Stress Detection', category: 'AI/ML', featured: false,
+    description: 'ML pipeline that analyses behavioural and lifestyle signals to predict student stress levels.',
+    tech_stack: ['Python', 'scikit-learn', 'Pandas', 'Jupyter'],
+    github_url: 'https://github.com/AyushRanjanRoy-01/Student-Stress-Analysis-and-detection',
+    image_url: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800' },
+  { id: 'driver-alert', title: 'Hybrid Driver Alert System', category: 'AI/ML', featured: false,
+    description: 'Fuses computer-vision drowsiness cues with behavioural signals to warn fatigued drivers in real time.',
+    tech_stack: ['Python', 'OpenCV', 'Computer Vision', 'Jupyter'],
+    github_url: 'https://github.com/AyushRanjanRoy-01/hybrid-driver-alert-system',
+    image_url: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800' },
+  { id: 'edtech-mvp', title: 'EdTech Learning MVP', category: 'Full Stack', featured: false,
+    description: 'An end-to-end ed-tech learning platform MVP with a Python backend.',
+    tech_stack: ['Python', 'Full Stack', 'REST API', 'MVP'],
+    github_url: 'https://github.com/AyushRanjanRoy-01/edtech-mvp-01',
+    image_url: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800' },
+];
+
 // Animation variants
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -234,9 +281,13 @@ const ProjectsSection = () => {
   const fetchProjects = async () => {
     try {
       const response = await axios.get(`${API}/projects`);
-      setProjects(response.data);
+      const data = Array.isArray(response.data) && response.data.length > 0
+        ? response.data
+        : FALLBACK_PROJECTS;
+      setProjects(data);
     } catch (error) {
-      console.error('Error fetching projects:', error);
+      console.error('Error fetching projects, using fallback:', error);
+      setProjects(FALLBACK_PROJECTS);
     } finally {
       setLoading(false);
     }
