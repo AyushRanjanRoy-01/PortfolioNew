@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body {
+  background-color: #0B0B0F;
+  color: #EDEDF0;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  letter-spacing: -0.011em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display), var(--font-inter), sans-serif;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+}
+
+::selection {
+  background: #7C5CFF;
+  color: #0B0B0F;
+}
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #0B0B0F; }
+::-webkit-scrollbar-thumb { background: #26262E; border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: #3a3a45; }
+
+a, button { outline: none; }
+:focus-visible {
+  outline: 2px solid #7C5CFF;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Single, subtle brand glow — replaces the old starfield/nebula/particles stack */
+.brand-glow {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(60rem 40rem at 78% -8%, rgba(124, 92, 255, 0.16), transparent 60%),
+    radial-gradient(48rem 36rem at 8% 12%, rgba(76, 155, 255, 0.10), transparent 60%);
+}
+
+/* Fine grid texture behind project cards */
+.grid-texture {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 26px 26px;
+  -webkit-mask-image: radial-gradient(circle at 50% 40%, black, transparent 72%);
+  mask-image: radial-gradient(circle at 50% 40%, black, transparent 72%);
+}
+
+/* Scroll-reveal — JS adds .is-visible; hidden state only applies when JS present */
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+.js .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .js .reveal { opacity: 1; transform: none; }
+  .brand-glow { display: none; }
+}
