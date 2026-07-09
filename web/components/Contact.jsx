@@ -11,8 +11,7 @@ export default function Contact() {
       <div className="mx-auto max-w-content">
         <h2 className="reveal text-[1.3rem] sm:text-[1.5rem]">Contact</h2>
         <p className="reveal mt-3 max-w-readable text-[15.5px] leading-relaxed text-muted">
-          Open to senior Gen AI and full-stack roles, and interesting collaborations.
-          The fastest way to reach me is email.
+          Open to senior roles and interesting work.
         </p>
         <a
           href={`mailto:${profile.email}`}

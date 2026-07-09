@@ -25,15 +25,10 @@ export const hero = {
 
 export const about = {
   bio: [
-    "I'm a Full Stack Gen AI Engineer at Accenture, building production agent infrastructure: " +
-      "stateful multi-agent orchestration, MCP-based tool gateways, and cost-controlled, policy-governed routing.",
-    "Before GenAI, I spent two years in distributed-systems engineering (Terraform, Kubernetes, CI/CD) " +
-      "running platforms at production scale, so I build LLM systems the way you'd build any critical " +
-      "service: observable, governed, and hard to break.",
+    "Gen AI engineer at Accenture, with two years in distributed systems before that. " +
+      "I build LLM systems like critical infrastructure: observable, governed, and hard to break.",
   ],
   facts: [
-    { k: "Role", v: "Full Stack Gen AI Engineer at Accenture" },
-    { k: "Based in", v: "Gurugram, India" },
     { k: "Cert", v: "Claude Certified Architect, Foundations (Anthropic)" },
     { k: "Education", v: "B.Tech ECE, VIT (2019–2023)" },
   ],

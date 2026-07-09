@@ -5,12 +5,8 @@ export default function Work() {
     <section id="work" className="border-t border-line px-5 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-content">
         <h2 className="reveal text-[1.3rem] sm:text-[1.5rem]">Work</h2>
-        <p className="reveal mt-3 max-w-readable text-[14.5px] leading-relaxed text-muted">
-          A few things I&apos;ve shipped and tinkered with. The open-source ones link to code,
-          so poke around. (Enterprise work is described generically.)
-        </p>
 
-        <div className="mt-9">
+        <div className="mt-7">
           {projects.map((p) => (
             <article key={p.title} className="reveal border-t border-line py-6">
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
