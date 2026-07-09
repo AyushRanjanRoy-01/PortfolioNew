@@ -26,6 +26,14 @@ export default function Work() {
 
               <div className="mt-2.5 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[12.5px] text-dim">
                 <span>{p.stack.join(" · ")}</span>
+                {p.live && (
+                  <>
+                    <span className="text-line">·</span>
+                    <a href={p.live} target="_blank" rel="noopener noreferrer" className="text-ink link">
+                      Site ↗
+                    </a>
+                  </>
+                )}
                 {p.github && (
                   <>
                     <span className="text-line">·</span>
