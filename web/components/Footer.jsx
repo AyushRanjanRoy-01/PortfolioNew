@@ -9,7 +9,7 @@ export default function Footer() {
         <ResumeButton />
 
         <div className="mt-8 flex flex-col gap-3 text-[13px] text-dim sm:flex-row sm:items-center sm:justify-between">
-          <p>© {year} {profile.name}</p>
+          <p>© {year}</p>
           <div className="flex gap-5">
             <a href={profile.github} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ink">GitHub</a>
             <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ink">LinkedIn</a>

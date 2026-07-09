@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 const LINKS = [
   { name: "Work", href: "#work" },
   { name: "About", href: "#about" },
+  { name: "Blog", href: "#blog" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -19,7 +20,7 @@ export default function Nav() {
   }, []);
 
   useEffect(() => {
-    const sections = ["work", "about", "contact"]
+    const sections = ["work", "about", "blog", "contact"]
       .map((id) => document.getElementById(id))
       .filter(Boolean);
     if (!sections.length || !("IntersectionObserver" in window)) return;
@@ -38,8 +39,12 @@ export default function Nav() {
       }`}
     >
       <nav className="mx-auto flex h-14 max-w-content items-center justify-between px-5 sm:px-6">
-        <a href="#top" className="text-[15px] font-semibold tracking-tight text-ink">
-          Ayush Roy
+        <a
+          href="#top"
+          aria-label="Home"
+          className="grid h-7 w-7 place-items-center rounded-md border border-line text-[13px] font-semibold tracking-tight text-ink"
+        >
+          AR
         </a>
         <div className="flex items-center gap-5 text-[14px] sm:gap-6">
           {LINKS.map((l) => (

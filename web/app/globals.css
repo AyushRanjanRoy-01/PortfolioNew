@@ -72,6 +72,10 @@ h1, h2, h3, h4 {
 }
 .js .reveal.is-visible { opacity: 1; transform: none; }
 
+/* Hero motif — sequential orange pulse (black + orange, minimal) */
+@keyframes artPulse { 0%, 100% { opacity: 0.1; } 45% { opacity: 1; } }
+.art-pulse { animation: artPulse 2.8s ease-in-out infinite; }
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001ms !important;
