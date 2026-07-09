@@ -19,17 +19,21 @@ body {
   background-color: #FBFBF9;
   color: #1B1B18;
   font-family: var(--font-inter), system-ui, sans-serif;
-  line-height: 1.65;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: -0.011em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
 
+/* Headings: same family as body (smooth), tight tracking = quiet + classy */
 h1, h2, h3, h4 {
-  font-family: var(--font-display), Georgia, serif;
-  font-weight: 500;
-  line-height: 1.12;
-  letter-spacing: -0.005em;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.022em;
   color: #1B1B18;
 }
 
@@ -51,7 +55,7 @@ h1, h2, h3, h4 {
 /* Understated link underline */
 .link {
   text-decoration: none;
-  border-bottom: 1px solid rgba(79, 70, 229, 0.28);
+  border-bottom: 1px solid rgba(79, 70, 229, 0.25);
   transition: border-color 0.15s ease, color 0.15s ease;
 }
 .link:hover {
@@ -63,7 +67,7 @@ h1, h2, h3, h4 {
 .reveal { opacity: 1; transform: none; }
 .js .reveal {
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(8px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .js .reveal.is-visible { opacity: 1; transform: none; }

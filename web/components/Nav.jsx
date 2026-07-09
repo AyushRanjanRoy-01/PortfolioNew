@@ -39,7 +39,7 @@ export default function Nav() {
       }`}
     >
       <nav className="mx-auto flex h-14 max-w-content items-center justify-between px-5 sm:px-6">
-        <a href="#top" className="font-display text-[17px] text-ink">
+        <a href="#top" className="text-[15px] font-semibold tracking-tight text-ink">
           Ayush Roy
         </a>
         <div className="flex items-center gap-6 text-[14px]">

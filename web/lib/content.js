@@ -17,7 +17,7 @@ export const profile = {
 };
 
 export const hero = {
-  h1: "I build production Gen AI systems that ship — and survive real data.",
+  h1: "I build production Gen AI systems that ship and survive real data.",
   sub:
     "Full Stack Gen AI Engineer at Accenture. I design stateful multi-agent pipelines, " +
     "MCP tool gateways, and the routing, governance and eval that keep them reliable in production.",
@@ -25,22 +25,22 @@ export const hero = {
 
 export const about = {
   bio: [
-    "I'm a Full Stack Gen AI Engineer at Accenture, building production agent infrastructure — " +
+    "I'm a Full Stack Gen AI Engineer at Accenture, building production agent infrastructure: " +
       "stateful multi-agent orchestration, MCP-based tool gateways, and cost-controlled, policy-governed routing.",
     "Before GenAI, I spent two years in distributed-systems engineering (Terraform, Kubernetes, CI/CD) " +
-      "running platforms at production scale — so I build LLM systems the way you'd build any critical " +
+      "running platforms at production scale, so I build LLM systems the way you'd build any critical " +
       "service: observable, governed, and hard to break.",
   ],
   facts: [
-    { k: "Role", v: "Full Stack Gen AI Engineer @ Accenture" },
+    { k: "Role", v: "Full Stack Gen AI Engineer at Accenture" },
     { k: "Based in", v: "Gurugram, India" },
-    { k: "Cert", v: "Claude Certified Architect — Foundations (Anthropic)" },
+    { k: "Cert", v: "Claude Certified Architect, Foundations (Anthropic)" },
     { k: "Education", v: "B.Tech ECE, VIT (2019–2023)" },
   ],
   skills: {
-    "Agents & Orchestration": ["LangGraph", "LangChain", "Multi-Agent", "MCP", "Human-in-the-Loop", "Stateful Workflows"],
-    "LLMOps & Governance": ["Model Gateway / Routing", "Cost Control", "Policy Enforcement", "Audit Trails", "OpenTelemetry", "Datadog"],
-    "Models & Retrieval": ["Claude", "GPT-4o / 5", "Azure AI Foundry", "RAG", "pgvector", "PostgreSQL"],
+    "Agents & orchestration": ["LangGraph", "LangChain", "Multi-Agent", "MCP", "Human-in-the-Loop", "Stateful Workflows"],
+    "LLMOps & governance": ["Model Gateway / Routing", "Cost Control", "Policy Enforcement", "Audit Trails", "OpenTelemetry", "Datadog"],
+    "Models & retrieval": ["Claude", "GPT-4o / 5", "Azure AI Foundry", "RAG", "pgvector", "PostgreSQL"],
     "Infrastructure": ["Python (async)", "FastAPI", "Docker", "Terraform", "AWS", "Azure AKS", "CI/CD"],
   },
 };
@@ -49,20 +49,20 @@ export const experience = [
   {
     role: "Full Stack Gen AI Engineer",
     company: "Accenture · GenAI & Data",
-    period: "Aug 2025 — Present",
+    period: "Aug 2025 – Present",
     points: [
       "Co-architected a stateful, graph-based multi-agent pipeline (LangGraph) that orchestrates several LLMs for document classification and extraction, and took it from proof-of-concept to production.",
       "Designed an ensemble-consensus classification layer with confidence-score routing through a model gateway, plus zero-redeployment live config for model management.",
-      "Built an MCP server and tool-invocation protocol giving agents governed, live access to databases — beyond static prompting into real tool use.",
+      "Built an MCP server and tool-invocation protocol giving agents governed, live access to databases, beyond static prompting into real tool use.",
       "Built an agent-observability console surfacing live agent state and decision traces, and a policy-enforcement workflow with human-in-the-loop checkpoints.",
     ],
   },
   {
     role: "Platform Engineer",
     company: "Accenture · Distributed Systems & Infrastructure",
-    period: "Aug 2023 — Aug 2025",
+    period: "Aug 2023 – Aug 2025",
     points: [
-      "Led a platform migration as lead engineer — Terraform IaC, CI/CD pipelines, and live-incident production debugging across a large microservice fleet serving enterprise customers.",
+      "Led a platform migration as lead engineer: Terraform IaC, CI/CD pipelines, and live-incident production debugging across a large microservice fleet serving enterprise customers.",
       "Owned Terraform infrastructure across multiple environments and modernized AWS Lambda services, with a VPN-secured OpenTelemetry observability protocol feeding centralized SIEM audit trails.",
     ],
   },
@@ -88,7 +88,7 @@ export const projects = [
     title: "MCP Tool Gateway",
     kind: "Enterprise · Accenture",
     blurb:
-      "An MCP server and tool-invocation protocol giving agents governed, live access to databases — beyond static prompting.",
+      "An MCP server and tool-invocation protocol giving agents governed, live access to databases, beyond static prompting.",
     stack: ["MCP", "FastAPI", "PostgreSQL"],
   },
   {
@@ -99,18 +99,18 @@ export const projects = [
     stack: ["LangGraph HIL", "OpenTelemetry", "Datadog"],
   },
   {
-    title: "IncidentIQ — AI-SRE Platform",
+    title: "IncidentIQ, AI-SRE Platform",
     kind: "Open source",
     blurb:
-      "A 5-agent LangGraph pipeline (triage → context → RAG knowledge → root-cause synthesis → supervision) producing confidence-scored diagnoses with human-gated rollback.",
+      "A 5-agent LangGraph pipeline (triage, context, RAG knowledge, root-cause synthesis, supervision) that produces confidence-scored diagnoses with human-gated rollback.",
     stack: ["LangGraph", "FastAPI", "pgvector", "RBAC"],
     github: "https://github.com/AyushRanjanRoy-01/IncidentIQ",
   },
   {
-    title: "RAGGym — Learn RAG by Coding",
+    title: "RAGGym, Learn RAG by Coding",
     kind: "Open source",
     blurb:
-      "A fully swappable RAG platform (LLM / embeddings / vector store hot-configurable) with a self-correcting retrieval loop and an AI-graded practice mode.",
+      "A fully swappable RAG platform (LLM, embeddings and vector store hot-configurable) with a self-correcting retrieval loop and an AI-graded practice mode.",
     stack: ["LangGraph", "Qdrant", "RAGAS", "Streamlit"],
     github: "https://github.com/AyushRanjanRoy-01/RAG-Project",
   },

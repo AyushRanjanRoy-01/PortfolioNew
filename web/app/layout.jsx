@@ -1,9 +1,8 @@
 import "./globals.css";
-import { Inter, Newsreader } from "next/font/google";
+import { Inter } from "next/font/google";
 import { profile, hero } from "@/lib/content";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-const display = Newsreader({ subsets: ["latin"], variable: "--font-display", display: "swap" });
 
 export const metadata = {
   title: `${profile.name} — ${profile.role}`,
@@ -30,9 +29,7 @@ export const metadata = {
   icons: { icon: "/favicon.svg" },
 };
 
-export const viewport = {
-  themeColor: "#FBFBF9",
-};
+export const viewport = { themeColor: "#FBFBF9" };
 
 const personJsonLd = {
   "@context": "https://schema.org",
@@ -48,12 +45,10 @@ const personJsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${display.variable}`}>
+    <html lang="en" className={inter.variable}>
       <body>
         <script
-          dangerouslySetInnerHTML={{
-            __html: "document.documentElement.classList.add('js');",
-          }}
+          dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js');" }}
         />
         <script
           type="application/ld+json"

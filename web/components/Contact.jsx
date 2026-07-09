@@ -7,20 +7,20 @@ export default function Contact() {
     { name: "Résumé", href: profile.resume },
   ];
   return (
-    <section id="contact" className="border-t border-line px-5 py-20 sm:px-6">
+    <section id="contact" className="border-t border-line px-5 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-content">
-        <h2 className="reveal text-[1.6rem] sm:text-[1.9rem]">Contact</h2>
-        <p className="reveal mt-4 max-w-readable text-[16px] leading-relaxed text-muted">
-          Open to senior Gen AI / full-stack roles and interesting collaborations.
+        <h2 className="reveal text-[1.3rem] sm:text-[1.5rem]">Contact</h2>
+        <p className="reveal mt-3 max-w-readable text-[15.5px] leading-relaxed text-muted">
+          Open to senior Gen AI and full-stack roles, and interesting collaborations.
           The fastest way to reach me is email.
         </p>
         <a
           href={`mailto:${profile.email}`}
-          className="reveal mt-5 inline-block font-display text-[1.35rem] text-ink link"
+          className="reveal mt-4 inline-block text-[1.05rem] text-ink link"
         >
           {profile.email}
         </a>
-        <div className="reveal mt-7 flex flex-wrap gap-x-6 gap-y-2 text-[15px]">
+        <div className="reveal mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[15px]">
           {links.map((l) => (
             <a
               key={l.name}
