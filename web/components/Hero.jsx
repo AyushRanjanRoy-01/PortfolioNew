@@ -15,8 +15,10 @@ export default function Hero() {
 
             <div className="reveal mt-7 max-w-readable space-y-3.5 text-[15.5px] leading-relaxed text-muted">
               <p>
-                I build production multi-agent AI systems: LLM orchestration, MCP tool gateways, RAG,
-                and the routing and governance that keep them reliable.
+                I build production{" "}
+                <span className="font-medium text-accent">multi-agent</span> AI systems: LLM
+                orchestration, MCP tool gateways, RAG, and the routing and governance that keep
+                them reliable.
               </p>
               <p>
                 In the open I build{" "}

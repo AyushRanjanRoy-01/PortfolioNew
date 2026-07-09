@@ -38,7 +38,7 @@ h1, h2, h3, h4 {
 }
 
 ::selection {
-  background: rgba(242, 107, 33, 0.18);
+  background: rgba(255, 90, 31, 0.18);
 }
 
 ::-webkit-scrollbar { width: 10px; }
@@ -47,7 +47,7 @@ h1, h2, h3, h4 {
 ::-webkit-scrollbar-thumb:hover { background: #cfcec6; }
 
 :focus-visible {
-  outline: 2px solid #F26B21;
+  outline: 2px solid #FF5A1F;
   outline-offset: 2px;
   border-radius: 3px;
 }
@@ -55,12 +55,12 @@ h1, h2, h3, h4 {
 /* Link underline — orange, present but clean */
 .link {
   text-decoration: none;
-  border-bottom: 1.5px solid rgba(242, 107, 33, 0.45);
+  border-bottom: 1.5px solid rgba(255, 90, 31, 0.45);
   transition: border-color 0.15s ease, color 0.15s ease;
 }
 .link:hover {
-  color: #F26B21;
-  border-color: #F26B21;
+  color: #FF5A1F;
+  border-color: #FF5A1F;
 }
 
 /* Gentle scroll-reveal (opt-in via JS, disabled for reduced-motion) */
@@ -74,7 +74,7 @@ h1, h2, h3, h4 {
 
 /* Hero motif — sequential orange pulse (black + orange, minimal) */
 @keyframes artPulse { 0%, 100% { opacity: 0.1; } 45% { opacity: 1; } }
-.art-pulse { animation: artPulse 2.8s ease-in-out infinite; }
+.art-pulse { animation: artPulse 2.2s ease-in-out infinite; }
 
 @media (prefers-reduced-motion: reduce) {
   * {

@@ -14,7 +14,7 @@ module.exports = {
         ink: "#1B1B18",      // near-black text
         muted: "#5C5B54",    // secondary
         dim: "#93928A",      // labels / tertiary
-        accent: "#F26B21",   // orange — the one vivid accent
+        accent: "#FF5A1F",   // orange — the one vivid accent
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],

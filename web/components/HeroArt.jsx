@@ -16,14 +16,14 @@ const EDGES = [
 const FLOW = [[0, 1], [1, 3], [3, 4], [4, 5]];
 
 const INK = "#1B1B18";
-const ORANGE = "#F26B21";
+const ORANGE = "#FF5A1F";
 
 export default function HeroArt() {
   return (
     <svg
       viewBox="0 0 280 280"
-      width="260"
-      height="260"
+      width="300"
+      height="300"
       fill="none"
       role="img"
       aria-label="Animated diagram of a multi-agent network"
