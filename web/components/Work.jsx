@@ -29,8 +29,6 @@ export default function Work() {
               <p className="mt-2.5 max-w-2xl text-[15px] leading-relaxed text-muted">{p.blurb}</p>
 
               <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[13px] text-dim">
-                <span className="text-muted">{p.metric}</span>
-                <span className="text-line">·</span>
                 <span>{p.stack.join(" · ")}</span>
                 {p.github && (
                   <>

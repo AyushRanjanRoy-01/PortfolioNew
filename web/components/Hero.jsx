@@ -1,4 +1,4 @@
-import { hero, stats, profile } from "@/lib/content";
+import { hero, profile } from "@/lib/content";
 
 export default function Hero() {
   return (
@@ -32,14 +32,6 @@ export default function Hero() {
           </a>
         </div>
 
-        <p className="reveal mt-12 max-w-readable text-[14px] leading-relaxed text-dim">
-          {stats.map((s, i) => (
-            <span key={s.label}>
-              {i > 0 && <span className="mx-2 text-line">·</span>}
-              <span className="text-muted">{s.value}</span> {s.label}
-            </span>
-          ))}
-        </p>
       </div>
     </section>
   );
