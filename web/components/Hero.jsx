@@ -11,11 +11,11 @@ export default function Hero() {
 
         <div className="reveal mt-7 max-w-readable space-y-3.5 text-[15.5px] leading-relaxed text-muted">
           <p>
-            I build AI agents that do real work. I care more about making them boring and
-            dependable than making them impressive.
+            I build production multi-agent AI systems: LLM orchestration, MCP tool gateways, RAG,
+            and the routing and governance that keep them reliable.
           </p>
           <p>
-            In the open I tinker with{" "}
+            In the open I build{" "}
             <a
               href="https://github.com/AyushRanjanRoy-01/IncidentIQ"
               target="_blank"
@@ -33,7 +33,7 @@ export default function Hero() {
             >
               RAGGym
             </a>
-            . Off the clock: coffee and chess.
+            .
           </p>
         </div>
 

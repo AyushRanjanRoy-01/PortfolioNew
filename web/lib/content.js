@@ -11,8 +11,7 @@ export const profile = {
   email: "royayush0611@gmail.com",
   phone: "+919540968483",
   github: "https://github.com/AyushRanjanRoy-01",
-  // TODO: confirm exact LinkedIn vanity URL
-  linkedin: "https://www.linkedin.com/in/ayushranjanroy",
+  linkedin: "https://linkedin.com/in/ayush-ranjan-roy",
   resume: "/resume.pdf",
 };
 
@@ -107,6 +106,7 @@ export const projects = [
     blurb:
       "A fully swappable RAG platform (LLM, embeddings and vector store hot-configurable) with a self-correcting retrieval loop and an AI-graded practice mode.",
     stack: ["LangGraph", "Qdrant", "RAGAS", "Streamlit"],
+    live: "https://rag-gym.streamlit.app/",
     github: "https://github.com/AyushRanjanRoy-01/RAG-Project",
   },
 ];
