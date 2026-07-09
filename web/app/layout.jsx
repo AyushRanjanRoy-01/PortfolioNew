@@ -1,10 +1,9 @@
 import "./globals.css";
-import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Inter, Newsreader } from "next/font/google";
 import { profile, hero } from "@/lib/content";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-const display = Space_Grotesk({ subsets: ["latin"], variable: "--font-display", display: "swap" });
-const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
+const display = Newsreader({ subsets: ["latin"], variable: "--font-display", display: "swap" });
 
 export const metadata = {
   title: `${profile.name} — ${profile.role}`,
@@ -32,7 +31,7 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: "#0B0B0F",
+  themeColor: "#FBFBF9",
 };
 
 const personJsonLd = {
@@ -49,9 +48,8 @@ const personJsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${display.variable} ${mono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${display.variable}`}>
       <body>
-        {/* progressive-enhancement flag: enables hidden reveal state only with JS */}
         <script
           dangerouslySetInnerHTML={{
             __html: "document.documentElement.classList.add('js');",

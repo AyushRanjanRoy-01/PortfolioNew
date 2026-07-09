@@ -9,9 +9,8 @@ import ScrollReveal from "@/components/ScrollReveal";
 export default function Page() {
   return (
     <>
-      <div className="brand-glow" aria-hidden="true" />
       <Nav />
-      <main className="relative z-10">
+      <main>
         <Hero />
         <Work />
         <About />

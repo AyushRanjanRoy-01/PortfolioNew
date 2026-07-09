@@ -8,31 +8,31 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bg: "#0B0B0F",
-        surface: "#141419",
-        line: "#26262E",
-        ink: "#EDEDF0",
-        muted: "#A1A1AA",
-        dim: "#6B6B76",
-        accent: "#7C5CFF",
-        "accent-soft": "#9B86FF",
+        bg: "#FBFBF9",       // warm paper
+        surface: "#FFFFFF",
+        line: "#E7E6E0",     // hairline
+        ink: "#1B1B18",      // near-black text
+        muted: "#5C5B54",    // secondary
+        dim: "#93928A",      // labels / tertiary
+        accent: "#4F46E5",   // quiet indigo — links only
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-display)", "var(--font-inter)", "sans-serif"],
-        mono: ["var(--font-mono)", "monospace"],
+        display: ["var(--font-display)", "Georgia", "serif"],
+        mono: ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
       },
       maxWidth: {
-        content: "1120px",
+        content: "960px",
+        readable: "660px",
       },
       keyframes: {
         "fade-up": {
-          "0%": { opacity: "0", transform: "translateY(16px)" },
+          "0%": { opacity: "0", transform: "translateY(10px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
       animation: {
-        "fade-up": "fade-up 0.5s cubic-bezier(0.22,1,0.36,1) both",
+        "fade-up": "fade-up 0.5s ease both",
       },
     },
   },
