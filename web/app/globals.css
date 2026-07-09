@@ -38,7 +38,7 @@ h1, h2, h3, h4 {
 }
 
 ::selection {
-  background: rgba(79, 70, 229, 0.14);
+  background: rgba(242, 107, 33, 0.18);
 }
 
 ::-webkit-scrollbar { width: 10px; }
@@ -47,20 +47,20 @@ h1, h2, h3, h4 {
 ::-webkit-scrollbar-thumb:hover { background: #cfcec6; }
 
 :focus-visible {
-  outline: 2px solid #4F46E5;
+  outline: 2px solid #F26B21;
   outline-offset: 2px;
   border-radius: 3px;
 }
 
-/* Understated link underline */
+/* Link underline — orange, present but clean */
 .link {
   text-decoration: none;
-  border-bottom: 1px solid rgba(79, 70, 229, 0.25);
+  border-bottom: 1.5px solid rgba(242, 107, 33, 0.45);
   transition: border-color 0.15s ease, color 0.15s ease;
 }
 .link:hover {
-  color: #4F46E5;
-  border-color: #4F46E5;
+  color: #F26B21;
+  border-color: #F26B21;
 }
 
 /* Gentle scroll-reveal (opt-in via JS, disabled for reduced-motion) */

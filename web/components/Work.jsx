@@ -4,7 +4,9 @@ export default function Work() {
   return (
     <section id="work" className="border-t border-line px-5 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-content">
-        <h2 className="reveal text-[1.3rem] sm:text-[1.5rem]">Work</h2>
+        <h2 className="reveal flex items-center gap-2.5 text-[1.3rem] sm:text-[1.5rem]">
+          <span className="inline-block h-2 w-2 bg-accent" />Work
+        </h2>
 
         <div className="mt-7">
           {projects.map((p) => (

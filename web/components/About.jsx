@@ -9,7 +9,9 @@ export default function About() {
           <div className="hidden h-12 w-12 shrink-0 overflow-hidden rounded-full sm:block">
             <Avatar />
           </div>
-          <h2 className="text-[1.3rem] sm:text-[1.5rem]">About</h2>
+          <h2 className="flex items-center gap-2.5 text-[1.3rem] sm:text-[1.5rem]">
+            <span className="inline-block h-2 w-2 bg-accent" />About
+          </h2>
         </div>
 
         <div className="reveal mt-6 max-w-readable space-y-4 text-[15.5px] leading-relaxed text-muted">

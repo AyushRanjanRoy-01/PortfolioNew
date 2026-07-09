@@ -52,7 +52,7 @@ export default function Nav() {
               key={l.name}
               href={l.href}
               className={`transition-colors ${
-                active === l.href.slice(1) ? "text-ink" : "text-muted hover:text-ink"
+                active === l.href.slice(1) ? "text-accent" : "text-muted hover:text-ink"
               }`}
             >
               {l.name}

@@ -8,7 +8,9 @@ export default function Contact() {
   return (
     <section id="contact" className="border-t border-line px-5 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-content">
-        <h2 className="reveal text-[1.3rem] sm:text-[1.5rem]">Contact</h2>
+        <h2 className="reveal flex items-center gap-2.5 text-[1.3rem] sm:text-[1.5rem]">
+          <span className="inline-block h-2 w-2 bg-accent" />Contact
+        </h2>
         <p className="reveal mt-3 max-w-readable text-[15.5px] leading-relaxed text-muted">
           Open to senior roles and interesting work.
         </p>
