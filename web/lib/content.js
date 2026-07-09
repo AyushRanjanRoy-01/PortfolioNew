@@ -6,7 +6,7 @@
 
 export const profile = {
   name: "Ayush Ranjan Roy",
-  role: "Full Stack Gen AI Engineer",
+  role: "AI Engineer",
   location: "Gurugram, India",
   email: "royayush0611@gmail.com",
   phone: "+919540968483",
@@ -19,13 +19,13 @@ export const profile = {
 export const hero = {
   h1: "I build production Gen AI systems that ship and survive real data.",
   sub:
-    "Full Stack Gen AI Engineer at Accenture. I design stateful multi-agent pipelines, " +
+    "AI Engineer at Accenture. I design stateful multi-agent pipelines, " +
     "MCP tool gateways, and the routing, governance and eval that keep them reliable in production.",
 };
 
 export const about = {
   bio: [
-    "Gen AI engineer at Accenture, with two years in distributed systems before that. " +
+    "AI Engineer at Accenture, with two years in distributed systems before that. " +
       "I build LLM systems like critical infrastructure: observable, governed, and hard to break.",
   ],
   facts: [
@@ -42,7 +42,7 @@ export const about = {
 
 export const experience = [
   {
-    role: "Full Stack Gen AI Engineer",
+    role: "AI Engineer",
     company: "Accenture · GenAI & Data",
     period: "Aug 2025 – Present",
     points: [

@@ -7,9 +7,9 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "sw
 export const metadata = {
   title: `${profile.name} — ${profile.role}`,
   description:
-    "Full Stack Gen AI Engineer at Accenture — production multi-agent systems, MCP tool gateways, RAG, and the routing, governance and eval that keep LLMs reliable in production.",
+    "AI Engineer at Accenture — production multi-agent systems, MCP tool gateways, RAG, and the routing, governance and eval that keep LLMs reliable in production.",
   keywords: [
-    "Gen AI Engineer", "Multi-Agent Systems", "LangGraph", "MCP", "RAG",
+    "AI Engineer", "Multi-Agent Systems", "LangGraph", "MCP", "RAG",
     "LLMOps", "Full Stack", "Ayush Ranjan Roy",
   ],
   authors: [{ name: profile.name }],

@@ -6,7 +6,7 @@ export default function Hero() {
       <div className="mx-auto max-w-content">
         <h1 className="reveal text-[1.7rem] sm:text-[2rem]">Ayush Ranjan Roy</h1>
         <p className="reveal mt-2 text-[15px] text-muted">
-          Gen AI engineer at Accenture, based in Gurugram.
+          AI Engineer at Accenture, based in Gurugram.
         </p>
 
         <div className="reveal mt-7 max-w-readable space-y-3.5 text-[15.5px] leading-relaxed text-muted">
