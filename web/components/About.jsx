@@ -1,5 +1,5 @@
 import Avatar from "@/components/Avatar";
-import { about, experience } from "@/lib/content";
+import { about } from "@/lib/content";
 
 export default function About() {
   return (
@@ -16,38 +16,6 @@ export default function About() {
           {about.bio.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
-        </div>
-
-        {/* Skills — plain grouped lines */}
-        <div className="reveal mt-9 max-w-readable space-y-2.5">
-          {Object.entries(about.skills).map(([group, items]) => (
-            <div key={group} className="flex flex-col gap-0.5 sm:flex-row sm:gap-4">
-              <div className="w-40 shrink-0 text-[13px] text-dim">{group}</div>
-              <div className="text-[14.5px] text-ink">{items.join(", ")}</div>
-            </div>
-          ))}
-        </div>
-
-        {/* Experience — one line each; detail lives in the résumé */}
-        <div className="reveal mt-10 max-w-readable">
-          {experience.map((e) => (
-            <div
-              key={e.role}
-              className="flex flex-wrap items-baseline justify-between gap-x-4 border-t border-line py-3 text-[14.5px]"
-            >
-              <span className="text-ink">
-                {e.role} <span className="text-muted">· {e.company.replace("Accenture · ", "Accenture, ")}</span>
-              </span>
-              <span className="text-[12.5px] text-dim">{e.period}</span>
-            </div>
-          ))}
-          <div className="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-[14px] text-dim">
-            {about.facts.map((f) => (
-              <span key={f.k}>
-                {f.k}: <span className="text-muted">{f.v}</span>
-              </span>
-            ))}
-          </div>
         </div>
       </div>
     </section>

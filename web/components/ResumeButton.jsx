@@ -21,7 +21,7 @@ export default function ResumeButton() {
       onClick={download}
       className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-5 py-2.5 text-[14px] text-ink transition-colors hover:border-accent/50 hover:text-accent"
     >
-      Download résumé ↓
+      Download resume ↓
     </button>
   );
 }
