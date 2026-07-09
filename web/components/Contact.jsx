@@ -4,7 +4,6 @@ export default function Contact() {
   const links = [
     { name: "GitHub", href: profile.github },
     { name: "LinkedIn", href: profile.linkedin },
-    { name: "Résumé", href: profile.resume },
   ];
   return (
     <section id="contact" className="border-t border-line px-5 py-16 sm:px-6 sm:py-20">

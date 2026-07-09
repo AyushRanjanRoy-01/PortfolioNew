@@ -1,5 +1,5 @@
 import Avatar from "@/components/Avatar";
-import { about, experience, profile } from "@/lib/content";
+import { about, experience } from "@/lib/content";
 
 export default function About() {
   return (
@@ -48,14 +48,6 @@ export default function About() {
               </span>
             ))}
           </div>
-          <a
-            href={profile.resume}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 inline-block text-[14.5px] text-ink link"
-          >
-            Full details in my résumé ↗
-          </a>
         </div>
       </div>
     </section>

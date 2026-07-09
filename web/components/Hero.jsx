@@ -37,9 +37,6 @@ export default function Hero() {
 
         <div className="reveal mt-7 flex flex-wrap items-center gap-x-5 gap-y-3 text-[15px]">
           <a href="#work" className="text-ink link">See my work →</a>
-          <a href={profile.resume} target="_blank" rel="noopener noreferrer" className="text-muted transition-colors hover:text-ink">
-            Résumé ↗
-          </a>
           <a href={`mailto:${profile.email}`} className="text-muted transition-colors hover:text-ink">
             Email
           </a>

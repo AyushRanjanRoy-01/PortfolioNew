@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import { profile } from "@/lib/content";
 
 const LINKS = [
   { name: "Work", href: "#work" },
@@ -42,26 +41,18 @@ export default function Nav() {
         <a href="#top" className="text-[15px] font-semibold tracking-tight text-ink">
           Ayush Roy
         </a>
-        <div className="flex items-center gap-6 text-[14px]">
+        <div className="flex items-center gap-5 text-[14px] sm:gap-6">
           {LINKS.map((l) => (
             <a
               key={l.name}
               href={l.href}
-              className={`hidden transition-colors sm:inline ${
+              className={`transition-colors ${
                 active === l.href.slice(1) ? "text-ink" : "text-muted hover:text-ink"
               }`}
             >
               {l.name}
             </a>
           ))}
-          <a
-            href={profile.resume}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-ink link"
-          >
-            Résumé
-          </a>
         </div>
       </nav>
     </header>
