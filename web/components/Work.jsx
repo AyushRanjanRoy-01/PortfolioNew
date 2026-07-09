@@ -6,8 +6,8 @@ export default function Work() {
       <div className="mx-auto max-w-content">
         <h2 className="reveal text-[1.6rem] sm:text-[1.9rem]">Work</h2>
         <p className="reveal mt-3 max-w-readable text-[15px] text-muted">
-          Production agent infrastructure shipped at Accenture, and open-source I build in the open.
-          Enterprise work is described generically.
+          A few things I&apos;ve shipped and tinkered with. The open-source ones link to code —
+          poke around. (Enterprise work is described generically.)
         </p>
 
         <div className="mt-10">
