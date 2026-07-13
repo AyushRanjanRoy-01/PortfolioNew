@@ -1,6 +1,5 @@
 import Nav from "@/components/Nav";
-import Hero from "@/components/Hero";
-import Ask from "@/components/Ask";
+import Console from "@/components/Console";
 import Work from "@/components/Work";
 import About from "@/components/About";
 import Blog from "@/components/Blog";
@@ -14,8 +13,7 @@ export default function Page() {
       <div className="grain" aria-hidden="true" />
       <Nav />
       <main>
-        <Hero />
-        <Ask />
+        <Console />
         <Work />
         <About />
         <Blog />
