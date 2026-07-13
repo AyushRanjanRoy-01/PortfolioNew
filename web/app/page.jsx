@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import Ask from "@/components/Ask";
 import Work from "@/components/Work";
 import About from "@/components/About";
 import Blog from "@/components/Blog";
@@ -14,6 +15,7 @@ export default function Page() {
       <Nav />
       <main>
         <Hero />
+        <Ask />
         <Work />
         <About />
         <Blog />
