@@ -7,8 +7,9 @@ export default function Hero() {
       <div className="mx-auto max-w-content">
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_auto]">
           <div>
-            <h1 className="reveal text-[1.7rem] sm:text-[2rem]">Ayush Ranjan Roy</h1>
-            <div className="reveal mt-3 h-[3px] w-10 rounded-full bg-accent" />
+            <h1 className="reveal font-semibold leading-[0.98] tracking-[-0.03em] text-[clamp(2rem,5.5vw,3.25rem)]">
+              Ayush Ranjan Roy<span className="ml-1.5 inline-block h-[0.42em] w-[0.42em] bg-accent align-baseline" />
+            </h1>
             <p className="reveal mt-4 text-[15px] text-muted">
               AI Engineer at Accenture, based in Gurugram.
             </p>

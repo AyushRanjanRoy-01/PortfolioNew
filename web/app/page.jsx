@@ -10,6 +10,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 export default function Page() {
   return (
     <>
+      <div className="grain" aria-hidden="true" />
       <Nav />
       <main>
         <Hero />

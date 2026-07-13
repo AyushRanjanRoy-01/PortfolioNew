@@ -4,21 +4,35 @@
 
 :root {
   color-scheme: light;
+  --c-bg: 251 251 249;      /* #FBFBF9 warm paper */
+  --c-surface: 255 255 255;
+  --c-line: 231 230 224;    /* #E7E6E0 hairline */
+  --c-ink: 27 27 24;        /* #1B1B18 */
+  --c-muted: 92 91 84;      /* #5C5B54 */
+  --c-dim: 147 146 138;     /* #93928A */
+  --c-accent: 255 90 31;    /* #FF5A1F */
 }
 
-* {
-  box-sizing: border-box;
+.dark {
+  color-scheme: dark;
+  --c-bg: 12 12 13;         /* #0C0C0D */
+  --c-surface: 22 22 24;    /* #161618 */
+  --c-line: 42 42 46;       /* #2A2A2E */
+  --c-ink: 232 232 227;     /* #E8E8E3 */
+  --c-muted: 163 163 156;   /* #A3A39C */
+  --c-dim: 120 120 114;     /* #787872 */
+  --c-accent: 255 107 51;   /* #FF6B33 */
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
-}
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 
 body {
-  background-color: #FBFBF9;
-  color: #1B1B18;
+  background-color: rgb(var(--c-bg));
+  color: rgb(var(--c-ink));
   font-family: var(--font-inter), system-ui, sans-serif;
+  font-optical-sizing: auto;
   font-size: 15px;
   line-height: 1.6;
   letter-spacing: -0.011em;
@@ -26,28 +40,27 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-/* Headings: same family as body (smooth), tight tracking = quiet + classy */
 h1, h2, h3, h4 {
   font-family: var(--font-inter), system-ui, sans-serif;
   font-weight: 600;
   line-height: 1.18;
   letter-spacing: -0.022em;
-  color: #1B1B18;
+  color: rgb(var(--c-ink));
+  text-wrap: balance;
 }
+p { text-wrap: pretty; }
 
-::selection {
-  background: rgba(255, 90, 31, 0.18);
-}
+::selection { background: rgb(var(--c-accent) / 0.2); }
 
 ::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #FBFBF9; }
-::-webkit-scrollbar-thumb { background: #E0DFD8; border-radius: 6px; }
-::-webkit-scrollbar-thumb:hover { background: #cfcec6; }
+::-webkit-scrollbar-track { background: rgb(var(--c-bg)); }
+::-webkit-scrollbar-thumb { background: rgb(var(--c-line)); border-radius: 6px; }
 
 :focus-visible {
-  outline: 2px solid #FF5A1F;
+  outline: 2px solid rgb(var(--c-accent));
   outline-offset: 2px;
   border-radius: 3px;
 }
@@ -55,26 +68,39 @@ h1, h2, h3, h4 {
 /* Link underline — orange, present but clean */
 .link {
   text-decoration: none;
-  border-bottom: 1.5px solid rgba(255, 90, 31, 0.45);
+  border-bottom: 1.5px solid rgb(var(--c-accent) / 0.45);
   transition: border-color 0.15s ease, color 0.15s ease;
 }
 .link:hover {
-  color: #FF5A1F;
-  border-color: #FF5A1F;
+  color: rgb(var(--c-accent));
+  border-color: rgb(var(--c-accent));
 }
 
 /* Gentle scroll-reveal (opt-in via JS, disabled for reduced-motion) */
 .reveal { opacity: 1; transform: none; }
 .js .reveal {
   opacity: 0;
-  transform: translateY(8px);
+  transform: translateY(10px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .js .reveal.is-visible { opacity: 1; transform: none; }
 
-/* Hero motif — sequential orange pulse (black + orange, minimal) */
+/* Hero motif — sequential orange pulse */
 @keyframes artPulse { 0%, 100% { opacity: 0.1; } 45% { opacity: 1; } }
 .art-pulse { animation: artPulse 2.2s ease-in-out infinite; }
+
+/* Film grain — "expensive paper" texture */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  pointer-events: none;
+  opacity: 0.04;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 140px 140px;
+}
+.dark .grain { mix-blend-mode: screen; opacity: 0.06; }
 
 @media (prefers-reduced-motion: reduce) {
   * {

@@ -48,7 +48,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={inter.variable}>
       <body>
         <script
-          dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js');" }}
+          dangerouslySetInnerHTML={{ __html: "(function(){try{var t=localStorage.getItem('theme');var d=t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches);var e=document.documentElement;e.classList.add('js');if(d)e.classList.add('dark');}catch(_){}})();" }}
         />
         <script
           type="application/ld+json"

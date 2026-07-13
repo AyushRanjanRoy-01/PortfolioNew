@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const LINKS = [
   { name: "Work", href: "#work" },
@@ -58,6 +59,7 @@ export default function Nav() {
               {l.name}
             </a>
           ))}
+          <ThemeToggle />
         </div>
       </nav>
     </header>

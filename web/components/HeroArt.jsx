@@ -15,7 +15,7 @@ const EDGES = [
 // a "signal path" that pulses orange in sequence
 const FLOW = [[0, 1], [1, 3], [3, 4], [4, 5]];
 
-const INK = "#1B1B18";
+const INK = "currentColor";
 const ORANGE = "#FF5A1F";
 
 export default function HeroArt() {
@@ -25,6 +25,7 @@ export default function HeroArt() {
       width="300"
       height="300"
       fill="none"
+      className="text-ink"
       role="img"
       aria-label="Animated diagram of a multi-agent network"
     >
