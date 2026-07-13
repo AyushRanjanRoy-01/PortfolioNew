@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import ThemeToggle from "@/components/ThemeToggle";
 
 const LINKS = [
   { name: "Work", href: "#work" },
@@ -47,7 +46,7 @@ export default function Nav() {
         >
           AR
         </a>
-        <div className="flex items-center gap-5 text-[14px] sm:gap-6">
+        <div className="flex items-center gap-5 font-mono text-[13px] sm:gap-6">
           {LINKS.map((l) => (
             <a
               key={l.name}
@@ -59,7 +58,6 @@ export default function Nav() {
               {l.name}
             </a>
           ))}
-          <ThemeToggle />
         </div>
       </nav>
     </header>

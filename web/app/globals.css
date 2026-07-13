@@ -3,25 +3,14 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: light;
-  --c-bg: 251 251 249;      /* #FBFBF9 warm paper */
-  --c-surface: 255 255 255;
-  --c-line: 231 230 224;    /* #E7E6E0 hairline */
-  --c-ink: 27 27 24;        /* #1B1B18 */
-  --c-muted: 92 91 84;      /* #5C5B54 */
-  --c-dim: 147 146 138;     /* #93928A */
-  --c-accent: 255 90 31;    /* #FF5A1F */
-}
-
-.dark {
   color-scheme: dark;
-  --c-bg: 12 12 13;         /* #0C0C0D */
-  --c-surface: 22 22 24;    /* #161618 */
-  --c-line: 42 42 46;       /* #2A2A2E */
-  --c-ink: 232 232 227;     /* #E8E8E3 */
-  --c-muted: 163 163 156;   /* #A3A39C */
-  --c-dim: 120 120 114;     /* #787872 */
-  --c-accent: 255 107 51;   /* #FF6B33 */
+  --c-bg: 11 12 14;        /* #0B0C0E near-black */
+  --c-surface: 19 21 25;   /* #131519 */
+  --c-line: 35 38 44;      /* #23262C hairline */
+  --c-ink: 237 235 230;    /* #EDEBE6 warm white */
+  --c-muted: 139 144 153;  /* #8B9099 */
+  --c-dim: 90 95 103;      /* #5A5F67 */
+  --c-accent: 198 242 78;  /* #C6F24E electric lime */
 }
 
 * { box-sizing: border-box; }
@@ -32,81 +21,63 @@ body {
   background-color: rgb(var(--c-bg));
   color: rgb(var(--c-ink));
   font-family: var(--font-inter), system-ui, sans-serif;
-  font-optical-sizing: auto;
   font-size: 15px;
-  line-height: 1.6;
-  letter-spacing: -0.011em;
+  line-height: 1.65;
+  letter-spacing: -0.005em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
-  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-inter), system-ui, sans-serif;
-  font-weight: 600;
-  line-height: 1.18;
-  letter-spacing: -0.022em;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
   color: rgb(var(--c-ink));
   text-wrap: balance;
 }
 p { text-wrap: pretty; }
 
-::selection { background: rgb(var(--c-accent) / 0.2); }
+::selection { background: rgb(var(--c-accent) / 0.28); color: rgb(var(--c-bg)); }
 
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: rgb(var(--c-bg)); }
 ::-webkit-scrollbar-thumb { background: rgb(var(--c-line)); border-radius: 6px; }
 
-:focus-visible {
-  outline: 2px solid rgb(var(--c-accent));
-  outline-offset: 2px;
-  border-radius: 3px;
-}
+:focus-visible { outline: 2px solid rgb(var(--c-accent)); outline-offset: 2px; border-radius: 3px; }
 
-/* Link underline — orange, present but clean */
 .link {
   text-decoration: none;
-  border-bottom: 1.5px solid rgb(var(--c-accent) / 0.45);
+  border-bottom: 1px solid rgb(var(--c-accent) / 0.4);
   transition: border-color 0.15s ease, color 0.15s ease;
 }
-.link:hover {
-  color: rgb(var(--c-accent));
-  border-color: rgb(var(--c-accent));
-}
+.link:hover { color: rgb(var(--c-accent)); border-color: rgb(var(--c-accent)); }
 
-/* Gentle scroll-reveal (opt-in via JS, disabled for reduced-motion) */
 .reveal { opacity: 1; transform: none; }
-.js .reveal {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
+.js .reveal { opacity: 0; transform: translateY(10px); transition: opacity 0.5s ease, transform 0.5s ease; }
 .js .reveal.is-visible { opacity: 1; transform: none; }
 
-/* Hero motif — sequential orange pulse */
-@keyframes artPulse { 0%, 100% { opacity: 0.1; } 45% { opacity: 1; } }
-.art-pulse { animation: artPulse 2.2s ease-in-out infinite; }
+/* faint terminal grid behind the console */
+.grid-bg {
+  background-image:
+    linear-gradient(rgb(var(--c-line) / 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--c-line) / 0.5) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(120% 90% at 20% 0%, black, transparent 72%);
+  mask-image: radial-gradient(120% 90% at 20% 0%, black, transparent 72%);
+}
 
-/* Film grain — "expensive paper" texture */
+/* film grain */
 .grain {
-  position: fixed;
-  inset: 0;
-  z-index: 45;
-  pointer-events: none;
-  opacity: 0.04;
-  mix-blend-mode: multiply;
+  position: fixed; inset: 0; z-index: 45; pointer-events: none;
+  opacity: 0.05; mix-blend-mode: screen;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 140px 140px;
 }
-.dark .grain { mix-blend-mode: screen; opacity: 0.06; }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.001ms !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
-  }
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
   .js .reveal { opacity: 1; transform: none; }
 }

@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: "class",
   content: [
     "./app/**/*.{js,jsx}",
     "./components/**/*.{js,jsx}",
@@ -19,21 +18,20 @@ module.exports = {
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-inter)", "system-ui", "sans-serif"],
-        mono: ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
+        mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
+        display: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       maxWidth: {
-        content: "960px",
-        readable: "660px",
+        content: "1040px",
+        readable: "680px",
       },
       keyframes: {
-        "fade-up": {
-          "0%": { opacity: "0", transform: "translateY(10px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
+        "fade-up": { "0%": { opacity: "0", transform: "translateY(10px)" }, "100%": { opacity: "1", transform: "translateY(0)" } },
+        blink: { "0%,49%": { opacity: "1" }, "50%,100%": { opacity: "0" } },
       },
       animation: {
         "fade-up": "fade-up 0.5s ease both",
+        blink: "blink 1.1s step-end infinite",
       },
     },
   },
