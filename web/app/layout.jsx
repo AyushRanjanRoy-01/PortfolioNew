@@ -1,8 +1,9 @@
 import "./globals.css";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import { profile, hero } from "@/lib/content";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
+const display = Space_Grotesk({ subsets: ["latin"], variable: "--font-display", display: "swap" });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
 
 export const metadata = {
@@ -22,7 +23,7 @@ export const metadata = {
   icons: { icon: "/favicon.svg" },
 };
 
-export const viewport = { themeColor: "#0B0C0E" };
+export const viewport = { themeColor: "#FAFAFF" };
 
 const personJsonLd = {
   "@context": "https://schema.org",
@@ -38,7 +39,7 @@ const personJsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${mono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${display.variable} ${mono.variable}`}>
       <body>
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js');" }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />

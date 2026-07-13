@@ -92,14 +92,14 @@ export default function Console() {
   }
 
   return (
-    <section id="top" className="relative min-h-[92vh] overflow-hidden px-5 pt-28 pb-16 sm:px-6 sm:pt-32">
-      <div className="grid-bg pointer-events-none absolute inset-0" aria-hidden="true" />
-      <div className="relative mx-auto max-w-content">
+    <section id="top" className="min-h-[88vh] px-5 pt-28 pb-16 sm:px-6 sm:pt-32">
+      <div className="mx-auto max-w-content">
         <p className="font-mono text-[12.5px] text-dim">
           {profile.name} · AI Engineer · {profile.location}
         </p>
-        <h1 className="mt-4 max-w-3xl text-[clamp(1.7rem,4.6vw,2.7rem)] leading-[1.1] tracking-[-0.025em]">
-          I build AI agents. <span className="text-accent">Ask mine</span> about my work.
+        <h1 className="mt-4 max-w-3xl text-[clamp(1.8rem,4.8vw,2.9rem)] leading-[1.08] tracking-[-0.025em]">
+          I build AI agents. <span className="grad-move">Ask mine</span> about my work.
+          <span className="blink text-accent" aria-hidden="true">▋</span>
         </h1>
 
         <form className="mt-7" onSubmit={(e) => { e.preventDefault(); submit(); }}>
