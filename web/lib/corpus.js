@@ -54,12 +54,12 @@ export const corpus = [
       "He implements MCP-style governed tool access and operator-facing agent observability so decisions and retrieval context stay reviewable, with OpenTelemetry / Datadog audit surfaces.",
   },
   {
-    id: "benchmarks",
-    title: "Document inference benchmarks",
-    source: "Work · Extraction",
-    tags: ["benchmark", "latency", "documents", "inference", "rag"],
+    id: "inference",
+    title: "Multi-model inference services",
+    source: "Work · GenAI",
+    tags: ["inference", "latency", "telemetry", "async", "rag"],
     text:
-      "Controlled internal benchmarks only (not client SLAs or production throughput): multi-model inference experiments with retries and telemetry on multi-page documents.",
+      "He designs async multi-model inference services with retries, backoff, concurrency control, and latency/token/cost telemetry, used alongside RAG-style grounding in agent paths.",
   },
   {
     id: "security-controls",
