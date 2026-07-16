@@ -28,7 +28,7 @@ export const about = {
   paragraphs: [
     "I’m an AI Engineer at Accenture working on production multi-agent systems for enterprise finance workflows. My differentiator isn’t prompt engineering — it’s combining agents, APIs, queues, databases, cloud infrastructure, security controls, human approvals, and failure handling into systems teams can actually run.",
     "Before GenAI I spent ~2 years as a Platform Engineer on Accenture’s MxDR / Adaptive MxDR security platform: Terraform modernization, Redis-backed shared services, Jenkins→GitHub Actions, AWS runtime upgrades, secrets migration, mTLS telemetry into customer SIEMs, and live production debugging. That foundation is why I design agents with fail-closed paths, approvals, and audit trails.",
-    "Outside work I ship HelixOps (human-gated remediation Incident IDE) and RAGGym (hands-on RAG learning). Open to roles at the intersection of GenAI platforms, agentic systems, and security-hardened infrastructure.",
+    "Outside work I ship HelixOps (human-gated remediation Incident IDE) and RAGGym (hands-on RAG learning). Open to senior AI roles across GenAI, AI engineering, platform/ops, and security — with a security-first instinct on anything that takes real actions.",
   ],
   facts: [
     { label: "Role", value: "AI Engineer, Accenture · GenAI & Data" },
