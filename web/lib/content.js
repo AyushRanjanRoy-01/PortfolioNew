@@ -61,9 +61,23 @@ export const about = {
     { label: "Focus", value: "~60% GenAI / agents · ~40% platform & security" },
     { label: "Background", value: "Platform Eng · MxDR / security product ecosystem" },
     { label: "Cert", value: "Claude Certified Architect, Foundations (Anthropic)" },
-    { label: "Education", value: "B.Tech ECE, VIT Chennai (2019–2023) · CGPA 7.67" },
+    { label: "Education", value: "B.Tech ECE, VIT Chennai (2019–2023)" },
     { label: "Location", value: "Gurugram, India" },
   ],
+  education: {
+    degree: "B.Tech, Electronics and Communication Engineering",
+    school: "VIT Chennai",
+    period: "2019–2023",
+    // From consolidated marksheet — few cyber / AI / CS relevant only (no CGPA)
+    coursework: [
+      "Artificial Intelligence",
+      "Essentials of Machine Learning",
+      "Cryptography and Network Security",
+      "Information Security Analysis and Audit",
+      "Data Structures and Algorithms",
+      "Operating Systems",
+    ],
+  },
   // Display order: AI first (majority), foundations second (~40%).
   skills: {
     "AI & agents": [
@@ -216,7 +230,8 @@ export const journey = [
   {
     year: "2019–23",
     title: "B.Tech ECE · VIT Chennai",
-    detail: "Hardware-adjacent foundations → software systems. CGPA 7.67/10.",
+    detail:
+      "AI, ML essentials, cryptography & network security, InfoSec audit, DSA, operating systems.",
   },
   {
     year: "2023–25",

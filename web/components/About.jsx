@@ -54,6 +54,23 @@ export default function About() {
               ))}
             </dl>
           </Reveal>
+
+          {about.education?.coursework?.length > 0 && (
+            <Reveal delay={180}>
+              <div className="mt-6">
+                <p className="mb-2 font-mono text-[10px] uppercase tracking-wider text-slate-500">
+                  Relevant coursework
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  {about.education.coursework.map((c) => (
+                    <span key={c} className="chip">
+                      {c}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          )}
         </div>
 
         <Reveal delay={100}>
