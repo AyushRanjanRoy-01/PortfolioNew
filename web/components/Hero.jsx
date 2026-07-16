@@ -7,7 +7,7 @@ import Reveal from "./Reveal";
 
 export default function Hero() {
   const [typed, setTyped] = useState("");
-  const full = "agent platforms that ship safely.";
+  const full = "agents & RAG systems that ship.";
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {

@@ -19,18 +19,18 @@ export const hero = {
   kicker: "AI Engineer · Accenture · Gurugram",
   title: "I build agent platforms that ship — with security controls, not demos.",
   subtitle:
-    "Mostly multi-agent GenAI — LangGraph workflows, HITL approvals, MCP tool use, RAG, and " +
-    "model routing — backed by a solid platform and security foundation (cloud, secrets, SIEM, " +
-    "production ops) from two years on Accenture’s MxDR ecosystem.",
+    "Mostly multi-agent GenAI — LangGraph workflows, RAG-backed knowledge retrieval, HITL " +
+    "approvals, MCP tool use, and model routing — backed by a solid platform and security " +
+    "foundation (cloud, secrets, SIEM, production ops) from two years on Accenture’s MxDR ecosystem.",
 };
 
 /** Hero orbit chips — ~60% AI / ~40% platform·security·ops */
 export const orbitSkills = [
   "LangGraph",
   "Multi-agent",
+  "RAG",
   "MCP",
   "HITL",
-  "RAG",
   "Claude / GPT",
   "Terraform",
   "AWS",
@@ -43,8 +43,9 @@ export const tickerItems = [
   "LangGraph multi-agent orchestration",
   "HITL approvals & durable workflow continuation",
   "MCP governed tool access",
-  "RAG · ensemble routing · model telemetry",
+  "RAG pipelines · retrieval + evaluation",
   "Dispute & Deduction agentic workflows",
+  "RAGGym — learn RAG by building",
   "Watchtower agent observability",
   "Terraform · AWS · multi-env CI/CD",
   "Secrets · IAM · mTLS · SIEM health",
@@ -52,13 +53,13 @@ export const tickerItems = [
 
 export const about = {
   paragraphs: [
-    "I’m an AI Engineer at Accenture working on production multi-agent systems for enterprise finance workflows. My differentiator isn’t prompt engineering — it’s combining agents, APIs, queues, databases, cloud infrastructure, security controls, human approvals, and failure handling into systems teams can actually run.",
-    "Before GenAI I spent ~2 years as a Platform Engineer on Accenture’s MxDR / Adaptive MxDR security platform: Terraform modernization, Redis-backed shared services, Jenkins→GitHub Actions, AWS runtime upgrades, secrets migration, mTLS telemetry into customer SIEMs, and live production debugging. That foundation is why I design agents with fail-closed paths, approvals, and audit trails.",
-    "Outside work I ship HelixOps (human-gated remediation Incident IDE) and RAGGym (hands-on RAG learning). Available for senior AI roles — especially where agents meet production controls and platform discipline.",
+    "I’m an AI Engineer at Accenture working on production multi-agent systems for enterprise finance workflows. My differentiator isn’t prompt engineering — it’s combining agents, RAG retrieval, APIs, queues, databases, cloud infrastructure, security controls, human approvals, and failure handling into systems teams can actually run.",
+    "Before GenAI I spent ~2 years as a Platform Engineer on Accenture’s MxDR / Adaptive MxDR security platform: Terraform modernization, Redis-backed shared services, Jenkins→GitHub Actions, AWS runtime upgrades, secrets migration, mTLS telemetry into customer SIEMs, and live production debugging. That foundation is why I design agents and RAG paths with fail-closed defaults, approvals, and audit trails.",
+    "Outside work I ship HelixOps (RAG-assisted RCA + human-gated remediation) and RAGGym (hands-on RAG learning and evaluation). Available for senior AI roles — especially where agents, RAG, and production controls meet.",
   ],
   facts: [
     { label: "Role", value: "AI Engineer, Accenture · GenAI & Data" },
-    { label: "Focus", value: "~60% GenAI / agents · ~40% platform & security" },
+    { label: "Focus", value: "Agents · RAG · ~40% platform & security" },
     { label: "Background", value: "Platform Eng · MxDR / security product ecosystem" },
     { label: "Cert", value: "Claude Certified Architect, Foundations (Anthropic)" },
     { label: "Education", value: "B.Tech ECE, VIT Chennai (2019–2023)" },
@@ -122,7 +123,7 @@ export const experience = [
       "Integrated LangGraph workflows with shared stage/state architecture, UI- and email-based continuation, and human-in-the-loop at uncertain priority, missing documents, approvals, and failure recovery.",
       "Integrated OAuth 2.0 approval APIs (none / L1 / L1+L2), mandatory Team Lead review, sequential approval, rejection restart, and persistence so approvals survive multi-cycle execution.",
       "Built async multi-model inference paths (retries, backoff, concurrency control) with latency/token/cost telemetry; validated multi-page documents in controlled benchmarks (up to 50 pages, 100+ docs tested).",
-      "Extended Watchtower for agent/workflow visibility and MCP-based governed tool access patterns for live operational context — with OpenTelemetry / Datadog audit surfaces.",
+      "Extended Watchtower for agent/workflow visibility and MCP-based governed tool access patterns for live operational context — with OpenTelemetry / Datadog audit surfaces; retrieval and document context sit alongside agent decisions (RAG-style knowledge use in the loop).",
     ],
   },
   {
@@ -154,15 +155,15 @@ export const projects = [
     kind: "Enterprise · Accenture GenAI",
     featured: true,
     blurb:
-      "Async multi-LLM inference with retries, concurrency control, and telemetry. Controlled benchmarks: 100+ documents, up to 50 pages; multi-page latency reduced from ~7 min to ~2.5–3 min in testing (not customer throughput).",
-    stack: ["LangGraph", "Claude / GPT", "Azure AI", "Benchmarking"],
+      "Async multi-LLM inference with retries, concurrency control, and telemetry for document-heavy RAG-style extraction paths. Controlled benchmarks: 100+ documents, up to 50 pages; multi-page latency reduced from ~7 min to ~2.5–3 min in testing (not customer throughput).",
+    stack: ["LangGraph", "Claude / GPT", "Azure AI", "RAG-style retrieval", "Benchmarking"],
   },
   {
     title: "Governed Tool Access & Watchtower",
     kind: "Enterprise · Accenture GenAI",
     featured: true,
     blurb:
-      "MCP-oriented governed tool invocation and Watchtower visibility for live agent/workflow state — so operators see decisions and agents don’t get unconstrained production access.",
+      "MCP-oriented governed tool invocation and Watchtower visibility for live agent/workflow state — so operators see decisions, retrieval context, and agents don’t get unconstrained production access.",
     stack: ["MCP", "Observability", "OpenTelemetry", "Datadog"],
   },
   {
@@ -202,8 +203,8 @@ export const projects = [
     kind: "Open source",
     featured: true,
     blurb:
-      "AI-SRE Incident IDE: multi-agent RCA → human-approved remediation. Security-minded defaults — mock-safe integrations, JWT/RBAC, decision traces. Clean rebuild of the earlier IncidentIQ stack.",
-    stack: ["FastAPI", "RBAC", "HITL", "RAG", "React"],
+      "AI-SRE Incident IDE: multi-agent RCA with RAG over runbooks/postmortems → human-approved remediation. Security-minded defaults — mock-safe integrations, JWT/RBAC, decision traces. Clean rebuild of the earlier IncidentIQ stack.",
+    stack: ["FastAPI", "RAG", "RBAC", "HITL", "React"],
     github: "https://github.com/AyushRanjanRoy-01/HelixOps",
   },
   {
@@ -211,8 +212,8 @@ export const projects = [
     kind: "Open source",
     featured: true,
     blurb:
-      "Learn RAG by doing: swappable LLM/embeddings/vector store, self-correcting retrieval, RAGAS evaluation, AI-graded practice mode.",
-    stack: ["LangGraph", "Qdrant", "RAGAS", "Streamlit"],
+      "Learn RAG by doing: full RAG stack you can swap (LLM, embeddings, vector store), self-correcting retrieval loop, RAGAS evaluation harness, and AI-graded practice mode.",
+    stack: ["RAG", "LangGraph", "Qdrant", "RAGAS", "Streamlit"],
     live: "https://rag-gym.streamlit.app/",
     github: "https://github.com/AyushRanjanRoy-01/RaGGym-Chatbot-CLI",
   },
@@ -248,6 +249,6 @@ export const journey = [
   {
     year: "Open source",
     title: "HelixOps · RAGGym",
-    detail: "Human-gated remediation IDE and hands-on RAG learning platform.",
+    detail: "RAG-assisted incident RCA (HelixOps) and hands-on RAG learning (RAGGym).",
   },
 ];
