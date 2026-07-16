@@ -72,7 +72,7 @@ export const tickerItems = [
 
 export const about = {
   paragraphs: [
-    "I’m an AI Engineer at Accenture working on production multi-agent systems in enterprise Order-to-Cash domains (including Dispute & Deduction) — LangGraph, RAG, Claude / Azure model paths, MCP-style tools, and human-in-the-loop controls.",
+    "I’m an AI Engineer at Accenture contributing to production multi-agent systems in enterprise Order-to-Cash domains (including Dispute & Deduction) — LangGraph, RAG, Claude / Azure model paths, MCP-style tools, and human-in-the-loop controls. Large multi-engineer programs; I own components, not the whole product.",
     "Before GenAI I spent ~2 years as a Platform Engineer on Accenture’s MxDR / Adaptive MxDR (AMxDR) security platform, modernizing the AWS cloud architecture: Terraform, shared services, CI/CD, runtimes, secrets, secure telemetry into enterprise SIEMs, and live production incident response. That platform work is the backbone of how I ship agents — observable, governed, fail-closed by default.",
     "Outside work I ship HelixOps (RAG-assisted RCA + human-gated remediation) and RAGGym (hands-on RAG learning and evaluation). Available for senior AI roles — especially where agents, RAG, and production controls meet.",
   ],
@@ -138,11 +138,10 @@ export const experience = [
     company: "Accenture · GenAI & Data",
     period: "Aug 2025 – Present",
     points: [
-      "Build multi-agent systems for enterprise Order-to-Cash domains, including Dispute & Deduction, using LangGraph orchestration, durable workflow state, and human-in-the-loop control points.",
-      "Design async multi-model inference services with retries, backoff, concurrency control, and latency/token/cost telemetry.",
-      "Implement MCP-style governed tool access and operator-facing agent observability with OpenTelemetry and Datadog tracing.",
-      "Contribute RAG-style retrieval and knowledge grounding alongside agent decision paths.",
-      "Author technical documentation and run knowledge-transfer sessions on LangGraph / LangChain patterns.",
+      "Contribute to multi-agent systems for enterprise Order-to-Cash / Dispute & Deduction domains — LangGraph orchestration, durable workflow state, and human-in-the-loop control points (team of many engineers).",
+      "Implemented async multi-model inference paths (Claude, GPT-4o/5, Azure AI) with retries, concurrency control, ensemble/confidence routing, and latency/token/cost telemetry — measured ~40% classification lift and ~55% multi-page / ~30% single-page latency cuts in controlled runs; batch capacity 9→50 pages.",
+      "Built MCP-style governed tool access and operator-facing agent observability with OpenTelemetry + Datadog across multi-agent failure paths.",
+      "Added RAG-style retrieval/knowledge grounding alongside agent decisions; documented architectures and ran LangGraph/LangChain KT for 4 engineers (~60% faster ramp-up).",
     ],
   },
   {
@@ -150,11 +149,10 @@ export const experience = [
     company: "Accenture · Security · MxDR / Adaptive MxDR (AMxDR)",
     period: "Aug 2023 – Aug 2025",
     points: [
-      "Helped modernize the MxDR → Adaptive MxDR (AMxDR) platform’s AWS cloud architecture: multi-environment Terraform, CI/CD, shared services, and production reliability for a security-product estate.",
-      "Owned Redis/ElastiCache-backed shared metadata platform services, certificates, Auto Scaling Groups, and environment consistency across the fleet.",
-      "Modernized infrastructure-as-code (legacy Terraform → 1.x) and migrated pipelines from Jenkins to GitHub Actions across a large service set.",
-      "Automated AWS Secrets Manager migrations and IAM updates; remediated CodeQL/Dependabot findings; hardened container/runtime baselines; upgraded Lambda and microservice runtimes.",
-      "Built restricted-egress proxy automation and synthetic health monitoring over mTLS/gRPC OpenTelemetry into enterprise SIEM paths; supported multi-tenant production incidents and blue-green deployments.",
+      "Led platform engineering work modernizing MxDR → Adaptive MxDR (AMxDR) AWS cloud architecture: Terraform IaC, GitHub Actions CI/CD, and production incident support across ~20 microservices serving 800+ enterprise accounts — ~35% faster deploys, ~30% infra cost reduction in measured platform work.",
+      "Owned Redis/ElastiCache-backed shared metadata services, certificates, Auto Scaling, and multi-environment consistency (6 environments).",
+      "Modernized 8+ AWS Lambda functions (Python 3.8→3.12) cutting runtime failures ~50%; automated Secrets Manager migrations + IAM; hardened containers; CodeQL/Dependabot remediation.",
+      "Delivered mTLS/OpenTelemetry synthetic health (5-min checks) into enterprise SIEM paths; blue-green deploys (Route 53/ASG) with zero customer-facing downtime on a live pipeline upgrade.",
     ],
   },
 ];
@@ -165,16 +163,16 @@ export const projects = [
     kind: "Enterprise · Accenture GenAI",
     featured: true,
     blurb:
-      "Multi-agent orchestration for enterprise Dispute & Deduction / Order-to-Cash workflows — LangGraph, durable state, HITL control points, and production-minded APIs. Industry domain only; no client process detail.",
+      "Contributed multi-agent components for enterprise Dispute & Deduction / Order-to-Cash workflows — LangGraph, durable state, HITL gates, and production APIs (large multi-engineer program).",
     stack: ["LangGraph", "FastAPI", "PostgreSQL", "HITL", "RAG"],
   },
   {
-    title: "Multi-Model Document Intelligence",
+    title: "Multi-Model Inference & Routing",
     kind: "Enterprise · Accenture GenAI",
     featured: true,
     blurb:
-      "Async multi-LLM inference services with retries, concurrency control, and latency/token/cost telemetry — plus RAG-style grounding for agent decisions.",
-    stack: ["LangGraph", "Claude / GPT", "Azure AI", "RAG", "Telemetry"],
+      "Owned async multi-LLM inference (Claude / GPT / Azure) with ensemble routing and telemetry — measured accuracy/latency gains in controlled runs; RAG grounding on agent paths.",
+    stack: ["Claude", "GPT", "Azure AI", "LangGraph", "RAG"],
   },
   {
     title: "Governed Tools & Agent Observability",
@@ -234,13 +232,6 @@ export const projects = [
     stack: ["RAG", "LangGraph", "Qdrant", "RAGAS", "Streamlit"],
     live: "https://rag-gym.streamlit.app/",
     github: "https://github.com/AyushRanjanRoy-01/RaGGym-Chatbot-CLI",
-  },
-];
-
-export const writing = [
-  {
-    title: "From platform engineering to governed agents",
-    note: "Coming soon — what platform/security years teach you about agent design.",
   },
 ];
 

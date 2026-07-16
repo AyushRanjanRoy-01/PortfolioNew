@@ -6,8 +6,9 @@ import { profile } from "@/lib/content";
 const links = [
   { href: "#brain", label: "Ask" },
   { href: "#lab", label: "Lab" },
+  { href: "#journey", label: "Path" },
   { href: "#work", label: "Work" },
-  { href: "#experience", label: "Experience" },
+  { href: "#experience", label: "Exp" },
   { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },
 ];

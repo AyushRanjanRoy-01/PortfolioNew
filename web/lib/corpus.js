@@ -11,7 +11,7 @@ export const corpus = [
     source: "About",
     tags: ["role", "accenture", "genai", "ai engineer", "work"],
     text:
-      "Ayush Ranjan Roy is an AI Engineer at Accenture (GenAI & Data) building production multi-agent systems for enterprise Order-to-Cash domains, including Dispute & Deduction. He works with agents, RAG, APIs, workflows, cloud infrastructure, and human-in-the-loop controls.",
+      "Ayush Ranjan Roy is an AI Engineer at Accenture (GenAI & Data) contributing to production multi-agent systems for enterprise Order-to-Cash domains, including Dispute & Deduction. He implements agents, RAG, inference routing, MCP-style tools, and human-in-the-loop controls as one engineer on larger delivery teams.",
   },
   {
     id: "platform-past",

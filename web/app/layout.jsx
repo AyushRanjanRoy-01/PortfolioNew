@@ -44,13 +44,13 @@ export const metadata = {
     type: "website",
     url: profile.site,
     siteName: `${profile.name} · Portfolio`,
-    images: ["/images/profile.jpg"],
+    images: ["/og.jpg"],
   },
   twitter: {
     card: "summary_large_image",
     title: `${profile.name} — ${profile.role}`,
     description: hero.subtitle,
-    images: ["/images/profile.jpg"],
+    images: ["/og.jpg"],
   },
   icons: { icon: "/favicon.svg" },
 };
