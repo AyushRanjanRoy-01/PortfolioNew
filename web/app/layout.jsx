@@ -1,23 +1,30 @@
 import "./globals.css";
-import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import { profile, hero } from "@/lib/content";
 
-const sans = Inter({
+/** Body — modern, clear, professional */
+const sans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
-const display = Space_Grotesk({
+/** Display — editorial serif with distinctive character */
+const display = Instrument_Serif({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
+  weight: ["400"],
+  style: ["normal", "italic"],
 });
 
+/** Labels / technical crumbs */
 const mono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
   display: "swap",
+  weight: ["400", "500"],
 });
 
 export const metadata = {
@@ -28,14 +35,9 @@ export const metadata = {
     "AI Engineer",
     "Platform Engineer",
     "Multi-Agent Systems",
-    "LangGraph",
-    "MCP",
-    "Human-in-the-Loop",
-    "Terraform",
-    "AWS",
-    "DevSecOps",
-    "Ayush Ranjan Roy",
+    "RAG",
     "Accenture",
+    "Ayush Ranjan Roy",
   ],
   authors: [{ name: profile.name }],
   openGraph: {
@@ -43,7 +45,7 @@ export const metadata = {
     description: hero.subtitle,
     type: "website",
     url: profile.site,
-    siteName: `${profile.name} · Portfolio`,
+    siteName: profile.name,
     images: ["/og.jpg"],
   },
   twitter: {
@@ -55,7 +57,7 @@ export const metadata = {
   icons: { icon: "/favicon.svg" },
 };
 
-export const viewport = { themeColor: "#03050a" };
+export const viewport = { themeColor: "#0a0c10" };
 
 const personJsonLd = {
   "@context": "https://schema.org",
@@ -76,7 +78,7 @@ const personJsonLd = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${sans.variable} ${display.variable} ${mono.variable}`}>
-      <body className="min-h-screen bg-void-950 text-slate-100 antialiased">
+      <body className="min-h-screen bg-ink text-stone antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}

@@ -11,21 +11,22 @@ const BRAND_SRC = {
 };
 
 export default function TechBrands() {
-  const cert = certifications.find((c) => c.highlight) || certifications[0];
+  const cert = certifications[0];
 
   return (
-    <section className="relative z-10 pb-4 pt-2">
+    <section className="relative z-10 pb-6 pt-2">
       <div className="container-page">
         <Reveal>
-          <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
-            {/* Claude cert highlight */}
-            <div className="glass-strong relative overflow-hidden p-5 sm:p-6">
-              <div className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-[#D4A27F]/12 blur-2xl" />
-              <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#E8C4A8]">
-                Featured certification
-              </p>
-              <div className="mt-3 flex items-start gap-4">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-[#D4A27F]/35 bg-[#D4A27F]/10 p-2.5">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-stretch">
+            {/* Certification — accent panel, distinct from stack strip */}
+            <div className="panel-accent relative flex-1 overflow-hidden px-7 py-7 sm:px-8">
+              <div
+                className="pointer-events-none absolute -right-8 -top-10 h-40 w-40 rounded-full bg-accent/15 blur-3xl"
+                aria-hidden
+              />
+              <p className="section-label mb-4">Certification</p>
+              <div className="flex items-start gap-5">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-accent/30 bg-black/25 p-3">
                   <Image
                     src={BRAND_SRC.claude}
                     alt="Anthropic"
@@ -34,41 +35,37 @@ export default function TechBrands() {
                     className="h-9 w-9"
                   />
                 </div>
-                <div className="min-w-0">
-                  <h2 className="font-display text-lg font-semibold tracking-tight text-white sm:text-xl">
+                <div>
+                  <h2 className="font-display text-[1.45rem] leading-snug text-stone sm:text-[1.65rem]">
                     {cert.name}
                   </h2>
-                  <p className="mt-1 text-sm text-slate-400">
+                  <p className="mt-1.5 font-mono text-[11px] text-accent-bright">
                     {cert.issuer} · {cert.when}
                   </p>
-                  <p className="mt-2 text-sm leading-6 text-slate-400">{cert.blurb}</p>
+                  <p className="mt-3 max-w-md text-sm leading-6 text-stone-muted">{cert.blurb}</p>
                 </div>
               </div>
             </div>
 
-            {/* Brand strip — real Simple Icons SVGs */}
-            <div className="glass-strong flex flex-col justify-center p-5 sm:p-6">
-              <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">
-                Technologies I ship with
-              </p>
-              <div className="mt-4 grid grid-cols-3 gap-3">
+            {/* Stack marks — quieter strip, not matching glass-strong */}
+            <div className="panel-outline flex min-w-0 flex-[0.85] flex-col justify-center px-6 py-6 sm:px-7">
+              <p className="section-label mb-5">Day-to-day stack</p>
+              <div className="grid grid-cols-3 gap-2 sm:gap-3">
                 {techBrands.map((b) => (
                   <div
                     key={b.id}
-                    className="flex flex-col items-center gap-2.5 rounded-xl border border-white/10 bg-black/25 px-2 py-4 text-center"
+                    className="flex flex-col items-center gap-2.5 rounded-xl bg-white/[0.025] px-2 py-4 transition hover:bg-white/[0.045]"
                   >
-                    <div className="flex h-10 w-10 items-center justify-center">
-                      <Image
-                        src={BRAND_SRC[b.id]}
-                        alt={b.name}
-                        width={36}
-                        height={36}
-                        className="h-9 w-9 object-contain"
-                      />
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold text-slate-100">{b.name}</p>
-                      <p className="font-mono text-[10px] text-slate-500">{b.sub}</p>
+                    <Image
+                      src={BRAND_SRC[b.id]}
+                      alt={b.name}
+                      width={30}
+                      height={30}
+                      className="h-7 w-7 object-contain opacity-90"
+                    />
+                    <div className="text-center">
+                      <p className="text-[0.8rem] font-semibold text-stone">{b.name}</p>
+                      <p className="text-[10px] text-stone-dim">{b.sub}</p>
                     </div>
                   </div>
                 ))}

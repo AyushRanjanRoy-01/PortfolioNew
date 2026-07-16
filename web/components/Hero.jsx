@@ -6,76 +6,123 @@ import Reveal from "./Reveal";
 
 export default function Hero() {
   return (
-    <section className="section pb-12 pt-16 sm:pb-20 sm:pt-24">
-      <div className="container-page grid items-center gap-14 lg:grid-cols-[1.25fr_0.85fr]">
+    <section className="section pb-14 pt-16 sm:pb-20 sm:pt-24">
+      <div className="container-page grid items-center gap-14 lg:grid-cols-[1.25fr_0.75fr] lg:gap-20">
         <div>
           <Reveal>
-            <div className="mb-6 flex flex-wrap items-center gap-2">
-              <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-slate-300">
-                Available for senior AI roles
+            <div className="mb-7 flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-signal/30 bg-signal-soft px-3 py-1 text-[11px] font-semibold tracking-wide text-signal">
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-signal" />
+                Open to senior AI roles
               </span>
-              <span className="rounded-full border border-[#D4A27F]/30 bg-[#D4A27F]/10 px-3 py-1 text-xs text-[#E8C4A8]">
+              <span className="rounded-full border border-accent/30 bg-accent-soft px-3 py-1 text-[11px] font-semibold tracking-wide text-accent-bright">
                 Claude Certified Architect
               </span>
             </div>
           </Reveal>
 
-          <Reveal delay={60}>
-            <p className="mb-3 text-sm text-slate-500">{hero.kicker}</p>
-            <h1 className="max-w-xl font-display text-[2.15rem] font-medium leading-[1.15] tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
-              {hero.title}
+          <Reveal delay={40}>
+            <p className="mb-5 font-mono text-[10px] font-medium uppercase tracking-label text-stone-dim">
+              {hero.kicker}
+            </p>
+          </Reveal>
+
+          <Reveal delay={70}>
+            <h1 className="max-w-[18ch] font-display text-display-2xl text-stone">
+              I build multi-agent systems{" "}
+              <em className="display-italic text-accent-bright">that hold up</em>{" "}
+              in production.
             </h1>
           </Reveal>
 
-          <Reveal delay={120}>
-            <p className="mt-5 max-w-xl text-[15px] leading-7 text-slate-400 sm:text-base sm:leading-8">
+          <Reveal delay={110}>
+            <p className="mt-7 max-w-measure text-[1.05rem] leading-[1.75] text-stone-muted sm:text-[1.1rem]">
               {hero.subtitle}
             </p>
           </Reveal>
 
-          <Reveal delay={180}>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+          <Reveal delay={150}>
+            <div className="mt-9 flex flex-wrap items-center gap-3">
               <a href="#work" className="btn btn-primary">
-                View work
+                View selected work
               </a>
               <a href={profile.resume} className="btn btn-ghost">
-                Resume
-              </a>
-              <a href="#contact" className="btn btn-ghost">
-                Contact
+                Resume PDF
               </a>
               <a
-                href={profile.github}
-                target="_blank"
-                rel="noreferrer"
-                className="btn btn-ghost"
+                href={`mailto:${profile.email}`}
+                className="text-sm font-medium text-stone-muted underline-offset-4 transition hover:text-accent-bright hover:underline"
               >
-                GitHub
+                {profile.email}
               </a>
+            </div>
+          </Reveal>
+
+          <Reveal delay={190}>
+            <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 border-t border-white/[0.06] pt-6 text-sm text-stone-dim">
+              <p>
+                <span className="font-mono text-[10px] uppercase tracking-wide text-stone-dim/80">
+                  Platform
+                </span>
+                <br />
+                <span className="text-stone-muted">MxDR → AMxDR on AWS</span>
+              </p>
+              <p>
+                <span className="font-mono text-[10px] uppercase tracking-wide text-stone-dim/80">
+                  GenAI
+                </span>
+                <br />
+                <span className="text-stone-muted">Agents · retrieval · review gates</span>
+              </p>
+              <p>
+                <span className="font-mono text-[10px] uppercase tracking-wide text-stone-dim/80">
+                  Side work
+                </span>
+                <br />
+                <span className="text-stone-muted">HelixOps · RAGGym</span>
+              </p>
             </div>
           </Reveal>
         </div>
 
-        <Reveal delay={100} className="mx-auto w-full max-w-xs sm:max-w-sm">
-          <div className="overflow-hidden rounded-2xl border border-white/10 bg-void-900 shadow-[0_24px_80px_rgba(0,0,0,0.45)]">
-            <div className="relative aspect-[4/5]">
-              <Image
-                src="/images/profile.jpg"
-                alt={profile.name}
-                fill
-                className="object-cover"
-                sizes="320px"
-                priority
-              />
+        <Reveal delay={90} className="mx-auto w-full max-w-[270px] sm:max-w-[290px] lg:ml-auto">
+          <figure className="relative">
+            {/* Asymmetric frame — not a centered double border */}
+            <div
+              className="absolute -left-3 -top-3 h-16 w-16 rounded-tl-2xl border-l border-t border-accent/40"
+              aria-hidden
+            />
+            <div
+              className="absolute -bottom-3 -right-3 h-16 w-16 rounded-br-2xl border-b border-r border-signal/30"
+              aria-hidden
+            />
+            <div className="overflow-hidden rounded-[1.4rem] border border-white/10 bg-ink-card shadow-lift">
+              <div className="relative aspect-[4/5]">
+                <Image
+                  src="/images/profile.jpg"
+                  alt={profile.name}
+                  fill
+                  className="object-cover"
+                  sizes="290px"
+                  priority
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent" />
+              </div>
+              <figcaption className="border-t border-white/[0.07] px-5 py-4">
+                <p className="font-display text-[1.35rem] leading-tight text-stone">
+                  {profile.name}
+                </p>
+                <p className="mt-1 text-[0.85rem] text-stone-muted">
+                  {profile.role}
+                  <span className="text-stone-dim"> · </span>
+                  {profile.company}
+                </p>
+                <p className="mt-1.5 font-mono text-[10px] tracking-wide text-stone-dim">
+                  {profile.location}
+                </p>
+              </figcaption>
             </div>
-            <div className="border-t border-white/10 px-4 py-3">
-              <p className="font-medium text-white">{profile.name}</p>
-              <p className="mt-0.5 text-sm text-slate-400">
-                {profile.role} · {profile.company}
-              </p>
-              <p className="mt-0.5 text-xs text-slate-500">{profile.location}</p>
-            </div>
-          </div>
+          </figure>
         </Reveal>
       </div>
     </section>

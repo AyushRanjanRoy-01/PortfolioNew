@@ -1,107 +1,100 @@
 "use client";
 
-import { useState } from "react";
 import { about } from "@/lib/content";
 import Reveal from "./Reveal";
 
-const tips = {
-  "Multi-agent systems": "Orchestrated workflows with review gates.",
-  "RAG / retrieval": "Ground answers in documents, not model memory alone.",
-  LangGraph: "Stateful agent graphs used in production paths.",
-  "Claude & GPT": "Multi-model inference and routing.",
-  "Azure AI": "Cloud model / document intelligence paths.",
-  "Human-in-the-loop": "People approve uncertain or high-impact steps.",
-  FastAPI: "Async APIs for agent services.",
-  PostgreSQL: "Workflow state and persistence.",
-  AWS: "MxDR / AMxDR cloud platform work.",
-  Terraform: "Infrastructure as code across environments.",
-  "Secrets & IAM": "Credential migration and access control.",
-  "CI/CD": "Jenkins to GitHub Actions migrations.",
-  Observability: "OpenTelemetry, Datadog, SIEM health checks.",
-  Docker: "Runtime and image hardening.",
-};
-
 export default function About() {
-  const [tip, setTip] = useState(null);
-
   return (
     <section id="about" className="section">
-      <div className="container-page grid gap-14 lg:grid-cols-[1.15fr_0.85fr]">
-        <div>
-          <Reveal>
-            <p className="section-label">About</p>
-            <h2 className="mb-6 font-display text-3xl tracking-tight text-white sm:text-4xl">
-              About
-            </h2>
-          </Reveal>
-          <Reveal delay={60}>
-            <div className="space-y-4 text-[15px] leading-7 text-slate-400 sm:text-base sm:leading-8">
-              {about.paragraphs.map((p) => (
-                <p key={p}>{p}</p>
-              ))}
-            </div>
-          </Reveal>
+      <div className="container-page">
+        <div className="grid gap-14 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
+          <div>
+            <Reveal>
+              <p className="section-label">About</p>
+              <h2 className="mb-6 max-w-lg font-display text-display-lg text-stone">
+                Agents on a{" "}
+                <em className="display-italic text-accent-bright">platform foundation</em>
+              </h2>
+            </Reveal>
 
-          <Reveal delay={100}>
-            <dl className="mt-8 grid gap-3 sm:grid-cols-2">
-              {about.facts.map((f) => (
-                <div key={f.label} className="glass px-4 py-3">
-                  <dt className="text-[11px] uppercase tracking-wide text-slate-500">{f.label}</dt>
-                  <dd className="mt-1 text-sm font-medium text-slate-100">{f.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </Reveal>
-
-          {about.education?.coursework?.length > 0 && (
-            <Reveal delay={140}>
-              <div className="mt-8">
-                <p className="mb-2 text-[11px] uppercase tracking-wide text-slate-500">
-                  Relevant coursework
+            {/* Pull quote — unique voice block */}
+            <Reveal delay={40}>
+              <blockquote className="mb-9 border-l-2 border-accent/50 pl-5">
+                <p className="font-display text-[1.35rem] italic leading-snug text-stone/90 sm:text-[1.5rem]">
+                  &ldquo;Ship agents the way you ship platforms — measurable, observable, fail-closed.&rdquo;
                 </p>
-                <div className="flex flex-wrap gap-1.5">
-                  {about.education.coursework.map((c) => (
-                    <span key={c} className="chip">
-                      {c}
-                    </span>
-                  ))}
-                </div>
+              </blockquote>
+            </Reveal>
+
+            <Reveal delay={70}>
+              <div className="space-y-5 text-[1.02rem] leading-[1.8] text-stone-muted">
+                {about.paragraphs.map((p) => (
+                  <p key={p}>{p}</p>
+                ))}
               </div>
             </Reveal>
-          )}
-        </div>
 
-        <Reveal delay={80}>
-          <div className="glass-strong p-6">
-            <p className="section-label mb-2">Stack</p>
-            <p className="mb-5 text-sm text-slate-400">Prioritized. Hover for a short note.</p>
-            {tip && (
-              <div className="mb-4 rounded-lg border border-white/10 bg-black/30 px-3 py-2 text-xs text-slate-300">
-                {tip}
-              </div>
-            )}
-            <div className="space-y-6">
-              {Object.entries(about.skills).map(([group, items]) => (
-                <div key={group}>
-                  <h3 className="mb-2 text-sm font-semibold text-slate-200">{group}</h3>
-                  <div className="flex flex-wrap gap-1.5">
-                    {items.map((item) => (
-                      <button
-                        key={item}
-                        type="button"
-                        className="chip transition hover:border-white/25 hover:text-white"
-                        onMouseEnter={() => setTip(tips[item] || item)}
-                        onMouseLeave={() => setTip(null)}
-                      >
-                        {item}
-                      </button>
+            <Reveal delay={100}>
+              <dl className="mt-10 grid gap-3 sm:grid-cols-2">
+                {about.facts.map((f, i) => (
+                  <div
+                    key={f.label}
+                    className={`px-4 py-3.5 ${i === 0 ? "panel-accent" : "glass"}`}
+                  >
+                    <dt className="font-mono text-[10px] uppercase tracking-label text-stone-dim">
+                      {f.label}
+                    </dt>
+                    <dd className="mt-1 text-sm font-medium leading-snug text-stone">{f.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </Reveal>
+
+            {about.education?.coursework?.length > 0 && (
+              <Reveal delay={130}>
+                <div className="mt-10">
+                  <p className="section-label mb-3">Coursework</p>
+                  <div className="flex flex-wrap gap-2">
+                    {about.education.coursework.map((c) => (
+                      <span key={c} className="chip">
+                        {c}
+                      </span>
                     ))}
                   </div>
                 </div>
-              ))}
-            </div>
+              </Reveal>
+            )}
           </div>
-        </Reveal>
+
+          <Reveal delay={80}>
+            <aside className="panel-solid sticky top-24 p-7 sm:p-8">
+              <p className="section-label">Toolkit</p>
+              <p className="mb-7 font-display text-[1.25rem] italic text-stone/85">
+                What I reach for most
+              </p>
+              <div className="space-y-8">
+                {Object.entries(about.skills).map(([group, items], gi) => (
+                  <div key={group}>
+                    <h3
+                      className={`mb-3 text-sm font-semibold tracking-wide ${
+                        gi === 0 ? "text-accent-bright" : "text-signal"
+                      }`}
+                    >
+                      {group}
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {items.map((item) => (
+                        <span key={item} className="chip">
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </aside>
+          </Reveal>
+        </div>
       </div>
     </section>
   );
