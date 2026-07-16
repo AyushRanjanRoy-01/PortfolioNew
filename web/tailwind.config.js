@@ -1,37 +1,38 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./app/**/*.{js,jsx}",
-    "./components/**/*.{js,jsx}",
-    "./lib/**/*.{js,jsx}",
-  ],
+  content: ["./app/**/*.{js,jsx}", "./components/**/*.{js,jsx}", "./lib/**/*.{js,jsx}"],
   theme: {
     extend: {
       colors: {
-        bg: "rgb(var(--c-bg) / <alpha-value>)",
-        surface: "rgb(var(--c-surface) / <alpha-value>)",
-        line: "rgb(var(--c-line) / <alpha-value>)",
-        ink: "rgb(var(--c-ink) / <alpha-value>)",
-        muted: "rgb(var(--c-muted) / <alpha-value>)",
-        dim: "rgb(var(--c-dim) / <alpha-value>)",
-        accent: "rgb(var(--c-accent) / <alpha-value>)",
+        ink: {
+          50: "#f7f7f5",
+          100: "#efeee9",
+          200: "#e2e0d8",
+          300: "#c9c6ba",
+          400: "#9e9a8c",
+          500: "#6f6b5e",
+          600: "#4a473e",
+          700: "#2f2d28",
+          800: "#1c1b18",
+          900: "#121110",
+        },
+        accent: {
+          DEFAULT: "#0f6e56",
+          soft: "#e6f4ef",
+          muted: "#3d9b7a",
+        },
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
-        display: ["var(--font-display)", "var(--font-inter)", "system-ui", "sans-serif"],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "Georgia", "serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       maxWidth: {
-        content: "1040px",
-        readable: "680px",
+        measure: "40rem",
+        content: "68rem",
       },
-      keyframes: {
-        "fade-up": { "0%": { opacity: "0", transform: "translateY(10px)" }, "100%": { opacity: "1", transform: "translateY(0)" } },
-        blink: { "0%,49%": { opacity: "1" }, "50%,100%": { opacity: "0" } },
-      },
-      animation: {
-        "fade-up": "fade-up 0.5s ease both",
-        blink: "blink 1.1s step-end infinite",
+      letterSpacing: {
+        tightest: "-0.04em",
       },
     },
   },

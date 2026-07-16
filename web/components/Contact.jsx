@@ -1,37 +1,50 @@
 import { profile } from "@/lib/content";
 
 export default function Contact() {
-  const links = [
-    { name: "GitHub", href: profile.github },
-    { name: "LinkedIn", href: profile.linkedin },
-  ];
   return (
-    <section id="contact" className="border-t border-line px-5 py-16 sm:px-6 sm:py-20">
-      <div className="mx-auto max-w-content">
-        <h2 className="reveal flex items-center gap-2.5 text-[1.3rem] sm:text-[1.5rem]">
-          <span className="inline-block h-2 w-2 bg-accent" />Contact
-        </h2>
-        <p className="reveal mt-3 max-w-readable text-[15.5px] leading-relaxed text-muted">
-          Open to senior roles and interesting work.
-        </p>
-        <a
-          href={`mailto:${profile.email}`}
-          className="reveal mt-4 inline-block text-[1.05rem] text-ink link"
-        >
-          {profile.email}
-        </a>
-        <div className="reveal mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[15px]">
-          {links.map((l) => (
+    <section id="contact" className="section rule">
+      <div className="container-page">
+        <div className="rounded-3xl border border-ink-200 bg-ink-900 px-6 py-12 text-ink-50 sm:px-12 sm:py-16">
+          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-400">
+            Contact
+          </p>
+          <h2 className="mt-3 max-w-xl font-display text-3xl leading-tight tracking-tight sm:text-4xl">
+            Open to senior AI engineering roles and hard production problems.
+          </h2>
+          <p className="mt-4 max-w-lg text-sm leading-7 text-ink-300">
+            If you&apos;re building agent platforms, LLM gateways, or RAG systems that need to
+            survive real traffic — I&apos;d like to hear from you.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
             <a
-              key={l.name}
-              href={l.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted transition-colors hover:text-ink"
+              href={`mailto:${profile.email}`}
+              className="btn rounded-full bg-white px-5 py-2.5 text-sm font-medium text-ink-900 hover:bg-ink-100"
             >
-              {l.name} ↗
+              {profile.email}
             </a>
-          ))}
+            <a
+              href={profile.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="btn rounded-full border border-ink-600 px-5 py-2.5 text-sm text-ink-100 hover:border-ink-400"
+            >
+              LinkedIn ↗
+            </a>
+            <a
+              href={profile.github}
+              target="_blank"
+              rel="noreferrer"
+              className="btn rounded-full border border-ink-600 px-5 py-2.5 text-sm text-ink-100 hover:border-ink-400"
+            >
+              GitHub ↗
+            </a>
+            <a
+              href={profile.resume}
+              className="btn rounded-full border border-ink-600 px-5 py-2.5 text-sm text-ink-100 hover:border-ink-400"
+            >
+              Resume PDF
+            </a>
+          </div>
         </div>
       </div>
     </section>

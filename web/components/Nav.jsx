@@ -1,65 +1,41 @@
-"use client";
-import { useEffect, useState } from "react";
+import { profile } from "@/lib/content";
 
-const LINKS = [
-  { name: "Work", href: "#work" },
-  { name: "About", href: "#about" },
-  { name: "Blog", href: "#blog" },
-  { name: "Contact", href: "#contact" },
+const links = [
+  { href: "#work", label: "Work" },
+  { href: "#experience", label: "Experience" },
+  { href: "#about", label: "About" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export default function Nav() {
-  const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState("");
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    const sections = ["work", "about", "blog", "contact"]
-      .map((id) => document.getElementById(id))
-      .filter(Boolean);
-    if (!sections.length || !("IntersectionObserver" in window)) return;
-    const io = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
-      { rootMargin: "-45% 0px -50% 0px" }
-    );
-    sections.forEach((s) => io.observe(s));
-    return () => io.disconnect();
-  }, []);
-
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled ? "border-b border-line bg-bg/85 backdrop-blur" : "border-b border-transparent"
-      }`}
-    >
-      <nav className="mx-auto flex h-14 max-w-content items-center justify-between px-5 sm:px-6">
-        <a
-          href="#top"
-          aria-label="Home"
-          className="grid h-7 w-7 place-items-center rounded-md border border-line text-[13px] font-semibold tracking-tight text-ink"
-        >
-          AR
+    <header className="sticky top-0 z-50 border-b border-ink-200/80 bg-ink-50/85 backdrop-blur-md">
+      <div className="container-page flex h-14 items-center justify-between">
+        <a href="#" className="font-medium tracking-tight text-ink-900">
+          {profile.name.split(" ")[0]}
+          <span className="text-ink-400">.</span>
         </a>
-        <div className="flex items-center gap-5 font-mono text-[13px] sm:gap-6">
-          {LINKS.map((l) => (
-            <a
-              key={l.name}
-              href={l.href}
-              className={`transition-colors ${
-                active === l.href.slice(1) ? "text-accent" : "text-muted hover:text-ink"
-              }`}
-            >
-              {l.name}
+        <nav className="hidden items-center gap-7 text-sm text-ink-600 sm:flex">
+          {links.map((l) => (
+            <a key={l.href} href={l.href} className="transition hover:text-ink-900">
+              {l.label}
             </a>
           ))}
+        </nav>
+        <div className="flex items-center gap-2">
+          <a
+            href={profile.github}
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-ghost hidden px-3 py-1.5 text-xs sm:inline-flex"
+          >
+            GitHub
+          </a>
+          <a href={profile.resume} className="btn btn-primary px-3 py-1.5 text-xs">
+            Resume
+          </a>
         </div>
-      </nav>
+      </div>
     </header>
   );
 }
