@@ -1,51 +1,53 @@
+"use client";
+
 import { profile } from "@/lib/content";
+import Reveal from "./Reveal";
 
 export default function Contact() {
   return (
-    <section id="contact" className="section rule">
+    <section id="contact" className="section">
       <div className="container-page">
-        <div className="rounded-3xl border border-ink-200 bg-ink-900 px-6 py-12 text-ink-50 sm:px-12 sm:py-16">
-          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-400">
-            Contact
-          </p>
-          <h2 className="mt-3 max-w-xl font-display text-3xl leading-tight tracking-tight sm:text-4xl">
-            Open to senior AI engineering roles and hard production problems.
-          </h2>
-          <p className="mt-4 max-w-lg text-sm leading-7 text-ink-300">
-            If you&apos;re building agent platforms, LLM gateways, or RAG systems that need to
-            survive real traffic — I&apos;d like to hear from you.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href={`mailto:${profile.email}`}
-              className="btn rounded-full bg-white px-5 py-2.5 text-sm font-medium text-ink-900 hover:bg-ink-100"
-            >
-              {profile.email}
-            </a>
-            <a
-              href={profile.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              className="btn rounded-full border border-ink-600 px-5 py-2.5 text-sm text-ink-100 hover:border-ink-400"
-            >
-              LinkedIn ↗
-            </a>
-            <a
-              href={profile.github}
-              target="_blank"
-              rel="noreferrer"
-              className="btn rounded-full border border-ink-600 px-5 py-2.5 text-sm text-ink-100 hover:border-ink-400"
-            >
-              GitHub ↗
-            </a>
-            <a
-              href={profile.resume}
-              className="btn rounded-full border border-ink-600 px-5 py-2.5 text-sm text-ink-100 hover:border-ink-400"
-            >
-              Resume PDF
-            </a>
+        <Reveal>
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#0d1524] via-[#0b1018] to-[#12081a] px-6 py-12 sm:px-12 sm:py-16">
+            <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-cyan-400/10 blur-3xl" />
+            <div className="pointer-events-none absolute -bottom-20 left-10 h-64 w-64 rounded-full bg-violet-500/15 blur-3xl" />
+
+            <p className="section-label">Contact</p>
+            <h2 className="relative mt-2 max-w-xl font-display text-3xl leading-tight tracking-tight text-white sm:text-4xl">
+              Building something agentic? Let&apos;s make it production-grade.
+            </h2>
+            <p className="relative mt-4 max-w-lg text-sm leading-7 text-slate-400">
+              Open to senior AI engineering roles and hard production problems — gateways, multi-agent
+              workflows, RAG that survives real data, and the governance layer in between.
+            </p>
+            <div className="relative mt-8 flex flex-wrap gap-3">
+              <a href={`mailto:${profile.email}`} className="btn btn-primary">
+                {profile.email}
+              </a>
+              <a
+                href={profile.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-ghost"
+              >
+                LinkedIn ↗
+              </a>
+              <a href={profile.github} target="_blank" rel="noreferrer" className="btn btn-ghost">
+                GitHub ↗
+              </a>
+              <a href={profile.resume} className="btn btn-ghost">
+                Resume PDF
+              </a>
+            </div>
+            <p className="relative mt-8 font-mono text-[11px] text-slate-500">
+              Press{" "}
+              <kbd className="rounded border border-white/10 bg-white/5 px-1.5 py-0.5 text-slate-300">
+                ⌘K
+              </kbd>{" "}
+              anytime to teleport around this site.
+            </p>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

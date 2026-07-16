@@ -4,35 +4,30 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ink: {
-          50: "#f7f7f5",
-          100: "#efeee9",
-          200: "#e2e0d8",
-          300: "#c9c6ba",
-          400: "#9e9a8c",
-          500: "#6f6b5e",
-          600: "#4a473e",
-          700: "#2f2d28",
-          800: "#1c1b18",
-          900: "#121110",
-        },
-        accent: {
-          DEFAULT: "#0f6e56",
-          soft: "#e6f4ef",
-          muted: "#3d9b7a",
+        void: {
+          50: "#eef2f8",
+          100: "#d5deeb",
+          200: "#a9b8d0",
+          300: "#7a8fad",
+          400: "#556985",
+          500: "#3a4a63",
+          600: "#273247",
+          700: "#1a2233",
+          800: "#0f1522",
+          900: "#080b12",
+          950: "#05070c",
         },
       },
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
-        display: ["var(--font-display)", "Georgia", "serif"],
+        display: ["var(--font-display)", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       maxWidth: {
         measure: "40rem",
-        content: "68rem",
       },
-      letterSpacing: {
-        tightest: "-0.04em",
+      boxShadow: {
+        glow: "0 0 40px rgba(94, 234, 212, 0.2)",
       },
     },
   },

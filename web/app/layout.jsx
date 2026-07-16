@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Inter, Instrument_Serif, JetBrains_Mono } from "next/font/google";
+import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import { profile, hero } from "@/lib/content";
 
 const sans = Inter({
@@ -8,9 +8,8 @@ const sans = Inter({
   display: "swap",
 });
 
-const display = Instrument_Serif({
+const display = Space_Grotesk({
   subsets: ["latin"],
-  weight: "400",
   variable: "--font-display",
   display: "swap",
 });
@@ -42,18 +41,18 @@ export const metadata = {
     type: "website",
     url: profile.site,
     siteName: `${profile.name} · Portfolio`,
-    images: ["/og.png"],
+    images: ["/images/profile.jpg"],
   },
   twitter: {
     card: "summary_large_image",
     title: `${profile.name} — ${profile.role}`,
     description: hero.subtitle,
-    images: ["/og.png"],
+    images: ["/images/profile.jpg"],
   },
   icons: { icon: "/favicon.svg" },
 };
 
-export const viewport = { themeColor: "#f7f7f5" };
+export const viewport = { themeColor: "#05070c" };
 
 const personJsonLd = {
   "@context": "https://schema.org",
@@ -74,7 +73,7 @@ const personJsonLd = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${sans.variable} ${display.variable} ${mono.variable}`}>
-      <body className="min-h-screen bg-ink-50 text-ink-900 antialiased">
+      <body className="min-h-screen bg-void-950 text-slate-100 antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
