@@ -132,18 +132,9 @@ export const projects = [
     kind: "Open source",
     featured: true,
     blurb:
-      "Multi-agent RCA and human-approved self-healing Incident IDE: alert → triage → RAG knowledge → root-cause → gated remediation. Offline-first, mock-safe by default.",
-    stack: ["FastAPI", "Multi-agent graph", "RAG", "React"],
+      "AI-SRE Incident IDE (clean rebuild of the earlier IncidentIQ stack): alert → multi-agent RCA graph (triage → plan → context ∥ knowledge → RCA → review) → human-approved remediation. Offline-first deterministic engine, mock-safe integrations, JWT/RBAC, and a three-pane operator console.",
+    stack: ["FastAPI", "Agent state graph", "RAG", "React", "Docker"],
     github: "https://github.com/AyushRanjanRoy-01/HelixOps",
-  },
-  {
-    title: "IncidentIQ",
-    kind: "Open source",
-    featured: false,
-    blurb:
-      "AI-SRE platform: multi-agent triage, context, RAG knowledge, RCA synthesis, and human-gated remediation with RBAC and observability.",
-    stack: ["LangGraph", "FastAPI", "pgvector", "RBAC"],
-    github: "https://github.com/AyushRanjanRoy-01/IncidentIQ",
   },
   {
     title: "RAGGym",
