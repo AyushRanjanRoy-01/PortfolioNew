@@ -4,17 +4,16 @@ import { useEffect, useState } from "react";
 import { profile } from "@/lib/content";
 
 const links = [
-  { href: "#brain", label: "Ask" },
-  { href: "#lab", label: "Lab" },
-  { href: "#journey", label: "Path" },
   { href: "#work", label: "Work" },
-  { href: "#experience", label: "Exp" },
+  { href: "#experience", label: "Experience" },
   { href: "#about", label: "About" },
+  { href: "#lab", label: "Demo" },
   { href: "#contact", label: "Contact" },
 ];
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -23,27 +22,17 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const openCmd = () => {
-    window.dispatchEvent(new Event("open-command-palette"));
-  };
-
   return (
     <header
       className={`sticky top-0 z-50 transition duration-300 ${
         scrolled
-          ? "border-b border-white/10 bg-[#05070c]/75 backdrop-blur-xl"
+          ? "border-b border-white/10 bg-[#03050a]/90 backdrop-blur-xl"
           : "border-b border-transparent bg-transparent"
       }`}
     >
       <div className="container-page flex h-14 items-center justify-between">
-        <a href="#" className="group flex items-center gap-2 font-display text-sm font-semibold tracking-tight">
-          <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-300/90 to-violet-400/90 text-xs text-slate-950 shadow-glow">
-            A
-          </span>
-          <span className="hidden sm:inline">
-            {profile.name.split(" ")[0]}
-            <span className="text-slate-500 group-hover:text-cyan-300 transition">.ai</span>
-          </span>
+        <a href="#" className="text-sm font-semibold tracking-tight text-white">
+          {profile.name}
         </a>
 
         <nav className="hidden items-center gap-1 md:flex">
@@ -51,7 +40,7 @@ export default function Nav() {
             <a
               key={l.href}
               href={l.href}
-              className="rounded-full px-3 py-1.5 text-sm text-slate-400 transition hover:bg-white/[0.04] hover:text-slate-100"
+              className="rounded-md px-3 py-1.5 text-sm text-slate-400 transition hover:bg-white/[0.04] hover:text-slate-100"
             >
               {l.label}
             </a>
@@ -59,21 +48,40 @@ export default function Nav() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={openCmd}
-            className="hidden items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-slate-400 transition hover:border-cyan-300/30 hover:text-slate-200 sm:inline-flex"
-          >
-            <span>Explore</span>
-            <kbd className="rounded bg-white/5 px-1.5 py-0.5 font-mono text-[10px] text-slate-500">
-              ⌘K
-            </kbd>
-          </button>
-          <a href={profile.resume} className="btn btn-primary px-3 py-1.5 text-xs">
+          <a href={profile.resume} className="btn btn-primary hidden px-3 py-1.5 text-xs sm:inline-flex">
             Resume
           </a>
+          <button
+            type="button"
+            className="btn btn-ghost px-3 py-1.5 text-xs md:hidden"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-label="Menu"
+          >
+            Menu
+          </button>
         </div>
       </div>
+
+      {open && (
+        <div className="border-t border-white/10 bg-[#03050a]/95 px-5 py-3 md:hidden">
+          <div className="flex flex-col gap-1">
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="rounded-md px-3 py-2 text-sm text-slate-300"
+                onClick={() => setOpen(false)}
+              >
+                {l.label}
+              </a>
+            ))}
+            <a href={profile.resume} className="rounded-md px-3 py-2 text-sm text-cyan-200">
+              Resume
+            </a>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

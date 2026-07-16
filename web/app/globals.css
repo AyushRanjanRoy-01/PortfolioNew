@@ -117,21 +117,11 @@ body {
 }
 
 .section {
-  @apply relative z-10 py-16 sm:py-24;
+  @apply relative z-10 py-20 sm:py-28;
 }
 
 .section-label {
-  @apply mb-4 inline-flex items-center gap-2 font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-cyan-300/75;
-}
-
-.section-label::before {
-  content: "";
-  width: 5px;
-  height: 5px;
-  border-radius: 999px;
-  background: var(--cyan);
-  box-shadow: 0 0 10px var(--glow);
-  animation: pulse-dot 2.4s ease-in-out infinite;
+  @apply mb-3 text-xs font-medium uppercase tracking-[0.14em] text-slate-500;
 }
 
 @keyframes pulse-dot {

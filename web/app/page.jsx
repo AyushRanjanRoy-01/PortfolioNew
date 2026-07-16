@@ -23,12 +23,12 @@ export default function Page() {
       <main>
         <Hero />
         <TechBrands />
-        <SiteBrain />
-        <AgentGraph />
-        <Journey />
         <Work />
         <Experience />
+        <Journey />
         <About />
+        <AgentGraph />
+        <SiteBrain />
         <Contact />
       </main>
       <Footer />

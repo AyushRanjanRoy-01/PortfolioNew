@@ -76,16 +76,16 @@ export default function AgentGraph() {
         <Reveal>
           <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="section-label">Interactive lab</p>
+              <p className="section-label">Demo</p>
               <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
-                Play the agent control plane
+                How agents fail closed
               </h2>
               <p className="mt-3 max-w-xl text-sm leading-6 text-slate-400">
-                Step a generic LangGraph-style path with RAG + HITL. Sample SRE scenarios only —
-                no client business processes. No live cluster.
+                A small client-side walkthrough of ingest → retrieve → decide → human gate → act.
+                Sample scenarios only — not a client system, not a live cluster.
               </p>
             </div>
-            <p className="font-mono text-[11px] text-slate-500">client-side · no API key</p>
+            <p className="text-xs text-slate-500">Runs in the browser</p>
           </div>
         </Reveal>
 
@@ -113,10 +113,10 @@ export default function AgentGraph() {
               <div className="border-b border-white/10 p-5 lg:border-b-0 lg:border-r">
                 <div className="mb-5 flex flex-wrap gap-2">
                   <button type="button" className="btn btn-primary text-xs" onClick={play}>
-                    {playing ? "Playing…" : "▶ Play"}
+                    {playing ? "Running…" : "Run"}
                   </button>
                   <button type="button" className="btn btn-ghost text-xs" onClick={stepOnce}>
-                    Step →
+                    Step
                   </button>
                   <button type="button" className="btn btn-ghost text-xs" onClick={reset}>
                     Reset

@@ -1,6 +1,5 @@
-// Single source of truth for portfolio content.
-// Grounded in AYUSH_ROY_MASTER_CAREER_SOURCE_OF_TRUTH.md + career intelligence skill.
-// Rule: no fabricated metrics, ownership, or AI-security depth beyond documented work.
+// Portfolio content — clarity first, metrics second, buzz last.
+// Contributor-level claims only (multi-engineer programs).
 
 export const profile = {
   name: "Ayush Ranjan Roy",
@@ -16,71 +15,43 @@ export const profile = {
 };
 
 export const hero = {
-  kicker: "AI Engineer · Accenture · Gurugram",
-  title: "I build agent platforms that ship — with security controls, not demos.",
+  kicker: "AI Engineer at Accenture · Gurugram",
+  title: "I build multi-agent systems that hold up in production.",
   subtitle:
-    "Mostly multi-agent GenAI — LangGraph workflows, RAG-backed knowledge retrieval, HITL " +
-    "gates, MCP tool use, Claude / Azure AI model paths — backed by modernizing Accenture " +
-    "MxDR → Adaptive MxDR (AMxDR) AWS cloud architecture: Terraform, shared services, secrets, " +
-    "secure telemetry, and production ops.",
+    "I work on agent workflows and retrieval for enterprise Order-to-Cash domains " +
+    "(including Dispute & Deduction), and I spent two years modernizing AWS infrastructure " +
+    "for Accenture’s MxDR / Adaptive MxDR platform. Clear outcomes over buzzwords.",
 };
 
-/** Highlight certs (public) */
 export const certifications = [
   {
     name: "Claude Certified Architect — Foundations",
     issuer: "Anthropic",
     when: "May 2026",
     highlight: true,
-    blurb: "Architecture fundamentals for building with Claude in production systems.",
+    blurb: "Production-oriented architecture with Claude.",
   },
 ];
 
-/** Brand strip — technology ecosystem (names only; simple icons) */
 export const techBrands = [
   { id: "claude", name: "Claude", sub: "Anthropic" },
   { id: "azure", name: "Azure", sub: "AI Foundry" },
   { id: "aws", name: "AWS", sub: "Cloud platform" },
 ];
 
-/** Hero orbit chips — ~60% AI / ~40% platform·security·ops */
-export const orbitSkills = [
-  "LangGraph",
-  "Multi-agent",
-  "RAG",
-  "MCP",
-  "HITL",
-  "Claude / GPT",
-  "Terraform",
-  "AWS",
-  "mTLS",
-  "OTel",
-];
-
-/** Marquee line — AI-heavy, still shows foundations */
-export const tickerItems = [
-  "LangGraph multi-agent orchestration",
-  "HITL gates on agent actions",
-  "MCP governed tool access",
-  "RAG pipelines · retrieval + evaluation",
-  "Dispute & Deduction · Order-to-Cash agents",
-  "RAGGym — learn RAG by building",
-  "Agent observability & decision traces",
-  "Terraform · AWS · multi-env CI/CD",
-  "Secrets · IAM · mTLS · SIEM health",
-];
+/** Fewer, calmer orbit labels */
+export const orbitSkills = ["Agents", "RAG", "Claude", "AWS", "Terraform", "Observability"];
 
 export const about = {
   paragraphs: [
-    "I’m an AI Engineer at Accenture contributing to production multi-agent systems in enterprise Order-to-Cash domains (including Dispute & Deduction) — LangGraph, RAG, Claude / Azure model paths, MCP-style tools, and human-in-the-loop controls. Large multi-engineer programs; I own components, not the whole product.",
-    "Before GenAI I spent ~2 years as a Platform Engineer on Accenture’s MxDR / Adaptive MxDR (AMxDR) security platform, modernizing the AWS cloud architecture: Terraform, shared services, CI/CD, runtimes, secrets, secure telemetry into enterprise SIEMs, and live production incident response. That platform work is the backbone of how I ship agents — observable, governed, fail-closed by default.",
-    "Outside work I ship HelixOps (RAG-assisted RCA + human-gated remediation) and RAGGym (hands-on RAG learning and evaluation). Available for senior AI roles — especially where agents, RAG, and production controls meet.",
+    "I’m an AI Engineer at Accenture. Day to day I contribute multi-agent and retrieval components on large delivery teams — orchestration, inference, tool access, and human review gates — for Order-to-Cash / Dispute & Deduction programs.",
+    "Before that I was a Platform Engineer on Accenture’s MxDR → Adaptive MxDR security product: Terraform, shared services, CI/CD, secrets, and telemetry on AWS. That work shapes how I ship agents: measurable, observable, and fail-closed by default.",
+    "Open source: HelixOps (incident RCA + human-approved fixes) and RAGGym (learn retrieval by building). Available for senior AI roles.",
   ],
   facts: [
     { label: "Role", value: "AI Engineer, Accenture · GenAI & Data" },
-    { label: "Focus", value: "Agents · RAG · platform & security foundations" },
-    { label: "Platform story", value: "MxDR → AMxDR AWS cloud modernization" },
-    { label: "Certification", value: "Claude Certified Architect — Foundations (Anthropic, May 2026)" },
+    { label: "Before", value: "Platform Engineer · MxDR / AMxDR on AWS" },
+    { label: "Certification", value: "Claude Certified Architect — Foundations (May 2026)" },
     { label: "Education", value: "B.Tech ECE, VIT Chennai (2019–2023)" },
     { label: "Location", value: "Gurugram, India" },
   ],
@@ -88,7 +59,6 @@ export const about = {
     degree: "B.Tech, Electronics and Communication Engineering",
     school: "VIT Chennai",
     period: "2019–2023",
-    // From consolidated marksheet — few cyber / AI / CS relevant only (no CGPA)
     coursework: [
       "Artificial Intelligence",
       "Essentials of Machine Learning",
@@ -98,50 +68,39 @@ export const about = {
       "Operating Systems",
     ],
   },
-  // Display order: AI first (majority), foundations second (~40%).
+  // Prioritized — not every tool under the sun
   skills: {
-    "AI & agents": [
+    "Primary": [
+      "Multi-agent systems",
+      "RAG / retrieval",
       "LangGraph",
-      "LangChain",
-      "Multi-agent workflows",
-      "MCP",
-      "HITL orchestration",
-      "RAG & retrieval",
-      "Claude · GPT-4o/5",
-      "Azure AI Foundry",
-      "Ensemble / confidence routing",
-      "Async inference · retries",
-      "Agent observability",
-      "Decision traces",
-      "RAGAS / LLM evaluation",
-      "FastAPI (agent APIs)",
-      "PostgreSQL · workflow state",
+      "Claude & GPT",
+      "Azure AI",
+      "Human-in-the-loop",
+      "FastAPI",
+      "PostgreSQL",
     ],
-    "Platform, security & ops": [
+    "Platform & security": [
+      "AWS",
       "Terraform",
-      "AWS (Lambda, EC2, ASG, S3)",
-      "GitHub Actions / CI/CD",
-      "Docker · multi-env deploys",
-      "Redis / ElastiCache",
-      "Secrets Manager · IAM",
-      "mTLS · SIEM telemetry",
-      "OpenTelemetry · Datadog",
-      "CodeQL / Dependabot",
-      "Production incident response",
+      "Secrets & IAM",
+      "CI/CD",
+      "Observability",
+      "Docker",
     ],
   },
 };
 
 export const experience = [
   {
-    role: "Full Stack LLM Development Analyst · AI Engineer",
+    role: "AI Engineer",
     company: "Accenture · GenAI & Data",
     period: "Aug 2025 – Present",
     points: [
-      "Contribute to multi-agent systems for enterprise Order-to-Cash / Dispute & Deduction domains — LangGraph orchestration, durable workflow state, and human-in-the-loop control points (team of many engineers).",
-      "Implemented async multi-model inference paths (Claude, GPT-4o/5, Azure AI) with retries, concurrency control, ensemble/confidence routing, and latency/token/cost telemetry — measured ~40% classification lift and ~55% multi-page / ~30% single-page latency cuts in controlled runs; batch capacity 9→50 pages.",
-      "Built MCP-style governed tool access and operator-facing agent observability with OpenTelemetry + Datadog across multi-agent failure paths.",
-      "Added RAG-style retrieval/knowledge grounding alongside agent decisions; documented architectures and ran LangGraph/LangChain KT for 4 engineers (~60% faster ramp-up).",
+      "Contribute multi-agent and workflow components for enterprise Order-to-Cash / Dispute & Deduction programs (large multi-engineer teams).",
+      "Implemented multi-model inference (Claude, GPT, Azure) with routing and telemetry — measured ~40% classification lift and ~55% / ~30% latency cuts in controlled runs; batch capacity 9→50 pages; program paths at 300+ docs/day, 97%+ accuracy.",
+      "Built governed tool access and agent observability (OpenTelemetry, Datadog); added retrieval grounding on agent paths.",
+      "Documented architectures and ran enablement for 4 engineers (~60% faster ramp-up).",
     ],
   },
   {
@@ -149,115 +108,101 @@ export const experience = [
     company: "Accenture · Security · MxDR / Adaptive MxDR (AMxDR)",
     period: "Aug 2023 – Aug 2025",
     points: [
-      "Led platform engineering work modernizing MxDR → Adaptive MxDR (AMxDR) AWS cloud architecture: Terraform IaC, GitHub Actions CI/CD, and production incident support across ~20 microservices serving 800+ enterprise accounts — ~35% faster deploys, ~30% infra cost reduction in measured platform work.",
-      "Owned Redis/ElastiCache-backed shared metadata services, certificates, Auto Scaling, and multi-environment consistency (6 environments).",
-      "Modernized 8+ AWS Lambda functions (Python 3.8→3.12) cutting runtime failures ~50%; automated Secrets Manager migrations + IAM; hardened containers; CodeQL/Dependabot remediation.",
-      "Delivered mTLS/OpenTelemetry synthetic health (5-min checks) into enterprise SIEM paths; blue-green deploys (Route 53/ASG) with zero customer-facing downtime on a live pipeline upgrade.",
+      "Led platform work modernizing MxDR → AMxDR AWS architecture: Terraform, CI/CD, production support across ~20 services / 800+ accounts — ~35% faster deploys, ~30% infra cost reduction in measured work.",
+      "Owned Redis-backed shared metadata services; 6 environments; upgraded 8+ Lambdas (Python 3.8→3.12), ~50% fewer runtime failures.",
+      "Secrets Manager + IAM automation; hardened 12+ services; restricted-egress proxy automation.",
+      "Secure telemetry (mTLS, OpenTelemetry) into enterprise SIEMs; blue-green deploys with zero customer-facing downtime on a live upgrade.",
     ],
   },
 ];
 
 export const projects = [
   {
-    title: "Dispute & Deduction · Order-to-Cash Agents",
+    title: "Order-to-Cash / Dispute & Deduction agents",
     kind: "Enterprise · Accenture GenAI",
     featured: true,
+    impact: "Contributor on multi-engineer program",
     blurb:
-      "Contributed multi-agent components for enterprise Dispute & Deduction / Order-to-Cash workflows — LangGraph, durable state, HITL gates, and production APIs (large multi-engineer program).",
-    stack: ["LangGraph", "FastAPI", "PostgreSQL", "HITL", "RAG"],
+      "Multi-agent workflow components, durable state, and human review gates — not sole product ownership.",
+    stack: ["LangGraph", "RAG", "FastAPI", "PostgreSQL"],
   },
   {
-    title: "Multi-Model Inference & Routing",
+    title: "Multi-model inference & routing",
     kind: "Enterprise · Accenture GenAI",
     featured: true,
+    impact: "~40% accuracy · ~55% multi-page latency",
     blurb:
-      "Owned async multi-LLM inference (Claude / GPT / Azure) with ensemble routing and telemetry — measured accuracy/latency gains in controlled runs; RAG grounding on agent paths.",
-    stack: ["Claude", "GPT", "Azure AI", "LangGraph", "RAG"],
+      "Async inference across Claude / GPT / Azure with ensemble routing and cost/latency telemetry.",
+    stack: ["Claude", "GPT", "Azure AI", "Telemetry"],
   },
   {
-    title: "Governed Tools & Agent Observability",
+    title: "Governed tools & observability",
     kind: "Enterprise · Accenture GenAI",
     featured: true,
+    impact: "Production traces · fail-closed tools",
     blurb:
-      "MCP-style governed tool invocation plus operator-facing agent/workflow visibility — decisions and retrieval context stay reviewable; agents don’t get unconstrained production access.",
-    stack: ["MCP", "Observability", "OpenTelemetry", "Datadog"],
+      "Tool access with guardrails and operator-visible agent state via OpenTelemetry and Datadog.",
+    stack: ["MCP-style tools", "OpenTelemetry", "Datadog"],
   },
   {
-    title: "MxDR → AMxDR AWS Platform Modernization",
+    title: "MxDR → AMxDR on AWS",
     kind: "Enterprise · Platform · MxDR / AMxDR",
     featured: true,
+    impact: "~35% deploy · ~30% cost · 800+ accounts",
     blurb:
-      "Platform engineering on Accenture MxDR / Adaptive MxDR: modernized AWS cloud architecture — Terraform, shared Redis metadata services, CI/CD, secrets/IAM, runtime upgrades, and multi-env production operations.",
-    stack: ["AWS", "Terraform", "Redis", "GitHub Actions", "Secrets Manager"],
+      "AWS platform modernization for Accenture’s security product: Terraform, shared services, CI/CD, secrets, multi-env ops.",
+    stack: ["AWS", "Terraform", "Redis", "CI/CD"],
   },
   {
-    title: "Secrets, IAM & Supply-Chain Hardening",
+    title: "Secrets, IAM & hardening",
     kind: "Enterprise · Security",
     featured: false,
-    blurb:
-      "Bulk Secrets Manager migration with Terraform/GHA automation and IAM updates; CodeQL/Dependabot remediation; Docker/runtime hardening.",
-    stack: ["Secrets Manager", "IAM", "CodeQL", "Dependabot", "GHA"],
-  },
-  {
-    title: "SIEM Telemetry & Synthetic Health",
-    kind: "Enterprise · Security",
-    featured: false,
-    blurb:
-      "Synthetic health checks over mTLS/gRPC OpenTelemetry into enterprise SIEM paths — multi-tenant monitoring and production incident support.",
-    stack: ["OpenTelemetry", "mTLS", "gRPC", "SIEM"],
-  },
-  {
-    title: "Restricted-Egress Proxy Automation",
-    kind: "Enterprise · Security",
-    featured: false,
-    blurb:
-      "Automation for enabling proxy-based restricted egress in enterprise network environments (Python + shell).",
-    stack: ["Python", "Shell", "Network security", "Automation"],
+    impact: "8+ Lambdas · 12+ services",
+    blurb: "Secrets automation, IAM updates, runtime upgrades, dependency and container hardening.",
+    stack: ["Secrets Manager", "IAM", "Docker"],
   },
   {
     title: "HelixOps",
     kind: "Open source",
     featured: true,
+    impact: "Public · human-gated remediation",
     blurb:
-      "AI-SRE Incident IDE: multi-agent RCA with RAG over runbooks → human-approved remediation. Mock-safe defaults, JWT/RBAC, decision traces. Public open-source project.",
-    stack: ["FastAPI", "RAG", "RBAC", "HITL", "React"],
+      "Incident IDE: multi-agent RCA with retrieval over runbooks, then human-approved fixes. Mock-safe by default.",
+    stack: ["FastAPI", "RAG", "React"],
     github: "https://github.com/AyushRanjanRoy-01/HelixOps",
   },
   {
     title: "RAGGym",
     kind: "Open source",
     featured: true,
+    impact: "Live demo · retrieval practice",
     blurb:
-      "Learn RAG by doing: swappable LLM/embeddings/vector store, self-correcting retrieval, RAGAS evaluation, AI-graded practice mode.",
-    stack: ["RAG", "LangGraph", "Qdrant", "RAGAS", "Streamlit"],
+      "Hands-on retrieval platform: swappable models and vector stores, self-correction, evaluation harness.",
+    stack: ["RAG", "LangGraph", "Streamlit"],
     live: "https://rag-gym.streamlit.app/",
     github: "https://github.com/AyushRanjanRoy-01/RaGGym-Chatbot-CLI",
   },
 ];
 
-/** Career arc for the timeline UI */
 export const journey = [
   {
     year: "2019–23",
     title: "B.Tech ECE · VIT Chennai",
-    detail:
-      "AI, ML essentials, cryptography & network security, InfoSec audit, DSA, operating systems.",
+    detail: "AI, security, and systems coursework.",
   },
   {
     year: "2023–25",
-    title: "Platform Engineer · MxDR / AMxDR",
-    detail:
-      "Modernized AWS cloud architecture for Accenture MxDR → Adaptive MxDR: Terraform, Redis, secrets, SIEM telemetry, production ops.",
+    title: "Platform · MxDR / AMxDR",
+    detail: "AWS modernization: Terraform, services, secrets, telemetry.",
   },
   {
     year: "2025–now",
-    title: "AI Engineer · Accenture GenAI",
-    detail:
-      "Order-to-Cash / Dispute & Deduction agents, RAG, Claude & Azure AI paths, HITL, MCP observability.",
+    title: "AI Engineer · GenAI",
+    detail: "Agents, retrieval, inference, and review gates on enterprise programs.",
   },
   {
     year: "Open source",
     title: "HelixOps · RAGGym",
-    detail: "RAG-assisted incident RCA (HelixOps) and hands-on RAG learning (RAGGym).",
+    detail: "Incident RCA tooling and retrieval learning platform.",
   },
 ];

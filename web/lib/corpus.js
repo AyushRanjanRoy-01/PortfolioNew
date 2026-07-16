@@ -180,9 +180,9 @@ export function answerFromCorpus(query) {
 }
 
 export const SUGGESTED_QUERIES = [
-  "What do you build with RAG?",
-  "MxDR / AMxDR AWS platform work?",
-  "Claude Certified Architect?",
-  "Dispute & Deduction / Order-to-Cash agents?",
-  "Are you available for senior AI roles?",
+  "What do you work on now?",
+  "MxDR / AMxDR platform work?",
+  "Claude certification?",
+  "Open source projects?",
+  "How can I contact you?",
 ];

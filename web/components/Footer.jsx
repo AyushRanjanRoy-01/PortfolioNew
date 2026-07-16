@@ -7,9 +7,7 @@ export default function Footer() {
         <p>
           © {new Date().getFullYear()} {profile.name}
         </p>
-        <p className="font-mono text-xs text-slate-600">
-          Minimal · Futuristic · Built to explore
-        </p>
+        <p className="text-xs text-slate-600">ayushranjanroy.com</p>
       </div>
     </footer>
   );

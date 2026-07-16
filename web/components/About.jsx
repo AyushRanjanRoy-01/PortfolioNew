@@ -5,20 +5,20 @@ import { about } from "@/lib/content";
 import Reveal from "./Reveal";
 
 const tips = {
-  LangGraph: "Stateful multi-agent graphs with HITL interrupts and continuation.",
-  "Multi-agent workflows": "Order-to-Cash / Dispute & Deduction agents at industry-domain level.",
-  MCP: "Governed tool invocation for live operational context.",
-  "HITL orchestration": "Humans gate uncertain or high-impact agent steps.",
-  "RAG & retrieval": "Retrieval that grounds agent answers in knowledge sources.",
-  "Claude · GPT-4o/5": "Multi-model orchestration in production agent stacks.",
-  "Ensemble / confidence routing": "Escalate when model confidence is weak.",
-  "Agent observability": "Operator-facing state and decision traces.",
-  Terraform: "MxDR → AMxDR AWS architecture modernization.",
-  "AWS (Lambda, EC2, ASG, S3)": "Cloud platform for MxDR/AMxDR — runtimes, ASG, multi-env.",
-  "Secrets Manager · IAM": "Bulk secret migration with automation and IAM updates.",
-  "mTLS · SIEM telemetry": "Synthetic health over mTLS into enterprise SIEMs.",
-  "OpenTelemetry · Datadog": "Traces for agents and platform services.",
-  "Production incident response": "Multi-tenant production debugging experience.",
+  "Multi-agent systems": "Orchestrated workflows with review gates.",
+  "RAG / retrieval": "Ground answers in documents, not model memory alone.",
+  LangGraph: "Stateful agent graphs used in production paths.",
+  "Claude & GPT": "Multi-model inference and routing.",
+  "Azure AI": "Cloud model / document intelligence paths.",
+  "Human-in-the-loop": "People approve uncertain or high-impact steps.",
+  FastAPI: "Async APIs for agent services.",
+  PostgreSQL: "Workflow state and persistence.",
+  AWS: "MxDR / AMxDR cloud platform work.",
+  Terraform: "Infrastructure as code across environments.",
+  "Secrets & IAM": "Credential migration and access control.",
+  "CI/CD": "Jenkins to GitHub Actions migrations.",
+  Observability: "OpenTelemetry, Datadog, SIEM health checks.",
+  Docker: "Runtime and image hardening.",
 };
 
 export default function About() {
@@ -26,15 +26,15 @@ export default function About() {
 
   return (
     <section id="about" className="section">
-      <div className="container-page grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+      <div className="container-page grid gap-14 lg:grid-cols-[1.15fr_0.85fr]">
         <div>
           <Reveal>
             <p className="section-label">About</p>
             <h2 className="mb-6 font-display text-3xl tracking-tight text-white sm:text-4xl">
-              Agent-first. Platform-backed.
+              About
             </h2>
           </Reveal>
-          <Reveal delay={80}>
+          <Reveal delay={60}>
             <div className="space-y-4 text-[15px] leading-7 text-slate-400 sm:text-base sm:leading-8">
               {about.paragraphs.map((p) => (
                 <p key={p}>{p}</p>
@@ -42,13 +42,11 @@ export default function About() {
             </div>
           </Reveal>
 
-          <Reveal delay={140}>
+          <Reveal delay={100}>
             <dl className="mt-8 grid gap-3 sm:grid-cols-2">
               {about.facts.map((f) => (
                 <div key={f.label} className="glass px-4 py-3">
-                  <dt className="font-mono text-[10px] uppercase tracking-wider text-slate-500">
-                    {f.label}
-                  </dt>
+                  <dt className="text-[11px] uppercase tracking-wide text-slate-500">{f.label}</dt>
                   <dd className="mt-1 text-sm font-medium text-slate-100">{f.value}</dd>
                 </div>
               ))}
@@ -56,9 +54,9 @@ export default function About() {
           </Reveal>
 
           {about.education?.coursework?.length > 0 && (
-            <Reveal delay={180}>
-              <div className="mt-6">
-                <p className="mb-2 font-mono text-[10px] uppercase tracking-wider text-slate-500">
+            <Reveal delay={140}>
+              <div className="mt-8">
+                <p className="mb-2 text-[11px] uppercase tracking-wide text-slate-500">
                   Relevant coursework
                 </p>
                 <div className="flex flex-wrap gap-1.5">
@@ -73,14 +71,12 @@ export default function About() {
           )}
         </div>
 
-        <Reveal delay={100}>
+        <Reveal delay={80}>
           <div className="glass-strong p-6">
-            <p className="section-label mb-2">Stack · 60% AI · 40% foundations</p>
-            <p className="mb-5 text-sm text-slate-400">
-              Hover a chip — short notes for the curious.
-            </p>
+            <p className="section-label mb-2">Stack</p>
+            <p className="mb-5 text-sm text-slate-400">Prioritized. Hover for a short note.</p>
             {tip && (
-              <div className="mb-4 rounded-xl border border-cyan-300/20 bg-cyan-300/5 px-3 py-2 font-mono text-xs text-cyan-100">
+              <div className="mb-4 rounded-lg border border-white/10 bg-black/30 px-3 py-2 text-xs text-slate-300">
                 {tip}
               </div>
             )}
@@ -93,15 +89,9 @@ export default function About() {
                       <button
                         key={item}
                         type="button"
-                        className="chip transition hover:border-cyan-300/40 hover:text-cyan-100"
-                        onMouseEnter={() =>
-                          setTip(tips[item] || `${item} — part of the production toolkit.`)
-                        }
+                        className="chip transition hover:border-white/25 hover:text-white"
+                        onMouseEnter={() => setTip(tips[item] || item)}
                         onMouseLeave={() => setTip(null)}
-                        onFocus={() =>
-                          setTip(tips[item] || `${item} — part of the production toolkit.`)
-                        }
-                        onBlur={() => setTip(null)}
                       >
                         {item}
                       </button>
