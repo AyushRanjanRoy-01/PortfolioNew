@@ -56,12 +56,15 @@ export default function Hero() {
 
             <Reveal delay={220}>
               <div className="mt-8 flex flex-wrap items-center gap-3">
-                <a href="#work" className="btn btn-primary">
-                  Explore the work
+                <a href="#brain" className="btn btn-primary">
+                  Ask the site
                   <span aria-hidden>→</span>
                 </a>
-                <a href={`mailto:${profile.email}`} className="btn btn-ghost">
-                  Start a conversation
+                <a href="#lab" className="btn btn-ghost">
+                  Run agent lab
+                </a>
+                <a href="#work" className="btn btn-ghost">
+                  Work
                 </a>
                 <a
                   href={profile.github}

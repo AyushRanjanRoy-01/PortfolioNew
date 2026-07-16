@@ -34,6 +34,8 @@ export default function CommandPalette() {
 
   const items = useMemo(() => {
     const base = [
+      { group: "Navigate", label: "Site brain (ask)", href: "#brain", hint: "RAG" },
+      { group: "Navigate", label: "Agent lab", href: "#lab", hint: "Simulate" },
       { group: "Navigate", label: "Career path", href: "#journey", hint: "Map" },
       { group: "Navigate", label: "Work", href: "#work", hint: "Projects" },
       { group: "Navigate", label: "Experience", href: "#experience", hint: "Career" },

@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { profile } from "@/lib/content";
 
 const links = [
-  { href: "#journey", label: "Path" },
+  { href: "#brain", label: "Ask" },
+  { href: "#lab", label: "Lab" },
   { href: "#work", label: "Work" },
   { href: "#experience", label: "Experience" },
   { href: "#about", label: "About" },

@@ -55,7 +55,7 @@ export const metadata = {
   icons: { icon: "/favicon.svg" },
 };
 
-export const viewport = { themeColor: "#05070c" };
+export const viewport = { themeColor: "#03050a" };
 
 const personJsonLd = {
   "@context": "https://schema.org",
