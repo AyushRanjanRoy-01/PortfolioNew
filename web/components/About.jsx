@@ -5,12 +5,14 @@ import { about } from "@/lib/content";
 import Reveal from "./Reveal";
 
 const tips = {
-  "LangGraph": "Stateful multi-agent graphs with retries & HITL.",
-  "MCP": "Governed tool protocols for live agent actions.",
-  "RAG": "Retrieval with evaluation — not just embeddings.",
-  "OpenTelemetry": "Traces that make agent decisions debuggable.",
-  "Terraform": "Infra as code from the platform years.",
-  "Azure AKS": "Where production agents actually run.",
+  "Policy enforcement": "Rules that block unsafe agent actions before they run.",
+  "Human-in-the-loop": "Approvals for high-impact steps — agents propose, humans authorize.",
+  "RBAC / least privilege": "Tools and data scoped to what the workflow actually needs.",
+  "MCP": "Governed tool protocols — no raw secrets in prompts.",
+  "Audit trails": "Decision traces you can hand to security and compliance.",
+  "OpenTelemetry": "Traces that make agent decisions debuggable and attributable.",
+  "LangGraph": "Stateful multi-agent graphs with retries & HITL checkpoints.",
+  "SIEM telemetry": "Security-bound signals from the platform years.",
 };
 
 export default function About() {
@@ -23,7 +25,7 @@ export default function About() {
           <Reveal>
             <p className="section-label">About</p>
             <h2 className="mb-6 font-display text-3xl tracking-tight text-white sm:text-4xl">
-              LLM systems as critical infrastructure
+              AI that acts — secured like infrastructure
             </h2>
           </Reveal>
           <Reveal delay={80}>

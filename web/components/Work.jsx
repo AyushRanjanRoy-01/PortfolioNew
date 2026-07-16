@@ -95,8 +95,8 @@ export default function Work() {
                         </p>
                         <p className="mt-2 text-sm leading-6 text-slate-300">
                           {p.featured
-                            ? "Built for reliability under real load — observability, approvals, and failure paths included, not bolted on later."
-                            : "A focused slice of the broader agent + infra toolkit — designed to be readable, demoable, and extensible."}
+                            ? "Security-first by design — policy gates, approvals, and audit paths built in, not bolted on after the demo."
+                            : "A focused slice of the agent + security toolkit — readable, demoable, and safe by default."}
                         </p>
                         <div className="mt-3 flex flex-wrap gap-3 text-xs font-medium">
                           {p.live && (

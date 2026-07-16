@@ -10,7 +10,7 @@ export default function Experience() {
         <Reveal>
           <p className="section-label">Experience</p>
           <h2 className="mb-12 font-display text-3xl tracking-tight text-white sm:text-4xl">
-            From platform firefighting to agent platforms
+            From security platforms to securing agents
           </h2>
         </Reveal>
 

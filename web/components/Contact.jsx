@@ -14,11 +14,11 @@ export default function Contact() {
 
             <p className="section-label">Contact</p>
             <h2 className="relative mt-2 max-w-xl font-display text-3xl leading-tight tracking-tight text-white sm:text-4xl">
-              Building something agentic? Let&apos;s make it production-grade.
+              Building agents that take real actions? Let&apos;s secure them.
             </h2>
             <p className="relative mt-4 max-w-lg text-sm leading-7 text-slate-400">
-              Open to senior AI engineering roles and hard production problems — gateways, multi-agent
-              workflows, RAG that survives real data, and the governance layer in between.
+              Open to senior AI security and agent-platform roles — policy gates, governed tool use,
+              HITL approvals, audit-grade telemetry, and multi-agent systems that fail closed.
             </p>
             <div className="relative mt-8 flex flex-wrap gap-3">
               <a href={`mailto:${profile.email}`} className="btn btn-primary">
