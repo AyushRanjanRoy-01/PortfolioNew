@@ -1,6 +1,7 @@
 /**
  * Grounded corpus for the citation-only Site Brain.
- * Answers must only recombine these chunks — never invent.
+ * Compliance: no client process detail, internal tool codenames, or proprietary playbooks.
+ * Industry domain names (Dispute & Deduction, Order-to-Cash) are OK.
  */
 
 export const corpus = [
@@ -10,23 +11,23 @@ export const corpus = [
     source: "About",
     tags: ["role", "accenture", "genai", "ai engineer", "work"],
     text:
-      "Ayush Ranjan Roy is an AI Engineer at Accenture (GenAI & Data) building production multi-agent systems for enterprise finance workflows. He combines agents, RAG retrieval, APIs, queues, databases, cloud infrastructure, security controls, human approvals, and failure handling.",
+      "Ayush Ranjan Roy is an AI Engineer at Accenture (GenAI & Data) building production multi-agent systems for enterprise Order-to-Cash domains, including Dispute & Deduction. He works with agents, RAG, APIs, workflows, cloud infrastructure, and human-in-the-loop controls.",
   },
   {
     id: "platform-past",
     title: "Platform engineering background",
     source: "Experience · Platform",
-    tags: ["platform", "mxdr", "terraform", "aws", "security", "siem", "secrets"],
+    tags: ["platform", "terraform", "aws", "security", "siem", "secrets", "redis"],
     text:
-      "Before GenAI he spent ~2 years as a Platform Engineer on Accenture’s MxDR / Adaptive MxDR security ecosystem: Terraform modernization, Redis/ElastiCache Common Cache ownership, Jenkins→GitHub Actions, AWS runtime upgrades, migration of 64 Secrets Manager secrets, mTLS telemetry into customer SIEMs, Squid Proxy enablement, and live production incident debugging.",
+      "Before GenAI he spent ~2 years as a Platform Engineer on Accenture’s security-product cloud platform: Terraform modernization, Redis-backed shared services, CI/CD migration, AWS runtime upgrades, Secrets Manager migrations, mTLS telemetry into enterprise SIEMs, restricted-egress proxy automation, and production incident debugging.",
   },
   {
     id: "dd-workflow",
-    title: "Dispute & Deduction agentic workflow",
+    title: "Dispute & Deduction · Order-to-Cash agents",
     source: "Work · GenAI",
-    tags: ["dispute", "deduction", "langgraph", "hitl", "approval", "finance", "agent"],
+    tags: ["dispute", "deduction", "order-to-cash", "langgraph", "hitl", "agent", "o2c"],
     text:
-      "He built components of a greenfield Dispute & Deduction agentic workflow (Order-to-Cash): email/attachment ingestion, categorization, prioritization with human fallback, cross-team handoffs, UI and email continuation, OAuth approval APIs (none / L1 / L1+L2), and case continuity. Status: production deployed, MVP ready, customer onboarding pending.",
+      "He contributes to multi-agent systems for enterprise Dispute & Deduction and Order-to-Cash workflows using LangGraph orchestration, durable workflow state, APIs, HITL control points, and production-minded deployment practices. Public descriptions stay at the industry-domain level only.",
   },
   {
     id: "rag-helixops",
@@ -34,7 +35,7 @@ export const corpus = [
     source: "Work · HelixOps",
     tags: ["helixops", "rag", "incident", "rca", "remediation", "rbac", "open source"],
     text:
-      "HelixOps is an open-source AI-SRE Incident IDE: multi-agent RCA with RAG over runbooks/postmortems, then human-approved remediation. Defaults include mock-safe integrations, JWT/RBAC, and decision traces. Code: github.com/AyushRanjanRoy-01/HelixOps.",
+      "HelixOps is an open-source AI-SRE Incident IDE: multi-agent RCA with RAG over sample runbooks, then human-approved remediation. Defaults include mock-safe integrations, JWT/RBAC, and decision traces. Code: github.com/AyushRanjanRoy-01/HelixOps.",
   },
   {
     id: "rag-raggym",
@@ -45,12 +46,12 @@ export const corpus = [
       "RAGGym is a hands-on RAG learning platform: swappable LLM/embeddings/vector store, self-correcting retrieval, RAGAS evaluation, AI-graded practice mode. Live demo: rag-gym.streamlit.app. Code: github.com/AyushRanjanRoy-01/RaGGym-Chatbot-CLI.",
   },
   {
-    id: "mcp-watchtower",
-    title: "MCP & Watchtower",
+    id: "mcp-obs",
+    title: "MCP & agent observability",
     source: "Work · GenAI",
-    tags: ["mcp", "watchtower", "observability", "tools", "governance"],
+    tags: ["mcp", "observability", "tools", "governance", "otel"],
     text:
-      "He extended Watchtower for agent/workflow visibility and MCP-based governed tool access patterns for live operational context, with OpenTelemetry / Datadog audit surfaces so operators see decisions and retrieval context.",
+      "He implements MCP-style governed tool access and operator-facing agent observability so decisions and retrieval context stay reviewable, with OpenTelemetry / Datadog audit surfaces.",
   },
   {
     id: "benchmarks",
@@ -58,15 +59,15 @@ export const corpus = [
     source: "Work · Extraction",
     tags: ["benchmark", "latency", "documents", "inference", "rag"],
     text:
-      "Controlled internal benchmarks (not customer throughput): validated 100+ documents, up to 50 pages; multi-page latency reduced from approximately 7 minutes to 2.5–3 minutes in testing with async multi-model inference, retries, and telemetry.",
+      "Controlled internal benchmarks only (not client SLAs or production throughput): multi-model inference experiments with retries and telemetry on multi-page documents.",
   },
   {
     id: "security-controls",
-    title: "Security & controls foundation",
+    title: "Security & platform controls",
     source: "Experience · Security",
     tags: ["security", "secrets", "iam", "mtls", "codeql", "siem", "proxy"],
     text:
-      "Security-adjacent production work includes AWS Secrets Manager migrations, IAM policy updates, mTLS on synthetic health paths, SIEM-bound telemetry, CodeQL/Dependabot remediation, Docker/runtime hardening, and one-click Squid Proxy enablement for restricted-egress enterprises. Direct AI red-teaming / prompt-injection ownership is not claimed.",
+      "Platform security work includes Secrets Manager migrations, IAM updates, mTLS on synthetic health paths, SIEM-bound telemetry, CodeQL/Dependabot remediation, runtime hardening, and restricted-egress proxy automation. He does not claim proprietary client control catalogs or AI red-team product ownership.",
   },
   {
     id: "education",
@@ -74,7 +75,7 @@ export const corpus = [
     source: "About · Education",
     tags: ["education", "vit", "coursework", "ai", "security", "dsa"],
     text:
-      "B.Tech Electronics and Communication Engineering, VIT Chennai (2019–2023). Relevant coursework: Artificial Intelligence, Essentials of Machine Learning, Cryptography and Network Security, Information Security Analysis and Audit, Data Structures and Algorithms, Operating Systems. CGPA is intentionally not listed.",
+      "B.Tech Electronics and Communication Engineering, VIT Chennai (2019–2023). Relevant coursework: Artificial Intelligence, Essentials of Machine Learning, Cryptography and Network Security, Information Security Analysis and Audit, Data Structures and Algorithms, Operating Systems.",
   },
   {
     id: "availability",
@@ -90,7 +91,7 @@ export const corpus = [
     source: "About",
     tags: ["philosophy", "production", "prompt", "systems"],
     text:
-      "His differentiator is not prompt engineering alone. It is combining enterprise workflows, AI agents, RAG, APIs, queues, databases, cloud infrastructure, security controls, human approvals, failure handling, and production deployment into systems teams can run.",
+      "His differentiator is not prompt engineering alone. It is combining enterprise workflows, AI agents, RAG, APIs, cloud infrastructure, human-in-the-loop controls, and production deployment into systems teams can run — described without client-specific process detail.",
   },
 ];
 
@@ -108,9 +109,6 @@ function tokens(s) {
     .filter((t) => t.length > 1 && !STOP.has(t));
 }
 
-/**
- * Rank corpus chunks for a query. Pure keyword/overlap scoring — no LLM.
- */
 export function searchCorpus(query, limit = 4) {
   const q = tokens(query);
   if (!q.length) return [];
@@ -123,14 +121,19 @@ export function searchCorpus(query, limit = 4) {
       if (doc.tags.some((tag) => tag.includes(t) || t.includes(tag))) score += 3;
       if (doc.title.toLowerCase().includes(t)) score += 2;
     }
-    // phrase-ish boosts
     const lower = query.toLowerCase();
     if (lower.includes("rag") && bag.includes("rag")) score += 4;
     if (lower.includes("helix") && bag.includes("helixops")) score += 5;
-    if ((lower.includes("hire") || lower.includes("available") || lower.includes("contact")) && doc.id === "availability")
+    if (
+      (lower.includes("hire") || lower.includes("available") || lower.includes("contact")) &&
+      doc.id === "availability"
+    )
       score += 6;
-    if (lower.includes("mxdr") || lower.includes("platform")) {
-      if (doc.id === "platform-past") score += 4;
+    if (lower.includes("platform") || lower.includes("terraform") || lower.includes("secrets")) {
+      if (doc.id === "platform-past" || doc.id === "security-controls") score += 3;
+    }
+    if (lower.includes("dispute") || lower.includes("deduction") || lower.includes("order-to-cash") || lower.includes("o2c")) {
+      if (doc.id === "dd-workflow") score += 5;
     }
     return { doc, score };
   });
@@ -142,34 +145,28 @@ export function searchCorpus(query, limit = 4) {
     .map((x) => x.doc);
 }
 
-/**
- * Build a grounded answer from top chunks. Never invents beyond them.
- */
 export function answerFromCorpus(query) {
   const hits = searchCorpus(query, 3);
   if (!hits.length) {
     return {
       answer:
-        "Not in my corpus. Try asking about agents, RAG, HelixOps, RAGGym, MxDR/platform work, HITL approvals, or how to contact me.",
+        "Not in my corpus. Try agents, RAG, HelixOps, RAGGym, platform engineering, Dispute & Deduction / Order-to-Cash at a high level, or contact.",
       citations: [],
       refused: true,
     };
   }
 
-  const answer = hits.map((h) => h.text).join(" ");
-  const citations = hits.map((h) => ({
-    id: h.id,
-    title: h.title,
-    source: h.source,
-  }));
-
-  return { answer, citations, refused: false };
+  return {
+    answer: hits.map((h) => h.text).join(" "),
+    citations: hits.map((h) => ({ id: h.id, title: h.title, source: h.source })),
+    refused: false,
+  };
 }
 
 export const SUGGESTED_QUERIES = [
   "What do you build with RAG?",
   "Tell me about HelixOps",
-  "Platform engineering on MxDR?",
-  "How do HITL approvals work in your systems?",
+  "Dispute & Deduction / Order-to-Cash agents?",
+  "Platform and security foundation?",
   "Are you available for senior AI roles?",
 ];

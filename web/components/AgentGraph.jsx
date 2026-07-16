@@ -81,8 +81,8 @@ export default function AgentGraph() {
                 Play the agent control plane
               </h2>
               <p className="mt-3 max-w-xl text-sm leading-6 text-slate-400">
-                Step a LangGraph-style path with RAG + HITL. Inject failure modes. No live cluster —
-                pure simulation of how production controls should behave.
+                Step a generic LangGraph-style path with RAG + HITL. Sample SRE scenarios only —
+                no client business processes. No live cluster.
               </p>
             </div>
             <p className="font-mono text-[11px] text-slate-500">client-side · no API key</p>

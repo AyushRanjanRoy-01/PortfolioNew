@@ -6,19 +6,19 @@ import Reveal from "./Reveal";
 
 const tips = {
   LangGraph: "Stateful multi-agent graphs with HITL interrupts and continuation.",
-  "Multi-agent workflows": "Production agent pipelines for enterprise finance workflows.",
+  "Multi-agent workflows": "Order-to-Cash / Dispute & Deduction agents at industry-domain level.",
   MCP: "Governed tool invocation for live operational context.",
-  "HITL / approval orchestration": "Humans step in when priority, docs, or approvals are uncertain.",
-  "RAG & retrieval": "Retrieval paths that feed agents real document context.",
+  "HITL orchestration": "Humans gate uncertain or high-impact agent steps.",
+  "RAG & retrieval": "Retrieval that grounds agent answers in knowledge sources.",
   "Claude · GPT-4o/5": "Multi-model orchestration in production agent stacks.",
-  "Ensemble / confidence routing": "Route or escalate when model confidence is weak.",
-  "Agent observability (Watchtower)": "Live agent/workflow state for operators.",
-  Terraform: "MxDR / Common Cache modernization — 0.11-era → 1.x standards.",
+  "Ensemble / confidence routing": "Escalate when model confidence is weak.",
+  "Agent observability": "Operator-facing state and decision traces.",
+  Terraform: "Cloud platform modernization and multi-env infrastructure.",
   "AWS (Lambda, EC2, ASG, S3)": "Runtime upgrades, ASG/blue-green, multi-env production.",
-  "Secrets Manager · IAM": "Migrated 64 secrets with automation — no prod interruption.",
-  "mTLS · SIEM telemetry": "Synthetic health over mTLS into customer SIEMs.",
+  "Secrets Manager · IAM": "Bulk secret migration with automation and IAM updates.",
+  "mTLS · SIEM telemetry": "Synthetic health over mTLS into enterprise SIEMs.",
   "OpenTelemetry · Datadog": "Traces for agents and platform services.",
-  "Production incident response": "Multi-tenant outages, ASG loops, live debugging.",
+  "Production incident response": "Multi-tenant production debugging experience.",
 };
 
 export default function About() {

@@ -1,20 +1,20 @@
 /**
  * Playable multi-agent control plane (client-side simulation).
- * Models a LangGraph-style pipeline with HITL + RAG — not a live backend.
+ * Generic SRE / agent-control scenarios only — no client business process detail.
  */
 
 export const SCENARIOS = [
   {
     id: "clean",
     label: "Clean path",
-    blurb: "High confidence · docs present · auto-propose fix",
+    blurb: "High confidence · RAG hit · propose action",
     inject: null,
   },
   {
-    id: "missing_doc",
-    label: "Missing document",
-    blurb: "RAG finds gap · human chase · resume",
-    inject: "missing_doc",
+    id: "weak_rag",
+    label: "Weak retrieval",
+    blurb: "Sparse RAG context · escalate to HITL",
+    inject: "weak_rag",
   },
   {
     id: "low_conf",
@@ -25,12 +25,11 @@ export const SCENARIOS = [
   {
     id: "policy_block",
     label: "Policy block",
-    blurb: "Remediation needs approval · no auto-exec",
+    blurb: "High blast radius · approval required",
     inject: "policy_block",
   },
 ];
 
-/** Graph nodes in display order */
 export const NODES = [
   { id: "ingest", label: "Ingest", kind: "data" },
   { id: "triage", label: "Triage", kind: "agent" },
@@ -41,10 +40,6 @@ export const NODES = [
   { id: "end", label: "Done", kind: "end" },
 ];
 
-/**
- * Returns ordered steps for a scenario simulation.
- * Each step: { nodeId, status, log, confidence?, citation? }
- */
 export function buildRun(scenarioId) {
   const scenario = SCENARIOS.find((s) => s.id === scenarioId) || SCENARIOS[0];
   const inj = scenario.inject;
@@ -53,117 +48,117 @@ export function buildRun(scenarioId) {
   steps.push({
     nodeId: "ingest",
     status: "ok",
-    log: "Alert / work item correlated. Fingerprint stored. Idempotent ingest.",
+    log: "Signal ingested. Fingerprint stored. Idempotent write.",
   });
   steps.push({
     nodeId: "triage",
     status: "ok",
-    log: "Severity scored. Route to multi-agent analysis. Noise filter passed.",
+    log: "Severity scored. Route to multi-agent analysis.",
     confidence: 0.86,
   });
 
-  if (inj === "missing_doc") {
+  if (inj === "weak_rag") {
     steps.push({
       nodeId: "rag",
       status: "warn",
-      log: "RAG over runbooks: partial hit. Required attachment missing for reason-code path.",
-      citation: "runbook · document requirements",
-      confidence: 0.52,
+      log: "RAG over public runbooks: sparse match. Insufficient context to ground a fix.",
+      citation: "runbook · index miss",
+      confidence: 0.41,
     });
     steps.push({
       nodeId: "rca",
-      status: "ok",
-      log: "Hypothesis: blocked on missing customer PDF. Draft chase message. Pause workflow.",
-      confidence: 0.71,
+      status: "warn",
+      log: "Hypothesis incomplete. Refuse unsupervised action when retrieval is weak.",
+      confidence: 0.55,
     });
     steps.push({
       nodeId: "hitl",
       status: "hitl",
-      log: "HITL interrupt: analyst reviews chase draft · resume when attachment lands.",
+      log: "HITL interrupt: operator reviews incomplete context before any proposal.",
     });
     steps.push({
       nodeId: "act",
-      status: "ok",
-      log: "Document received · workflow resumed · extraction continues. No unsupervised infra action.",
+      status: "blocked",
+      log: "No action executed. Trace records retrieval gap + human handoff.",
     });
   } else if (inj === "low_conf") {
     steps.push({
       nodeId: "rag",
       status: "ok",
-      log: "RAG retrieves 3 chunks (postmortem + latency runbook). Citations attached.",
-      citation: "postmortem · payment latency 2024",
+      log: "RAG retrieves sample postmortem + latency runbook. Citations attached.",
+      citation: "sample · latency runbook",
       confidence: 0.78,
     });
     steps.push({
       nodeId: "rca",
       status: "warn",
-      log: "Ensemble split 2–2. Confidence below threshold → fail-closed, no auto-action.",
+      log: "Ensemble split. Confidence below threshold → fail-closed.",
       confidence: 0.48,
     });
     steps.push({
       nodeId: "hitl",
       status: "hitl",
-      log: "HITL required: operator must confirm root cause before any remediation proposal.",
+      log: "HITL required: human confirms root cause before any remediation proposal.",
     });
     steps.push({
       nodeId: "act",
       status: "blocked",
-      log: "Action withheld until human confirmation. Audit trail written.",
+      log: "Action withheld until confirmation. Audit trail written.",
     });
   } else if (inj === "policy_block") {
     steps.push({
       nodeId: "rag",
       status: "ok",
-      log: "RAG: deployment rollback playbook ranked #1 with citations.",
-      citation: "runbook · deployment_rollback",
+      log: "RAG ranks a generic rollback playbook with citations.",
+      citation: "sample · rollback playbook",
       confidence: 0.91,
     });
     steps.push({
       nodeId: "rca",
       status: "ok",
-      log: "RCA: bad canary release. Proposed action: rollback service X (high blast radius).",
+      log: "RCA suggests high blast-radius change. Proposal only — never auto-apply.",
       confidence: 0.88,
     });
     steps.push({
       nodeId: "hitl",
       status: "hitl",
-      log: "Policy: remediations require human approval. Mock mode default — no live cluster touch.",
+      log: "Policy: remediations require human approval. Mock mode default.",
     });
     steps.push({
       nodeId: "act",
       status: "pending",
-      log: "Proposal queued. Approve → execute (mock-safe) · Reject → log reason.",
+      log: "Proposal queued. Approve → mock-safe execute · Reject → log reason.",
     });
   } else {
     steps.push({
       nodeId: "rag",
       status: "ok",
       log: "RAG retrieves runbook + similar incident. Citations bound to answer.",
-      citation: "runbook · high_latency",
+      citation: "sample · high latency",
       confidence: 0.9,
     });
     steps.push({
       nodeId: "rca",
       status: "ok",
-      log: "RCA: saturation on checkout-api. Propose scale-out with rationale.",
+      log: "RCA: service saturation. Propose scale-out with rationale.",
       confidence: 0.87,
     });
     steps.push({
       nodeId: "hitl",
       status: "ok",
-      log: "Low blast radius + high confidence → soft gate logged; operator still notified.",
+      log: "Low blast radius + high confidence → soft gate logged; operator notified.",
     });
     steps.push({
       nodeId: "act",
       status: "ok",
-      log: "Remediation proposed with audit trail. In live systems: approve before execute.",
+      log: "Remediation proposed with audit trail. Live systems still require approve-before-execute.",
     });
   }
 
   steps.push({
     nodeId: "end",
     status: "ok",
-    log: "Trace complete. Every step is attributable — agents propose, controls decide.",
+    log: "Trace complete. Agents propose; controls decide. Demo uses sample data only.",
   });
 
   return { scenario, steps };

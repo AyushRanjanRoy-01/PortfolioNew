@@ -13,7 +13,7 @@ export default function Journey() {
             How the story connects
           </h2>
           <p className="mb-10 max-w-xl text-sm leading-6 text-slate-400">
-            From ECE → secure platform engineering on MxDR → production GenAI agents. Same
+            From ECE → secure cloud platform engineering → production GenAI agents. Same
             discipline: production first, demos later.
           </p>
         </Reveal>
