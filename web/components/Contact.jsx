@@ -14,12 +14,12 @@ export default function Contact() {
 
             <p className="section-label">Contact</p>
             <h2 className="relative mt-2 max-w-xl font-display text-3xl leading-tight tracking-tight text-white sm:text-4xl">
-              Open to senior AI roles — wherever agents meet production.
+              Building something that has to survive production?
             </h2>
             <p className="relative mt-4 max-w-lg text-sm leading-7 text-slate-400">
-              GenAI, AI engineering, platform/ops, and security — I&apos;m open across the stack.
-              Strongest lens: shipping multi-agent systems with security-minded controls (HITL,
-              governed tools, audit trails) on solid cloud foundations.
+              Available for senior AI roles. I care most about systems that take real actions —
+              multi-agent workflows with human judgment, governed tools, and the platform
+              foundations underneath.
             </p>
             <div className="relative mt-8 flex flex-wrap gap-3">
               <a href={`mailto:${profile.email}`} className="btn btn-primary">
