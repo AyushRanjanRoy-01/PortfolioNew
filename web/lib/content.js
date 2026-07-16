@@ -16,13 +16,39 @@ export const profile = {
 };
 
 export const hero = {
-  kicker: "AI Engineer · Platform & Security · Accenture · Gurugram",
+  kicker: "AI Engineer · Accenture · Gurugram",
   title: "I build agent platforms that ship — with security controls, not demos.",
   subtitle:
-    "Multi-agent workflows, human-in-the-loop approvals, governed tool access, and audit-ready " +
-    "telemetry — on top of two years building secure cloud platforms (Terraform, secrets, SIEM, " +
-    "production incident response) in Accenture’s security product ecosystem.",
+    "Mostly multi-agent GenAI — LangGraph workflows, HITL approvals, MCP tool use, RAG, and " +
+    "model routing — backed by a solid platform and security foundation (cloud, secrets, SIEM, " +
+    "production ops) from two years on Accenture’s MxDR ecosystem.",
 };
+
+/** Hero orbit chips — ~60% AI / ~40% platform·security·ops */
+export const orbitSkills = [
+  "LangGraph",
+  "Multi-agent",
+  "MCP",
+  "HITL",
+  "RAG",
+  "Claude / GPT",
+  "Terraform",
+  "AWS",
+  "mTLS",
+  "OTel",
+];
+
+/** Marquee line — AI-heavy, still shows foundations */
+export const tickerItems = [
+  "LangGraph multi-agent orchestration",
+  "HITL approvals & durable workflow continuation",
+  "MCP governed tool access",
+  "RAG · ensemble routing · model telemetry",
+  "Dispute & Deduction agentic workflows",
+  "Watchtower agent observability",
+  "Terraform · AWS · multi-env CI/CD",
+  "Secrets · IAM · mTLS · SIEM health",
+];
 
 export const about = {
   paragraphs: [
@@ -32,50 +58,42 @@ export const about = {
   ],
   facts: [
     { label: "Role", value: "AI Engineer, Accenture · GenAI & Data" },
-    { label: "Focus", value: "Agent platforms · HITL · Secure cloud foundations" },
+    { label: "Focus", value: "~60% GenAI / agents · ~40% platform & security" },
     { label: "Background", value: "Platform Eng · MxDR / security product ecosystem" },
     { label: "Cert", value: "Claude Certified Architect, Foundations (Anthropic)" },
     { label: "Education", value: "B.Tech ECE, VIT Chennai (2019–2023) · CGPA 7.67" },
     { label: "Location", value: "Gurugram, India" },
   ],
+  // Display order: AI first (majority), foundations second (~40%).
   skills: {
-    "Agents & GenAI": [
+    "AI & agents": [
       "LangGraph",
       "LangChain",
       "Multi-agent workflows",
       "MCP",
-      "HITL approvals",
-      "RAG",
-      "FastAPI",
-      "PostgreSQL / CTEs",
+      "HITL / approval orchestration",
+      "RAG & retrieval",
+      "Claude · GPT-4o/5",
+      "Azure AI Foundry",
+      "Ensemble / confidence routing",
+      "Async inference · retries",
+      "Agent observability (Watchtower)",
+      "Decision traces",
+      "RAGAS / LLM evaluation",
+      "FastAPI (agent APIs)",
+      "PostgreSQL · CTEs · checkpoints",
     ],
-    "Platform engineering": [
-      "Terraform (0.11 → 1.x)",
+    "Platform, security & ops": [
+      "Terraform",
       "AWS (Lambda, EC2, ASG, S3)",
       "GitHub Actions / CI/CD",
+      "Docker · multi-env deploys",
       "Redis / ElastiCache",
-      "Docker",
-      "Blue-green deploys",
-      "Multi-environment ops",
-    ],
-    "Security & controls": [
-      "AWS Secrets Manager",
-      "IAM policies",
-      "mTLS",
-      "PII redaction",
+      "Secrets Manager · IAM",
+      "mTLS · SIEM telemetry",
+      "OpenTelemetry · Datadog",
       "CodeQL / Dependabot",
-      "GitHub Advanced Security",
-      "Squid Proxy automation",
-      "SIEM-bound telemetry",
-    ],
-    "Observability": [
-      "OpenTelemetry",
-      "gRPC / OTLP",
-      "BindPlane",
-      "Datadog",
-      "CloudWatch",
-      "Synthetic health checks",
-      "Correlation IDs",
+      "Production incident response",
     ],
   },
 };

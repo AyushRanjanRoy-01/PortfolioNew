@@ -2,10 +2,8 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { hero, profile } from "@/lib/content";
+import { hero, orbitSkills, profile, tickerItems } from "@/lib/content";
 import Reveal from "./Reveal";
-
-const ORBIT = ["LangGraph", "HITL", "MCP", "Terraform", "Secrets", "mTLS", "SIEM", "OTel"];
 
 export default function Hero() {
   const [typed, setTyped] = useState("");
@@ -79,8 +77,8 @@ export default function Hero() {
             <Reveal delay={280}>
               <div className="mt-10 grid max-w-lg grid-cols-3 gap-3">
                 {[
-                  { k: "Now", v: "GenAI agents" },
-                  { k: "Built on", v: "Platform eng" },
+                  { k: "Core", v: "GenAI · agents" },
+                  { k: "Also", v: "Platform · sec" },
                   { k: "Base", v: "Gurugram" },
                 ].map((s) => (
                   <div key={s.k} className="glass px-3 py-3">
@@ -98,8 +96,8 @@ export default function Hero() {
             <div className="relative aspect-square">
               <div className="orbit-ring slow" />
               <div className="orbit-ring" />
-              {ORBIT.map((label, i) => {
-                const angle = (i / ORBIT.length) * Math.PI * 2 - Math.PI / 2;
+              {orbitSkills.map((label, i) => {
+                const angle = (i / orbitSkills.length) * Math.PI * 2 - Math.PI / 2;
                 const r = 46;
                 const x = 50 + r * Math.cos(angle);
                 const y = 50 + r * Math.sin(angle);
@@ -140,15 +138,7 @@ export default function Hero() {
           <div className="ticker-track font-mono text-[11px] text-slate-400">
             {[...Array(2)].map((_, loop) => (
               <div key={loop} className="flex gap-8 px-4">
-                {[
-                  "Dispute & Deduction multi-agent workflows",
-                  "HITL approvals · OAuth approval APIs",
-                  "MCP + Watchtower operator visibility",
-                  "MxDR platform engineering foundations",
-                  "Secrets Manager · IAM · mTLS · SIEM",
-                  "Terraform · GHA · multi-env production",
-                  "HelixOps · RAGGym",
-                ].map((t) => (
+                {tickerItems.map((t) => (
                   <span key={`${loop}-${t}`} className="whitespace-nowrap">
                     <span className="mr-2 text-cyan-300/70">◆</span>
                     {t}

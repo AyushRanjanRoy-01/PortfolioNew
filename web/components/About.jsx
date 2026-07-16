@@ -5,17 +5,20 @@ import { about } from "@/lib/content";
 import Reveal from "./Reveal";
 
 const tips = {
-  "LangGraph": "Stateful multi-agent graphs with HITL interrupts and continuation.",
-  "HITL approvals": "Humans decide when priority, documents, or approvals are uncertain.",
-  "MCP": "Governed tool invocation patterns for live operational context.",
-  "Terraform (0.11 → 1.x)": "Owned modernization on the MxDR / Common Cache stack.",
-  "AWS Secrets Manager": "Automated migration of 64 secrets with IAM + GHA — no prod interruption.",
-  "mTLS": "Mutual TLS on synthetic health and SIEM-bound telemetry paths.",
-  "SIEM-bound telemetry": "5-min synthetic health into customer SIEMs via BindPlane.",
-  "OpenTelemetry": "gRPC/OTLP traces for agents and platform services.",
-  "Redis / ElastiCache": "Common Cache — shared device metadata platform ownership.",
-  "Squid Proxy automation": "One-click enablement for restricted-egress enterprise customers.",
-  "CodeQL / Dependabot": "Supply-chain remediation in GitHub Enterprise security workflows.",
+  LangGraph: "Stateful multi-agent graphs with HITL interrupts and continuation.",
+  "Multi-agent workflows": "Production agent pipelines for enterprise finance workflows.",
+  MCP: "Governed tool invocation for live operational context.",
+  "HITL / approval orchestration": "Humans step in when priority, docs, or approvals are uncertain.",
+  "RAG & retrieval": "Retrieval paths that feed agents real document context.",
+  "Claude · GPT-4o/5": "Multi-model orchestration in production agent stacks.",
+  "Ensemble / confidence routing": "Route or escalate when model confidence is weak.",
+  "Agent observability (Watchtower)": "Live agent/workflow state for operators.",
+  Terraform: "MxDR / Common Cache modernization — 0.11-era → 1.x standards.",
+  "AWS (Lambda, EC2, ASG, S3)": "Runtime upgrades, ASG/blue-green, multi-env production.",
+  "Secrets Manager · IAM": "Migrated 64 secrets with automation — no prod interruption.",
+  "mTLS · SIEM telemetry": "Synthetic health over mTLS into customer SIEMs.",
+  "OpenTelemetry · Datadog": "Traces for agents and platform services.",
+  "Production incident response": "Multi-tenant outages, ASG loops, live debugging.",
 };
 
 export default function About() {
@@ -28,7 +31,7 @@ export default function About() {
           <Reveal>
             <p className="section-label">About</p>
             <h2 className="mb-6 font-display text-3xl tracking-tight text-white sm:text-4xl">
-              Platform-hardened. Agent-capable.
+              Agent-first. Platform-backed.
             </h2>
           </Reveal>
           <Reveal delay={80}>
@@ -55,9 +58,9 @@ export default function About() {
 
         <Reveal delay={100}>
           <div className="glass-strong p-6">
-            <p className="section-label mb-2">Stack constellation</p>
+            <p className="section-label mb-2">Stack · 60% AI · 40% foundations</p>
             <p className="mb-5 text-sm text-slate-400">
-              Hover a chip — small notes for the curious.
+              Hover a chip — short notes for the curious.
             </p>
             {tip && (
               <div className="mb-4 rounded-xl border border-cyan-300/20 bg-cyan-300/5 px-3 py-2 font-mono text-xs text-cyan-100">
