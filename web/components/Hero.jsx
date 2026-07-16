@@ -5,11 +5,11 @@ import { useEffect, useState } from "react";
 import { hero, profile } from "@/lib/content";
 import Reveal from "./Reveal";
 
-const ORBIT = ["AI Security", "HITL", "MCP", "Policy", "RBAC", "Audit", "LangGraph", "SIEM"];
+const ORBIT = ["LangGraph", "HITL", "MCP", "Terraform", "Secrets", "mTLS", "SIEM", "OTel"];
 
 export default function Hero() {
   const [typed, setTyped] = useState("");
-  const full = "secure agent systems that ship.";
+  const full = "agent platforms that ship safely.";
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -32,7 +32,7 @@ export default function Hero() {
           <div className="mb-8 flex flex-wrap items-center gap-3">
             <span className="inline-flex items-center gap-2 rounded-full border border-cyan-300/25 bg-cyan-300/10 px-3 py-1 font-mono text-[11px] text-cyan-200">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-cyan-300" />
-              Available for AI security roles
+              Open to GenAI platform & secure systems roles
             </span>
             <span className="chip">{hero.kicker}</span>
           </div>
@@ -79,8 +79,8 @@ export default function Hero() {
             <Reveal delay={280}>
               <div className="mt-10 grid max-w-lg grid-cols-3 gap-3">
                 {[
-                  { k: "Agents", v: "Governed" },
-                  { k: "Focus", v: "AI Security" },
+                  { k: "Now", v: "GenAI agents" },
+                  { k: "Built on", v: "Platform eng" },
                   { k: "Base", v: "Gurugram" },
                 ].map((s) => (
                   <div key={s.k} className="glass px-3 py-3">
@@ -141,13 +141,13 @@ export default function Hero() {
             {[...Array(2)].map((_, loop) => (
               <div key={loop} className="flex gap-8 px-4">
                 {[
-                  "AI security for agentic systems",
-                  "Policy enforcement & fail-closed routing",
-                  "Governed MCP tool access",
-                  "Human-in-the-loop approvals",
-                  "Audit trails · OpenTelemetry · SIEM",
-                  "Least-privilege agent actions",
-                  "HelixOps · secure remediation defaults",
+                  "Dispute & Deduction multi-agent workflows",
+                  "HITL approvals · OAuth approval APIs",
+                  "MCP + Watchtower operator visibility",
+                  "MxDR platform engineering foundations",
+                  "Secrets Manager · IAM · mTLS · SIEM",
+                  "Terraform · GHA · multi-env production",
+                  "HelixOps · RAGGym",
                 ].map((t) => (
                   <span key={`${loop}-${t}`} className="whitespace-nowrap">
                     <span className="mr-2 text-cyan-300/70">◆</span>

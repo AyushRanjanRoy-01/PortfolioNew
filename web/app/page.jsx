@@ -3,6 +3,7 @@ import ScrollProgress from "@/components/ScrollProgress";
 import CommandPalette from "@/components/CommandPalette";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import Journey from "@/components/Journey";
 import Work from "@/components/Work";
 import Experience from "@/components/Experience";
 import About from "@/components/About";
@@ -18,6 +19,7 @@ export default function Page() {
       <Nav />
       <main>
         <Hero />
+        <Journey />
         <Work />
         <Experience />
         <About />

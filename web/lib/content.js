@@ -1,8 +1,10 @@
 // Single source of truth for portfolio content.
+// Grounded in AYUSH_ROY_MASTER_CAREER_SOURCE_OF_TRUTH.md + career intelligence skill.
+// Rule: no fabricated metrics, ownership, or AI-security depth beyond documented work.
 
 export const profile = {
   name: "Ayush Ranjan Roy",
-  role: "AI Security Engineer",
+  role: "AI Engineer",
   company: "Accenture",
   location: "Gurugram, India",
   email: "royayush0611@gmail.com",
@@ -14,126 +16,161 @@ export const profile = {
 };
 
 export const hero = {
-  kicker: "AI Security · Accenture · Gurugram",
-  title: "I build secure multi-agent systems that ship and stay governed.",
+  kicker: "AI Engineer · Platform & Security · Accenture · Gurugram",
+  title: "I build agent platforms that ship — with security controls, not demos.",
   subtitle:
-    "Policy-enforced agent workflows, human-in-the-loop approvals, governed MCP tool access, " +
-    "and audit-grade telemetry for enterprise GenAI — grounded in two years of platform and " +
-    "security infrastructure engineering before agents.",
+    "Multi-agent workflows, human-in-the-loop approvals, governed tool access, and audit-ready " +
+    "telemetry — on top of two years building secure cloud platforms (Terraform, secrets, SIEM, " +
+    "production incident response) in Accenture’s security product ecosystem.",
 };
 
 export const about = {
   paragraphs: [
-    "I'm an AI Security Engineer at Accenture. I make agentic systems safe to run in production: least-privilege tool use, policy gates, human approval paths, and full decision traces — not just prompts that work in a demo.",
-    "Before GenAI I spent two years on platform and security infrastructure (Terraform, production incidents, SIEM-bound telemetry). That background shapes how I design multi-agent pipelines: assume failure, assume misuse, require proof. Outside work I ship open-source tools for safe remediation (HelixOps) and RAG learning (RAGGym).",
+    "I’m an AI Engineer at Accenture working on production multi-agent systems for enterprise finance workflows. My differentiator isn’t prompt engineering — it’s combining agents, APIs, queues, databases, cloud infrastructure, security controls, human approvals, and failure handling into systems teams can actually run.",
+    "Before GenAI I spent ~2 years as a Platform Engineer on Accenture’s MxDR / Adaptive MxDR security platform: Terraform modernization, Redis-backed shared services, Jenkins→GitHub Actions, AWS runtime upgrades, secrets migration, mTLS telemetry into customer SIEMs, and live production debugging. That foundation is why I design agents with fail-closed paths, approvals, and audit trails.",
+    "Outside work I ship HelixOps (human-gated remediation Incident IDE) and RAGGym (hands-on RAG learning). Open to roles at the intersection of GenAI platforms, agentic systems, and security-hardened infrastructure.",
   ],
   facts: [
-    { label: "Role", value: "AI Security Engineer, Accenture · GenAI & Data" },
-    { label: "Focus", value: "AI Security · Agent governance · Secure tool use" },
+    { label: "Role", value: "AI Engineer, Accenture · GenAI & Data" },
+    { label: "Focus", value: "Agent platforms · HITL · Secure cloud foundations" },
+    { label: "Background", value: "Platform Eng · MxDR / security product ecosystem" },
     { label: "Cert", value: "Claude Certified Architect, Foundations (Anthropic)" },
-    { label: "Education", value: "B.Tech ECE, VIT (2019–2023)" },
+    { label: "Education", value: "B.Tech ECE, VIT Chennai (2019–2023) · CGPA 7.67" },
     { label: "Location", value: "Gurugram, India" },
   ],
   skills: {
-    "AI Security & controls": [
-      "Policy enforcement",
-      "Human-in-the-loop",
-      "RBAC / least privilege",
-      "Audit trails",
-      "Secure tool invocation",
-      "Approval workflows",
-    ],
-    "Agents & orchestration": [
+    "Agents & GenAI": [
       "LangGraph",
       "LangChain",
-      "Multi-agent systems",
+      "Multi-agent workflows",
       "MCP",
-      "Stateful workflows",
-      "Decision traces",
-    ],
-    "Models & retrieval": [
-      "Claude",
-      "GPT-4o / 5",
-      "Azure AI Foundry",
+      "HITL approvals",
       "RAG",
-      "pgvector",
-      "PostgreSQL",
-    ],
-    "Platform & security infra": [
-      "Python (async)",
       "FastAPI",
-      "Terraform",
-      "AWS",
-      "Azure AKS",
+      "PostgreSQL / CTEs",
+    ],
+    "Platform engineering": [
+      "Terraform (0.11 → 1.x)",
+      "AWS (Lambda, EC2, ASG, S3)",
+      "GitHub Actions / CI/CD",
+      "Redis / ElastiCache",
+      "Docker",
+      "Blue-green deploys",
+      "Multi-environment ops",
+    ],
+    "Security & controls": [
+      "AWS Secrets Manager",
+      "IAM policies",
+      "mTLS",
+      "PII redaction",
+      "CodeQL / Dependabot",
+      "GitHub Advanced Security",
+      "Squid Proxy automation",
+      "SIEM-bound telemetry",
+    ],
+    "Observability": [
       "OpenTelemetry",
-      "SIEM telemetry",
-      "CI/CD",
+      "gRPC / OTLP",
+      "BindPlane",
+      "Datadog",
+      "CloudWatch",
+      "Synthetic health checks",
+      "Correlation IDs",
     ],
   },
 };
 
 export const experience = [
   {
-    role: "AI Security Engineer",
+    role: "Full Stack LLM Development Analyst · AI Engineer",
     company: "Accenture · GenAI & Data",
     period: "Aug 2025 – Present",
     points: [
-      "Co-architected a stateful LangGraph multi-agent pipeline for document classification and extraction — with production guardrails from day one, not bolted on later.",
-      "Designed confidence-gated model routing and ensemble consensus so low-trust model outputs never silently drive enterprise actions.",
-      "Built an MCP server and tool-invocation protocol for governed, least-privilege database access — agents only get tools the policy allows.",
-      "Shipped policy-enforcement workflows with human-in-the-loop checkpoints, agent decision-trace consoles, and audit surfaces via OpenTelemetry / Datadog.",
+      "Built components of a greenfield Dispute & Deduction agentic workflow (Order-to-Cash): email/attachment ingestion, categorization, prioritization with human fallback, cross-team handoffs, and case continuity across queues, UI, and APIs — production deployed, MVP ready.",
+      "Integrated LangGraph workflows with shared stage/state architecture, UI- and email-based continuation, and human-in-the-loop at uncertain priority, missing documents, approvals, and failure recovery.",
+      "Integrated OAuth 2.0 approval APIs (none / L1 / L1+L2), mandatory Team Lead review, sequential approval, rejection restart, and persistence so approvals survive multi-cycle execution.",
+      "Built async multi-model inference paths (retries, backoff, concurrency control) with latency/token/cost telemetry; validated multi-page documents in controlled benchmarks (up to 50 pages, 100+ docs tested).",
+      "Extended Watchtower for agent/workflow visibility and MCP-based governed tool access patterns for live operational context — with OpenTelemetry / Datadog audit surfaces.",
     ],
   },
   {
     role: "Platform Engineer",
-    company: "Accenture · Security / Distributed Systems",
+    company: "Accenture · Security (MxDR / Adaptive MxDR ecosystem)",
     period: "Aug 2023 – Aug 2025",
     points: [
-      "Led platform migration as lead engineer: Terraform IaC, CI/CD, and live-incident debugging across a large microservice fleet in a security product ecosystem.",
-      "Owned multi-environment Terraform and modernized AWS Lambda services; VPN-secured OpenTelemetry feeding centralized SIEM audit trails.",
+      "Owned modernization of Common Cache — a Redis/ElastiCache-backed shared device-metadata platform used across device classes — including legacy Java/APIs, Terraform, certificates, Auto Scaling Groups, and environment drift across 10+ environments.",
+      "Modernized Terraform from 0.11-era code to 1.x standards; worked multi-environment CI/CD (dev → staging → US/EU prod); adapted migrations from Jenkins to GitHub Actions using platform templates across 30+ repositories.",
+      "Automated migration of 64 AWS Secrets Manager secrets (Terraform + GHA/scripts + IAM updates) with no production interruption; removed hardcoded Slack webhooks; remediated CodeQL/Dependabot findings and hardened Docker/runtime stacks.",
+      "Migrated 8+ AWS Lambda functions Python 3.8 → 3.12 and 3 critical microservices from CentOS-era stacks toward Amazon Linux; decommissioned 22 unused EC2 instances to shrink footprint.",
+      "Designed and implemented one-click Squid Proxy enablement for restricted-egress enterprise customers (Python + shell automation).",
+      "Owned architecture and implementation of 5-minute synthetic health monitoring over mTLS/gRPC OpenTelemetry paths into customer SIEM systems (BindPlane routing); stabilized multi-tenant log-ingestion incidents with Datadog/CloudWatch and blue-green ASG diagnosis.",
     ],
   },
 ];
 
 export const projects = [
   {
-    title: "Production Multi-Agent Document Pipeline",
-    kind: "Enterprise · Accenture",
+    title: "Dispute & Deduction Agentic Workflow",
+    kind: "Enterprise · Accenture GenAI",
     featured: true,
     blurb:
-      "Stateful LangGraph pipeline for document classification and extraction — production path with controlled model use, not an unconstrained agent free-for-all.",
-    stack: ["LangGraph", "Guarded routing", "Azure AI", "PostgreSQL"],
+      "Greenfield enterprise D&D workflow: classify → prioritize → document chase → approvals → analyst review, with HITL interrupts and durable continuation across systems. Production deployed; customer onboarding pending.",
+    stack: ["LangGraph", "FastAPI", "PostgreSQL", "HITL", "OAuth approvals"],
   },
   {
-    title: "Confidence-Gated Model Gateway",
-    kind: "Enterprise · Accenture",
+    title: "Multi-Model Document Extraction Path",
+    kind: "Enterprise · Accenture GenAI",
     featured: true,
     blurb:
-      "Ensemble majority-voting and confidence-score routing so weak or disputed model outputs fail closed instead of flowing into finance workflows.",
-    stack: ["Python (async)", "Consensus routing", "Fail-closed design"],
+      "Async multi-LLM inference with retries, concurrency control, and telemetry. Controlled benchmarks: 100+ documents, up to 50 pages; multi-page latency reduced from ~7 min to ~2.5–3 min in testing (not customer throughput).",
+    stack: ["LangGraph", "Claude / GPT", "Azure AI", "Benchmarking"],
   },
   {
-    title: "Governed MCP Tool Gateway",
-    kind: "Enterprise · Accenture",
+    title: "Governed Tool Access & Watchtower",
+    kind: "Enterprise · Accenture GenAI",
     featured: true,
     blurb:
-      "MCP server and tool protocol for live DB access with policy boundaries — agents invoke tools under explicit authorization, not raw credentials in prompts.",
-    stack: ["MCP", "FastAPI", "Least privilege", "PostgreSQL"],
+      "MCP-oriented governed tool invocation and Watchtower visibility for live agent/workflow state — so operators see decisions and agents don’t get unconstrained production access.",
+    stack: ["MCP", "Observability", "OpenTelemetry", "Datadog"],
   },
   {
-    title: "Policy Enforcement & HITL Approvals",
-    kind: "Enterprise · Accenture",
+    title: "Common Cache Platform Modernization",
+    kind: "Enterprise · Platform · MxDR",
+    featured: true,
+    blurb:
+      "Owned Redis/ElastiCache-backed shared device-metadata platform modernization: Java services, Terraform, certs, ASGs, multi-environment drift — backbone metadata for the security product fleet.",
+    stack: ["Redis", "Terraform", "Java", "AWS", "Multi-env"],
+  },
+  {
+    title: "Secrets, IAM & Supply-Chain Hardening",
+    kind: "Enterprise · Security",
     featured: false,
     blurb:
-      "Rule-based policy engine with LangGraph human-in-the-loop checkpoints, full audit trail, and live agent decision-trace UI for operators.",
-    stack: ["LangGraph HIL", "Policy engine", "OpenTelemetry", "Datadog"],
+      "Migrated 64 secrets into AWS Secrets Manager with Terraform/GHA automation and IAM updates; CodeQL/Dependabot remediation; Docker/runtime hardening; GitHub Advanced Security workflows.",
+    stack: ["Secrets Manager", "IAM", "CodeQL", "Dependabot", "GHA"],
+  },
+  {
+    title: "SIEM Telemetry & Synthetic Health",
+    kind: "Enterprise · Security",
+    featured: false,
+    blurb:
+      "5-minute synthetic health checks over mTLS/gRPC OTel into customer SIEMs via BindPlane — closing telemetry blind spots for multi-tenant enterprise clients.",
+    stack: ["OpenTelemetry", "mTLS", "gRPC", "SIEM", "BindPlane"],
+  },
+  {
+    title: "Squid Proxy Enablement",
+    kind: "Enterprise · Security",
+    featured: false,
+    blurb:
+      "One-click Squid Proxy enablement for air-gapped / restricted-egress enterprise environments — configuration, detection, and deployment automation in Python and shell.",
+    stack: ["Python", "Shell", "Network security", "Automation"],
   },
   {
     title: "HelixOps",
     kind: "Open source",
     featured: true,
     blurb:
-      "AI-SRE Incident IDE with security-first defaults: human-approved remediation, mock-safe integrations, JWT/RBAC, decision traces — agents propose, operators authorize.",
+      "AI-SRE Incident IDE: multi-agent RCA → human-approved remediation. Security-minded defaults — mock-safe integrations, JWT/RBAC, decision traces. Clean rebuild of the earlier IncidentIQ stack.",
     stack: ["FastAPI", "RBAC", "HITL", "RAG", "React"],
     github: "https://github.com/AyushRanjanRoy-01/HelixOps",
   },
@@ -142,26 +179,42 @@ export const projects = [
     kind: "Open source",
     featured: true,
     blurb:
-      "Learn RAG by doing: chat with books, self-correcting retrieval loop, hot-swappable LLM/embeddings/vector store, and AI-graded practice mode.",
+      "Learn RAG by doing: swappable LLM/embeddings/vector store, self-correcting retrieval, RAGAS evaluation, AI-graded practice mode.",
     stack: ["LangGraph", "Qdrant", "RAGAS", "Streamlit"],
     live: "https://rag-gym.streamlit.app/",
     github: "https://github.com/AyushRanjanRoy-01/RaGGym-Chatbot-CLI",
-  },
-  {
-    title: "Startup Incubator (LangGraph)",
-    kind: "Open source",
-    featured: false,
-    blurb:
-      "AI-powered startup incubator workflow on LangGraph — idea → research → structured outputs in a Gradio space.",
-    stack: ["LangGraph", "Gradio", "LLMs"],
-    live: "https://huggingface.co/spaces/ayushroy/my-gradio-app",
-    github: "https://github.com/AyushRanjanRoy-01/Startup_Incubator_LangGraph",
   },
 ];
 
 export const writing = [
   {
-    title: "Securing agents that take real actions",
-    note: "Coming soon — policy gates, tool privilege, and human approval under load.",
+    title: "From MxDR platforms to governed agents",
+    note: "Coming soon — what platform/security years teach you about agent design.",
+  },
+];
+
+/** Career arc for the timeline UI */
+export const journey = [
+  {
+    year: "2019–23",
+    title: "B.Tech ECE · VIT Chennai",
+    detail: "Hardware-adjacent foundations → software systems. CGPA 7.67/10.",
+  },
+  {
+    year: "2023–25",
+    title: "Platform Engineer · Accenture Security",
+    detail:
+      "MxDR ecosystem: Terraform, Redis platforms, secrets/IAM, SIEM telemetry, production incidents.",
+  },
+  {
+    year: "2025–now",
+    title: "AI Engineer · Accenture GenAI",
+    detail:
+      "Dispute & Deduction agents, multi-model extraction, HITL approvals, MCP/Watchtower observability.",
+  },
+  {
+    year: "Open source",
+    title: "HelixOps · RAGGym",
+    detail: "Human-gated remediation IDE and hands-on RAG learning platform.",
   },
 ];

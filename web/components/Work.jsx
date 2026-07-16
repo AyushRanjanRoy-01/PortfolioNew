@@ -6,7 +6,8 @@ import Reveal from "./Reveal";
 
 const filters = [
   { id: "all", label: "All" },
-  { id: "enterprise", label: "Enterprise" },
+  { id: "genai", label: "GenAI" },
+  { id: "platform", label: "Platform & security" },
   { id: "oss", label: "Open source" },
 ];
 
@@ -15,7 +16,9 @@ export default function Work() {
   const [active, setActive] = useState(null);
 
   const list = useMemo(() => {
-    if (filter === "enterprise") return projects.filter((p) => p.kind.includes("Enterprise"));
+    if (filter === "genai") return projects.filter((p) => p.kind.includes("GenAI"));
+    if (filter === "platform")
+      return projects.filter((p) => p.kind.includes("Platform") || p.kind.includes("Security"));
     if (filter === "oss") return projects.filter((p) => p.kind.includes("Open source"));
     return projects;
   }, [filter]);
@@ -95,8 +98,8 @@ export default function Work() {
                         </p>
                         <p className="mt-2 text-sm leading-6 text-slate-300">
                           {p.featured
-                            ? "Security-first by design — policy gates, approvals, and audit paths built in, not bolted on after the demo."
-                            : "A focused slice of the agent + security toolkit — readable, demoable, and safe by default."}
+                            ? "Grounded in real enterprise delivery — production-deployed where stated; benchmarks labeled when internal-only."
+                            : "A focused slice of platform, security, or open-source work — readable and interview-defensible."}
                         </p>
                         <div className="mt-3 flex flex-wrap gap-3 text-xs font-medium">
                           {p.live && (

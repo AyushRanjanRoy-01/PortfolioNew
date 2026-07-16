@@ -10,7 +10,7 @@ export default function Experience() {
         <Reveal>
           <p className="section-label">Experience</p>
           <h2 className="mb-12 font-display text-3xl tracking-tight text-white sm:text-4xl">
-            From security platforms to securing agents
+            Platform engineering → production GenAI
           </h2>
         </Reveal>
 

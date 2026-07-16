@@ -14,11 +14,12 @@ export default function Contact() {
 
             <p className="section-label">Contact</p>
             <h2 className="relative mt-2 max-w-xl font-display text-3xl leading-tight tracking-tight text-white sm:text-4xl">
-              Building agents that take real actions? Let&apos;s secure them.
+              Building agent platforms that need production discipline?
             </h2>
             <p className="relative mt-4 max-w-lg text-sm leading-7 text-slate-400">
-              Open to senior AI security and agent-platform roles — policy gates, governed tool use,
-              HITL approvals, audit-grade telemetry, and multi-agent systems that fail closed.
+              Open to GenAI platform, agentic systems, and security-hardened infrastructure roles —
+              multi-agent workflows, HITL approvals, governed tools, and the cloud foundations that
+              keep them reliable.
             </p>
             <div className="relative mt-8 flex flex-wrap gap-3">
               <a href={`mailto:${profile.email}`} className="btn btn-primary">

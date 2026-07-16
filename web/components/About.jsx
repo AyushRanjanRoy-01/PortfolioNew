@@ -5,14 +5,17 @@ import { about } from "@/lib/content";
 import Reveal from "./Reveal";
 
 const tips = {
-  "Policy enforcement": "Rules that block unsafe agent actions before they run.",
-  "Human-in-the-loop": "Approvals for high-impact steps — agents propose, humans authorize.",
-  "RBAC / least privilege": "Tools and data scoped to what the workflow actually needs.",
-  "MCP": "Governed tool protocols — no raw secrets in prompts.",
-  "Audit trails": "Decision traces you can hand to security and compliance.",
-  "OpenTelemetry": "Traces that make agent decisions debuggable and attributable.",
-  "LangGraph": "Stateful multi-agent graphs with retries & HITL checkpoints.",
-  "SIEM telemetry": "Security-bound signals from the platform years.",
+  "LangGraph": "Stateful multi-agent graphs with HITL interrupts and continuation.",
+  "HITL approvals": "Humans decide when priority, documents, or approvals are uncertain.",
+  "MCP": "Governed tool invocation patterns for live operational context.",
+  "Terraform (0.11 → 1.x)": "Owned modernization on the MxDR / Common Cache stack.",
+  "AWS Secrets Manager": "Automated migration of 64 secrets with IAM + GHA — no prod interruption.",
+  "mTLS": "Mutual TLS on synthetic health and SIEM-bound telemetry paths.",
+  "SIEM-bound telemetry": "5-min synthetic health into customer SIEMs via BindPlane.",
+  "OpenTelemetry": "gRPC/OTLP traces for agents and platform services.",
+  "Redis / ElastiCache": "Common Cache — shared device metadata platform ownership.",
+  "Squid Proxy automation": "One-click enablement for restricted-egress enterprise customers.",
+  "CodeQL / Dependabot": "Supply-chain remediation in GitHub Enterprise security workflows.",
 };
 
 export default function About() {
@@ -25,7 +28,7 @@ export default function About() {
           <Reveal>
             <p className="section-label">About</p>
             <h2 className="mb-6 font-display text-3xl tracking-tight text-white sm:text-4xl">
-              AI that acts — secured like infrastructure
+              Platform-hardened. Agent-capable.
             </h2>
           </Reveal>
           <Reveal delay={80}>
