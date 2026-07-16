@@ -3,6 +3,7 @@ import ScrollProgress from "@/components/ScrollProgress";
 import CommandPalette from "@/components/CommandPalette";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import TechBrands from "@/components/TechBrands";
 import SiteBrain from "@/components/SiteBrain";
 import AgentGraph from "@/components/AgentGraph";
 import Journey from "@/components/Journey";
@@ -21,6 +22,7 @@ export default function Page() {
       <Nav />
       <main>
         <Hero />
+        <TechBrands />
         <SiteBrain />
         <AgentGraph />
         <Journey />

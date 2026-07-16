@@ -32,6 +32,9 @@ export default function Hero() {
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-cyan-300" />
               Available for senior AI roles
             </span>
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#D97757]/35 bg-[#D97757]/10 px-3 py-1 font-mono text-[11px] text-[#E8A88A]">
+              Claude Certified Architect
+            </span>
             <span className="chip">{hero.kicker}</span>
           </div>
         </Reveal>

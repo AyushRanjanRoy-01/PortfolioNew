@@ -20,9 +20,28 @@ export const hero = {
   title: "I build agent platforms that ship — with security controls, not demos.",
   subtitle:
     "Mostly multi-agent GenAI — LangGraph workflows, RAG-backed knowledge retrieval, HITL " +
-    "approvals, MCP tool use, and model routing — backed by a solid platform and security " +
-    "foundation (cloud, secrets, SIEM, production ops) from two years on Accenture’s security-product cloud platform.",
+    "gates, MCP tool use, Claude / Azure AI model paths — backed by modernizing Accenture " +
+    "MxDR → Adaptive MxDR (AMxDR) AWS cloud architecture: Terraform, shared services, secrets, " +
+    "secure telemetry, and production ops.",
 };
+
+/** Highlight certs (public) */
+export const certifications = [
+  {
+    name: "Claude Certified Architect — Foundations",
+    issuer: "Anthropic",
+    when: "May 2026",
+    highlight: true,
+    blurb: "Architecture fundamentals for building with Claude in production systems.",
+  },
+];
+
+/** Brand strip — technology ecosystem (names only; simple icons) */
+export const techBrands = [
+  { id: "claude", name: "Claude", sub: "Anthropic" },
+  { id: "azure", name: "Azure", sub: "AI Foundry" },
+  { id: "aws", name: "AWS", sub: "Cloud platform" },
+];
 
 /** Hero orbit chips — ~60% AI / ~40% platform·security·ops */
 export const orbitSkills = [
@@ -53,15 +72,15 @@ export const tickerItems = [
 
 export const about = {
   paragraphs: [
-    "I’m an AI Engineer at Accenture working on production multi-agent systems in enterprise Order-to-Cash domains (including Dispute & Deduction). My differentiator isn’t prompt engineering — it’s combining agents, RAG, APIs, workflows, cloud infrastructure, and human-in-the-loop controls into systems teams can actually run.",
-    "Before GenAI I spent ~2 years as a Platform Engineer on Accenture’s security-product cloud platform: Terraform, shared services, CI/CD, AWS runtimes, secrets management, secure telemetry, and production incident response. That foundation is why I design agents and RAG paths with fail-closed defaults and auditability.",
+    "I’m an AI Engineer at Accenture working on production multi-agent systems in enterprise Order-to-Cash domains (including Dispute & Deduction) — LangGraph, RAG, Claude / Azure model paths, MCP-style tools, and human-in-the-loop controls.",
+    "Before GenAI I spent ~2 years as a Platform Engineer on Accenture’s MxDR / Adaptive MxDR (AMxDR) security platform, modernizing the AWS cloud architecture: Terraform, shared services, CI/CD, runtimes, secrets, secure telemetry into enterprise SIEMs, and live production incident response. That platform work is the backbone of how I ship agents — observable, governed, fail-closed by default.",
     "Outside work I ship HelixOps (RAG-assisted RCA + human-gated remediation) and RAGGym (hands-on RAG learning and evaluation). Available for senior AI roles — especially where agents, RAG, and production controls meet.",
   ],
   facts: [
     { label: "Role", value: "AI Engineer, Accenture · GenAI & Data" },
-    { label: "Focus", value: "Agents · RAG · ~40% platform & security" },
-    { label: "Background", value: "Platform Eng · security-product cloud platform" },
-    { label: "Cert", value: "Claude Certified Architect, Foundations (Anthropic)" },
+    { label: "Focus", value: "Agents · RAG · platform & security foundations" },
+    { label: "Platform story", value: "MxDR → AMxDR AWS cloud modernization" },
+    { label: "Certification", value: "Claude Certified Architect — Foundations (Anthropic, May 2026)" },
     { label: "Education", value: "B.Tech ECE, VIT Chennai (2019–2023)" },
     { label: "Location", value: "Gurugram, India" },
   ],
@@ -128,13 +147,13 @@ export const experience = [
   },
   {
     role: "Platform Engineer",
-    company: "Accenture · Security / Cloud Platform",
+    company: "Accenture · Security · MxDR / Adaptive MxDR (AMxDR)",
     period: "Aug 2023 – Aug 2025",
     points: [
-      "Modernized cloud infrastructure with Terraform, multi-environment CI/CD, and Jenkins → GitHub Actions migrations.",
-      "Owned Redis/ElastiCache-backed shared metadata platform services, certificates, Auto Scaling, and environment consistency.",
-      "Automated AWS Secrets Manager migrations and IAM updates; remediated CodeQL/Dependabot findings; hardened container/runtime baselines.",
-      "Migrated Lambda and microservice runtimes to supported Python/OS versions; reduced unused compute footprint.",
+      "Helped modernize the MxDR → Adaptive MxDR (AMxDR) platform’s AWS cloud architecture: multi-environment Terraform, CI/CD, shared services, and production reliability for a security-product estate.",
+      "Owned Redis/ElastiCache-backed shared metadata platform services, certificates, Auto Scaling Groups, and environment consistency across the fleet.",
+      "Modernized infrastructure-as-code (legacy Terraform → 1.x) and migrated pipelines from Jenkins to GitHub Actions across a large service set.",
+      "Automated AWS Secrets Manager migrations and IAM updates; remediated CodeQL/Dependabot findings; hardened container/runtime baselines; upgraded Lambda and microservice runtimes.",
       "Built restricted-egress proxy automation and synthetic health monitoring over mTLS/gRPC OpenTelemetry into enterprise SIEM paths; supported multi-tenant production incidents and blue-green deployments.",
     ],
   },
@@ -166,12 +185,12 @@ export const projects = [
     stack: ["MCP", "Observability", "OpenTelemetry", "Datadog"],
   },
   {
-    title: "Shared Metadata Platform Modernization",
-    kind: "Enterprise · Platform",
+    title: "MxDR → AMxDR AWS Platform Modernization",
+    kind: "Enterprise · Platform · MxDR / AMxDR",
     featured: true,
     blurb:
-      "Redis/ElastiCache-backed shared metadata platform modernization: services, Terraform, certs, ASGs, multi-environment operations for a security-product cloud estate.",
-    stack: ["Redis", "Terraform", "Java", "AWS", "Multi-env"],
+      "Platform engineering on Accenture MxDR / Adaptive MxDR: modernized AWS cloud architecture — Terraform, shared Redis metadata services, CI/CD, secrets/IAM, runtime upgrades, and multi-env production operations.",
+    stack: ["AWS", "Terraform", "Redis", "GitHub Actions", "Secrets Manager"],
   },
   {
     title: "Secrets, IAM & Supply-Chain Hardening",
@@ -235,15 +254,15 @@ export const journey = [
   },
   {
     year: "2023–25",
-    title: "Platform Engineer · Accenture Security",
+    title: "Platform Engineer · MxDR / AMxDR",
     detail:
-      "Cloud platform: Terraform, Redis services, secrets/IAM, SIEM telemetry, production incidents.",
+      "Modernized AWS cloud architecture for Accenture MxDR → Adaptive MxDR: Terraform, Redis, secrets, SIEM telemetry, production ops.",
   },
   {
     year: "2025–now",
     title: "AI Engineer · Accenture GenAI",
     detail:
-      "Order-to-Cash / Dispute & Deduction agents, RAG, multi-model inference, HITL, MCP observability.",
+      "Order-to-Cash / Dispute & Deduction agents, RAG, Claude & Azure AI paths, HITL, MCP observability.",
   },
   {
     year: "Open source",

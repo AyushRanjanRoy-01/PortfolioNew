@@ -19,7 +19,7 @@ export const corpus = [
     source: "Experience · Platform",
     tags: ["platform", "terraform", "aws", "security", "siem", "secrets", "redis"],
     text:
-      "Before GenAI he spent ~2 years as a Platform Engineer on Accenture’s security-product cloud platform: Terraform modernization, Redis-backed shared services, CI/CD migration, AWS runtime upgrades, Secrets Manager migrations, mTLS telemetry into enterprise SIEMs, restricted-egress proxy automation, and production incident debugging.",
+      "Before GenAI he spent ~2 years as a Platform Engineer on Accenture’s MxDR / Adaptive MxDR (AMxDR) security platform, modernizing the AWS cloud architecture: Terraform, Redis-backed shared services, CI/CD migration, runtime upgrades, Secrets Manager migrations, mTLS telemetry into enterprise SIEMs, restricted-egress proxy automation, and production incident debugging.",
   },
   {
     id: "dd-workflow",
@@ -68,6 +68,22 @@ export const corpus = [
     tags: ["security", "secrets", "iam", "mtls", "codeql", "siem", "proxy"],
     text:
       "Platform security work includes Secrets Manager migrations, IAM updates, mTLS on synthetic health paths, SIEM-bound telemetry, CodeQL/Dependabot remediation, runtime hardening, and restricted-egress proxy automation. He does not claim proprietary client control catalogs or AI red-team product ownership.",
+  },
+  {
+    id: "cert-claude",
+    title: "Claude Certified Architect",
+    source: "Certifications",
+    tags: ["claude", "anthropic", "certification", "certified", "architect"],
+    text:
+      "Claude Certified Architect — Foundations (Anthropic, May 2026). Highlights production-oriented Claude architecture fundamentals.",
+  },
+  {
+    id: "mxdr-platform",
+    title: "MxDR / AMxDR AWS modernization",
+    source: "Experience · Platform",
+    tags: ["mxdr", "amxdr", "adaptive", "aws", "terraform", "platform", "modernization"],
+    text:
+      "As Platform Engineer on Accenture MxDR / Adaptive MxDR (AMxDR), he contributed to modernizing the product’s AWS cloud architecture: multi-environment Terraform, shared Redis metadata services, CI/CD, secrets/IAM, runtime upgrades, synthetic health into enterprise SIEMs, and multi-tenant production operations.",
   },
   {
     id: "education",
@@ -165,8 +181,8 @@ export function answerFromCorpus(query) {
 
 export const SUGGESTED_QUERIES = [
   "What do you build with RAG?",
-  "Tell me about HelixOps",
+  "MxDR / AMxDR AWS platform work?",
+  "Claude Certified Architect?",
   "Dispute & Deduction / Order-to-Cash agents?",
-  "Platform and security foundation?",
   "Are you available for senior AI roles?",
 ];
