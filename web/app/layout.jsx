@@ -1,25 +1,13 @@
 import "./globals.css";
-import { Plus_Jakarta_Sans, Instrument_Serif, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import { profile, hero } from "@/lib/content";
 
-/** Body — modern, clear, professional */
-const sans = Plus_Jakarta_Sans({
+const sans = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
-  weight: ["400", "500", "600", "700"],
 });
 
-/** Display — editorial serif with distinctive character */
-const display = Instrument_Serif({
-  subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-  weight: ["400"],
-  style: ["normal", "italic"],
-});
-
-/** Labels / technical crumbs */
 const mono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
@@ -30,7 +18,7 @@ const mono = JetBrains_Mono({
 export const metadata = {
   metadataBase: new URL(profile.site),
   title: `${profile.name} — ${profile.role}`,
-  description: hero.subtitle,
+  description: hero.blurb,
   keywords: [
     "AI Engineer",
     "Platform Engineer",
@@ -42,7 +30,7 @@ export const metadata = {
   authors: [{ name: profile.name }],
   openGraph: {
     title: `${profile.name} — ${profile.role}`,
-    description: hero.subtitle,
+    description: hero.blurb,
     type: "website",
     url: profile.site,
     siteName: profile.name,
@@ -51,13 +39,13 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: `${profile.name} — ${profile.role}`,
-    description: hero.subtitle,
+    description: hero.blurb,
     images: ["/og.jpg"],
   },
   icons: { icon: "/favicon.svg" },
 };
 
-export const viewport = { themeColor: "#0a0c10" };
+export const viewport = { themeColor: "#0b1220" };
 
 const personJsonLd = {
   "@context": "https://schema.org",
@@ -77,7 +65,7 @@ const personJsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${sans.variable} ${display.variable} ${mono.variable}`}>
+    <html lang="en" className={`${sans.variable} ${mono.variable}`}>
       <body className="min-h-screen bg-ink text-stone antialiased">
         <script
           type="application/ld+json"

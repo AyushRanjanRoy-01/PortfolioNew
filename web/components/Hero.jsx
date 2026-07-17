@@ -1,128 +1,76 @@
 "use client";
 
 import Image from "next/image";
-import { hero, profile } from "@/lib/content";
+import { hero, profile, certifications } from "@/lib/content";
 import Reveal from "./Reveal";
 
 export default function Hero() {
+  const cert = certifications[0];
+
   return (
-    <section className="section pb-14 pt-16 sm:pb-20 sm:pt-24">
-      <div className="container-page grid items-center gap-14 lg:grid-cols-[1.25fr_0.75fr] lg:gap-20">
-        <div>
+    <section className="section pt-16 sm:pt-24">
+      <div className="container-page grid items-start gap-12 lg:grid-cols-[1fr_auto] lg:gap-16">
+        <div className="max-w-measure">
           <Reveal>
-            <div className="mb-7 flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-signal/30 bg-signal-soft px-3 py-1 text-[11px] font-semibold tracking-wide text-signal">
-                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-signal" />
-                Open to senior AI roles
-              </span>
-              <span className="rounded-full border border-accent/30 bg-accent-soft px-3 py-1 text-[11px] font-semibold tracking-wide text-accent-bright">
-                Claude Certified Architect
-              </span>
-            </div>
+            <h1 className="text-3xl font-semibold tracking-tight text-stone sm:text-4xl">
+              {hero.title}
+            </h1>
+            <p className="mt-3 text-lg text-stone-muted">{hero.subtitle}</p>
           </Reveal>
 
           <Reveal delay={40}>
-            <p className="mb-5 font-mono text-[10px] font-medium uppercase tracking-label text-stone-dim">
-              {hero.kicker}
-            </p>
+            <p className="mt-6 text-[0.98rem] leading-7 text-stone-muted">{hero.blurb}</p>
           </Reveal>
 
-          <Reveal delay={70}>
-            <h1 className="max-w-[18ch] font-display text-display-2xl text-stone">
-              I build multi-agent systems{" "}
-              <em className="display-italic text-accent-bright">that hold up</em>{" "}
-              in production.
-            </h1>
+          <Reveal delay={80}>
+            <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+              <li>
+                <a href={`mailto:${profile.email}`} className="link-accent">
+                  {profile.email}
+                </a>
+              </li>
+              <li>
+                <a href={profile.github} target="_blank" rel="noreferrer" className="link">
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a href={profile.linkedin} target="_blank" rel="noreferrer" className="link">
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a href={profile.resume} className="link">
+                  Resume
+                </a>
+              </li>
+            </ul>
           </Reveal>
 
-          <Reveal delay={110}>
-            <p className="mt-7 max-w-measure text-[1.05rem] leading-[1.75] text-stone-muted sm:text-[1.1rem]">
-              {hero.subtitle}
-            </p>
-          </Reveal>
-
-          <Reveal delay={150}>
-            <div className="mt-9 flex flex-wrap items-center gap-3">
-              <a href="#work" className="btn btn-primary">
-                View selected work
-              </a>
-              <a href={profile.resume} className="btn btn-ghost">
-                Resume PDF
-              </a>
-              <a
-                href={`mailto:${profile.email}`}
-                className="text-sm font-medium text-stone-muted underline-offset-4 transition hover:text-accent-bright hover:underline"
-              >
-                {profile.email}
-              </a>
-            </div>
-          </Reveal>
-
-          <Reveal delay={190}>
-            <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 border-t border-white/[0.06] pt-6 text-sm text-stone-dim">
-              <p>
-                <span className="font-mono text-[10px] uppercase tracking-wide text-stone-dim/80">
-                  Platform
-                </span>
-                <br />
-                <span className="text-stone-muted">MxDR → AMxDR on AWS</span>
+          {cert && (
+            <Reveal delay={100}>
+              <p className="mt-8 text-sm text-stone-dim">
+                {cert.name}
+                <span className="text-stone-dim/70"> · {cert.issuer}, {cert.when}</span>
               </p>
-              <p>
-                <span className="font-mono text-[10px] uppercase tracking-wide text-stone-dim/80">
-                  GenAI
-                </span>
-                <br />
-                <span className="text-stone-muted">Agents · retrieval · review gates</span>
-              </p>
-              <p>
-                <span className="font-mono text-[10px] uppercase tracking-wide text-stone-dim/80">
-                  Side work
-                </span>
-                <br />
-                <span className="text-stone-muted">HelixOps · RAGGym</span>
-              </p>
-            </div>
-          </Reveal>
+            </Reveal>
+          )}
         </div>
 
-        <Reveal delay={90} className="mx-auto w-full max-w-[270px] sm:max-w-[290px] lg:ml-auto">
-          <figure className="relative">
-            {/* Asymmetric frame — not a centered double border */}
-            <div
-              className="absolute -left-3 -top-3 h-16 w-16 rounded-tl-2xl border-l border-t border-accent/40"
-              aria-hidden
-            />
-            <div
-              className="absolute -bottom-3 -right-3 h-16 w-16 rounded-br-2xl border-b border-r border-signal/30"
-              aria-hidden
-            />
-            <div className="overflow-hidden rounded-[1.4rem] border border-white/10 bg-ink-card shadow-lift">
-              <div className="relative aspect-[4/5]">
-                <Image
-                  src="/images/profile.jpg"
-                  alt={profile.name}
-                  fill
-                  className="object-cover"
-                  sizes="290px"
-                  priority
-                />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent" />
-              </div>
-              <figcaption className="border-t border-white/[0.07] px-5 py-4">
-                <p className="font-display text-[1.35rem] leading-tight text-stone">
-                  {profile.name}
-                </p>
-                <p className="mt-1 text-[0.85rem] text-stone-muted">
-                  {profile.role}
-                  <span className="text-stone-dim"> · </span>
-                  {profile.company}
-                </p>
-                <p className="mt-1.5 font-mono text-[10px] tracking-wide text-stone-dim">
-                  {profile.location}
-                </p>
-              </figcaption>
+        <Reveal delay={60} className="hidden w-[200px] shrink-0 sm:block lg:w-[220px]">
+          <div className="overflow-hidden rounded-lg border border-white/[0.08]">
+            <div className="relative aspect-square">
+              <Image
+                src="/images/profile.jpg"
+                alt={profile.name}
+                fill
+                className="object-cover"
+                sizes="220px"
+                priority
+              />
             </div>
-          </figure>
+          </div>
+          <p className="mt-3 font-mono text-[11px] text-stone-dim">{profile.location}</p>
         </Reveal>
       </div>
     </section>
