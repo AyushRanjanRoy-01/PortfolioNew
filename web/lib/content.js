@@ -1,8 +1,6 @@
-// Portfolio content grounded in career SoT + owner corrections.
-// Rules:
-// - Datadog / OpenTelemetry / SIEM product telemetry → MxDR platform only
-// - GenAI agentic work → multi-agent systems, MCP, HITL, LangGraph, inference
-// - Contributor-level claims; no client process codenames (e.g. Synops)
+// Portfolio content — impact + tech only.
+// Datadog / OpenTelemetry → MxDR only.
+// GenAI → multi-agent, MCP, HITL, inference. No process jargon.
 
 export const profile = {
   name: "Ayush Ranjan Roy",
@@ -20,12 +18,11 @@ export const profile = {
 export const hero = {
   title: profile.name,
   subtitle:
-    "AI Engineer at Accenture. Multi-agent systems, MCP tool access, and human-in-the-loop workflows.",
+    "AI Engineer at Accenture. Multi-agent systems, MCP, and human-in-the-loop workflows.",
   blurb:
-    "I build multi-agent systems for enterprise Order-to-Cash / Dispute & Deduction programs — " +
-    "LangGraph orchestration, MCP-governed tools, and human review gates. " +
-    "Before that I was a platform engineer on Accenture’s MxDR / Adaptive MxDR product on AWS, " +
-    "including production telemetry (OpenTelemetry, Datadog, SIEM).",
+    "I build multi-agent systems for enterprise finance workflows (Order-to-Cash / Dispute & Deduction) " +
+    "with LangGraph, MCP tool access, and human review. Previously platform engineering on " +
+    "Accenture’s MxDR / Adaptive MxDR product on AWS — including OpenTelemetry, Datadog, and SIEM telemetry.",
 };
 
 export const certifications = [
@@ -38,10 +35,10 @@ export const certifications = [
 
 export const about = {
   paragraphs: [
-    "I’m an AI engineer at Accenture (GenAI & Data). I work on multi-agent systems for Order-to-Cash and Dispute & Deduction: LangGraph workflows, MCP for governed tool calls, human-in-the-loop continuation (UI and email), approvals, durable state, and FastAPI services — as a contributor on multi-engineer teams.",
-    "I also work on multi-model inference (Claude, GPT, Azure) with routing, retries, concurrency control, and latency / token / cost instrumentation for evaluation.",
-    "From 2023–2025 I was a platform engineer on Accenture Security’s MxDR → Adaptive MxDR product: Terraform, shared services, CI/CD, secrets, and production observability — OpenTelemetry, Datadog, and mTLS health into enterprise SIEMs — on AWS.",
-    "Outside work I maintain HelixOps and RAGGym. Based in Gurugram. Open to senior AI roles.",
+    "AI engineer at Accenture (GenAI & Data). I build multi-agent systems with LangGraph, MCP for governed tool calls, human-in-the-loop review, FastAPI, and PostgreSQL — on multi-engineer teams shipping enterprise finance workflows.",
+    "I also build multi-model inference (Claude, GPT, Azure): async execution, routing, retries, and latency / token / cost metrics.",
+    "2023–2025: platform engineer on Accenture Security’s MxDR → Adaptive MxDR product — Terraform, shared services, CI/CD, secrets, and production observability (OpenTelemetry, Datadog, SIEM) on AWS.",
+    "Open source: HelixOps, RAGGym. Gurugram. Open to senior AI roles.",
   ],
   education: {
     degree: "B.Tech, Electronics and Communication Engineering",
@@ -87,15 +84,14 @@ export const experience = [
   {
     role: "AI Engineer",
     company: "Accenture",
-    group: "GenAI & Data · multi-agent systems",
+    group: "GenAI & Data",
     period: "Aug 2025 — Present",
     href: "https://www.accenture.com",
     points: [
-      "Build multi-agent systems for enterprise Order-to-Cash / Dispute & Deduction: LangGraph orchestration, durable workflow state, and cross-step continuation.",
-      "MCP for governed tool access — live tool execution behind reviewable controls, not free-form agent side effects.",
-      "Human-in-the-loop at uncertain classification, prioritization, missing documents, approvals, and failure recovery (UI and email continuation).",
-      "Multi-model inference (Claude, GPT, Azure) with async execution, routing, retries, and latency / token / cost instrumentation for evaluation.",
-      "FastAPI services, PostgreSQL persistence, and architecture notes / enablement for engineers joining the program.",
+      "Multi-agent systems for enterprise Order-to-Cash / Dispute & Deduction using LangGraph, FastAPI, and PostgreSQL — durable state so long-running workflows resume reliably.",
+      "MCP tool access so agents call production tools under policy instead of unconstrained side effects.",
+      "Human-in-the-loop gates so uncertain or high-impact steps pause for analyst approval before the run continues.",
+      "Multi-model inference (Claude, GPT, Azure) with async execution, routing, retries, and latency / token / cost metrics for evaluation.",
     ],
     stack: [
       "LangGraph",
@@ -115,10 +111,10 @@ export const experience = [
     period: "Aug 2023 — Aug 2025",
     href: "https://www.accenture.com",
     points: [
-      "AWS platform work modernizing MxDR → Adaptive MxDR: Terraform, CI/CD, production support across shared services and multi-account environments.",
-      "Redis-backed shared metadata services; multi-environment ops; Lambda runtime upgrades (Python 3.8 → 3.12).",
-      "Secrets Manager and IAM automation; service and container hardening; restricted-egress proxy automation.",
-      "Production observability on the security platform: OpenTelemetry / gRPC health paths, Datadog for monitoring and debugging, mTLS telemetry into enterprise SIEMs; blue-green deploys on live upgrades.",
+      "AWS platform for MxDR → Adaptive MxDR: Terraform, CI/CD, and production support across shared services and multi-account environments.",
+      "Redis-backed shared metadata services; Lambda upgrades (Python 3.8 → 3.12); multi-environment operations.",
+      "Secrets Manager and IAM automation; service hardening; restricted-egress proxy automation.",
+      "Observability on the security platform: OpenTelemetry health paths, Datadog monitoring, mTLS telemetry into enterprise SIEMs; blue-green deploys on live upgrades.",
     ],
     stack: [
       "AWS",
@@ -135,38 +131,38 @@ export const experience = [
 
 export const projects = [
   {
-    title: "Multi-agent O2C / Dispute & Deduction systems",
+    title: "Multi-agent finance workflows",
     kind: "Enterprise · GenAI",
     blurb:
-      "LangGraph multi-agent workflows for dispute intake, prioritization, document chase, and approvals — with MCP-governed tools and human-in-the-loop gates. Contributor on a multi-engineer delivery program.",
+      "LangGraph multi-agent systems for Order-to-Cash / Dispute & Deduction — MCP tools, human review gates, FastAPI, PostgreSQL. Contributor on a multi-engineer team.",
     stack: ["LangGraph", "MCP", "HITL", "FastAPI", "PostgreSQL"],
   },
   {
-    title: "MCP tool access & human review",
+    title: "MCP + human-in-the-loop",
     kind: "Enterprise · GenAI",
     blurb:
-      "MCP servers and tool bindings so agents call live capabilities under policy, with analyst review for uncertain steps, approvals, and failure recovery.",
-    stack: ["MCP", "HITL", "LangGraph", "OAuth"],
+      "MCP servers and tool bindings for governed agent tool use, with human approval before high-impact actions.",
+    stack: ["MCP", "HITL", "LangGraph"],
   },
   {
     title: "Multi-model inference",
     kind: "Enterprise · GenAI",
     blurb:
-      "Async inference across Claude, GPT, and Azure with concurrency control, retries, routing, and latency / token / cost metrics for benchmarking and evaluation.",
+      "Async inference across Claude, GPT, and Azure with concurrency control, retries, routing, and latency / token / cost metrics.",
     stack: ["Claude", "GPT", "Azure AI", "Async Python"],
   },
   {
     title: "MxDR → Adaptive MxDR on AWS",
     kind: "Enterprise · Platform",
     blurb:
-      "Platform modernization for Accenture’s security product: Terraform, shared services, CI/CD, secrets, multi-env ops, plus OpenTelemetry, Datadog, and SIEM-bound health telemetry.",
+      "Platform modernization: Terraform, shared services, CI/CD, secrets, plus OpenTelemetry, Datadog, and SIEM health telemetry.",
     stack: ["AWS", "Terraform", "OpenTelemetry", "Datadog", "Redis"],
   },
   {
     title: "HelixOps",
     kind: "Open source",
     blurb:
-      "Incident IDE: multi-agent RCA over runbooks, then human-approved remediation. Mock-safe by default.",
+      "Incident IDE: multi-agent RCA over runbooks, then human-approved fixes. Mock-safe by default.",
     stack: ["LangGraph", "RAG", "FastAPI", "HITL"],
     github: "https://github.com/AyushRanjanRoy-01/HelixOps",
   },
@@ -174,7 +170,7 @@ export const projects = [
     title: "RAGGym",
     kind: "Open source",
     blurb:
-      "Retrieval practice platform with swappable models and stores, self-correction, and an evaluation harness.",
+      "Retrieval practice platform: swappable models and stores, self-correction, evaluation harness.",
     stack: ["RAG", "LangGraph", "Streamlit"],
     live: "https://rag-gym.streamlit.app/",
     github: "https://github.com/AyushRanjanRoy-01/RaGGym-Chatbot-CLI",
